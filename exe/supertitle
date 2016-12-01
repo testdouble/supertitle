@@ -1,0 +1,21 @@
+if ARGV.size != 4
+  puts <<-TEXT.gsub(/^    /,'')
+    Usage: supertitle input_file input_format output_file output_format
+
+    Example:
+      $ supertitle scna.srt srt scna-script.txt transcript
+  TEXT
+  exit 1
+end
+
+input_file = ARGV[0]
+input_format = ARGV[1].to_sym
+output_file = ARGV[2]
+output_format = ARGV[3].to_sym
+
+require "supertitle"
+supertitles = Supertitle.read(File.read(input_file), input_format)
+File.open(output_file, 'w') do |f|
+  f.write(Supertitle.write(supertitles, output_format) + "\n")
+end
+

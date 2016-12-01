@@ -1,0 +1,4674 @@
+1
+00:00:00,300 --> 00:00:03,300
+This talk is titled how to 
+scratch an itch in 200 repos
+
+2
+00:00:03,300 --> 00:00:06,300
+or less. @searls is my real name
+
+3
+00:00:06,300 --> 00:00:09,300
+My parents were quite prescient
+and on-brand back when
+
+4
+00:00:09,300 --> 00:00:12,300
+they named me. This is
+what my face looked
+
+5
+00:00:12,300 --> 00:00:15,300
+like in 2011 and
+thanks to personal
+
+6
+00:00:15,300 --> 00:00:18,300
+branding, I'm now stuck with this
+face forever because you might see it
+
+7
+00:00:18,300 --> 00:00:21,300
+from Twitter or Github 
+as my avatar
+
+8
+00:00:21,300 --> 00:00:22,466
+Just like Todd mentioned, I 
+co-founded an agency with him
+
+9
+00:00:22,466 --> 00:00:25,466
+Just like Todd mentioned, I co-founded an 
+agency with him 5 years ago called
+
+10
+00:00:25,466 --> 00:00:28,466
+Test Double. Our mission 
+in life is to improve
+
+11
+00:00:28,466 --> 00:00:31,466
+a lot of the stuff about software that sucks, 
+and one of the things that sucks a lot
+
+12
+00:00:31,466 --> 00:00:34,466
+is that most engineering teams 
+operate at capacity
+
+13
+00:00:34,466 --> 00:00:37,466
+and they don't have enough
+slack in the system to improve
+
+14
+00:00:37,466 --> 00:00:40,466
+things like testing, and quality, 
+and craft. So we come in 
+
+15
+00:00:40,466 --> 00:00:43,466
+to pair with those teams to 
+add enough capacity so that
+
+16
+00:00:43,466 --> 00:00:46,466
+we can all work together to make 
+stuff better. It might sound
+
+17
+00:00:46,466 --> 00:00:49,466
+familiar as a business model, it's
+kind of like consulting except good
+
+18
+00:00:49,466 --> 00:00:52,466
+So if your team could
+benefit from that sort of
+
+19
+00:00:52,466 --> 00:00:55,466
+thing, I hope you'll chat with me
+or Todd tonight or tomorrow
+
+20
+00:00:55,466 --> 00:00:58,466
+So, yeah, how to scratch an itch
+You might be able to 
+
+21
+00:00:58,466 --> 00:01:01,466
+infer from that title that this
+is a talk about creativity
+
+22
+00:01:01,466 --> 00:01:04,466
+Everyone loves creativity, "yay!
+creativity!" That's a good
+
+23
+00:01:04,466 --> 00:01:07,466
+thing, right, ok, cool, let's talk
+about creativity. …So what is
+
+24
+00:01:07,466 --> 00:01:10,466
+creativity, exactly? It's one 
+of those axiomatic
+
+25
+00:01:10,466 --> 00:01:13,466
+concepts that we generally
+don't interrogate
+
+26
+00:01:13,466 --> 00:01:16,466
+or introspect much on, and
+I forced myself to
+
+27
+00:01:16,466 --> 00:01:19,466
+think about this when I was 
+designing this talk and
+
+28
+00:01:19,466 --> 00:01:22,466
+The first thing that came to mind
+is that creativity is a lot like passion
+
+29
+00:01:22,466 --> 00:01:25,466
+Passion's hot right now. We got all 
+these passion projects. Look at all
+
+30
+00:01:25,466 --> 00:01:28,466
+these passionate logos for passion
+projects that people have
+
+31
+00:01:28,466 --> 00:01:31,466
+made. But personally I don't
+get on board with a movement
+
+32
+00:01:31,466 --> 00:01:34,466
+until I can find a way to engage 
+with a brand
+
+33
+00:01:34,466 --> 00:01:37,466
+and its hashtag. So the American
+Express passion project.
+
+34
+00:01:37,466 --> 00:01:40,466
+And it actually serves as a 
+really good example of why
+
+35
+00:01:40,466 --> 00:01:43,466
+passion doesn't equal creativity,
+because it fizzles out
+
+36
+00:01:43,466 --> 00:01:46,466
+kind of like domain 
+name registrations
+
+37
+00:01:46,466 --> 00:01:49,466
+So the Amex passion 
+project is just gone
+
+38
+00:01:49,466 --> 00:01:52,466
+now. So, no, passion 
+isn't quite
+
+39
+00:01:52,466 --> 00:01:55,466
+what creativity is. You might
+say "is creativity art?"
+
+40
+00:01:55,466 --> 00:01:58,466
+You certainly—coding feels
+creative, right?
+
+41
+00:01:58,466 --> 00:02:01,466
+We know it's a creative 
+enterprise, but not all of our
+
+42
+00:02:01,466 --> 00:02:04,466
+code is art, when I put 
+it up on a screen
+
+43
+00:02:04,466 --> 00:02:07,466
+You know, it's mostly functional
+most of the time. It certainly can
+
+44
+00:02:07,466 --> 00:02:10,466
+be art, but it doesn't seem like
+the best metaphor
+
+45
+00:02:10,466 --> 00:02:13,466
+or abstraction. You could say,
+is creativity vision
+
+46
+00:02:13,466 --> 00:02:16,466
+and foresight? If we had a 
+crystal ball where you could see
+
+47
+00:02:16,466 --> 00:02:19,466
+where the cloud is and where it's 
+going to go and there might be an
+
+48
+00:02:19,466 --> 00:02:22,466
+aspect of that, but that's not 
+in itself building anything
+
+49
+00:02:22,466 --> 00:02:25,466
+it's just prognostication, 
+so vision's not enough
+
+50
+00:02:25,466 --> 00:02:28,466
+And I thought about 
+this at length to try to
+
+51
+00:02:28,466 --> 00:02:31,466
+figure out, "am I creative?
+are you creative?"
+
+52
+00:02:31,466 --> 00:02:34,466
+And if I was forced to think
+in those terms
+
+53
+00:02:34,466 --> 00:02:37,466
+and that popular framing about 
+creativity like filling out a survey
+
+54
+00:02:37,466 --> 00:02:40,466
+Are you incredibly passionate? Do you 
+create beautiful things?
+
+55
+00:02:40,466 --> 00:02:43,466
+Can you see into the future? Of
+course most of us would say no
+
+56
+00:02:43,466 --> 00:02:46,466
+to all three of those things, so
+certainly we're not
+
+57
+00:02:46,466 --> 00:02:49,466
+creative. That's a really high
+bar to clear. Creative people
+
+58
+00:02:49,466 --> 00:02:52,466
+are these magical unicorns and
+that's not me, that's not us.
+
+59
+00:02:52,466 --> 00:02:55,466
+That's kind of disappointing.
+We can
+
+60
+00:02:55,466 --> 00:02:58,466
+usually at least relate to the idea
+of a creative spark, right, like we 
+
+61
+00:02:58,466 --> 00:03:01,466
+have an idea in the back of our heads
+we're walking down the street and an
+
+62
+00:03:01,466 --> 00:03:04,466
+idea occurs and then of course 
+what happens next is we just
+
+63
+00:03:04,466 --> 00:03:07,466
+effortlessly create amazing things
+based on that idea
+
+64
+00:03:07,466 --> 00:03:10,466
+Unfortunately, that doesn't comport
+with my experience. Actually
+
+65
+00:03:10,466 --> 00:03:13,466
+I have a—creative ideas, 
+they stress me
+
+66
+00:03:13,466 --> 00:03:16,466
+out. That spark, tells me—
+I'm already really busy
+
+67
+00:03:16,466 --> 00:03:19,466
+how am I going to find the 
+time or the capability to go
+
+68
+00:03:19,466 --> 00:03:22,466
+and accomplish that thing
+
+69
+00:03:22,466 --> 00:03:25,466
+these ideas they sort of scare me, 
+because I don't think I'm—gonna
+
+70
+00:03:25,466 --> 00:03:28,466
+have fear, uncertainty, and doubt I'm not going
+to be able to do them. Where does that spark
+
+71
+00:03:28,466 --> 00:03:31,466
+come from? Is there some big 
+dragon breathing fire
+
+72
+00:03:31,466 --> 00:03:34,466
+behind me? Should I be running 
+from my ideas or I'm going to burn
+
+73
+00:03:34,466 --> 00:03:37,466
+up? I got this fraught 
+relationship with these
+
+74
+00:03:37,466 --> 00:03:40,466
+creative ideas in my head, and so
+I was thinking about my own
+
+75
+00:03:40,466 --> 00:03:43,466
+weird relationship with creativity
+and I realized
+
+76
+00:03:43,466 --> 00:03:46,466
+the best metaphor for me is that
+creativity is a chronic
+
+77
+00:03:46,466 --> 00:03:49,466
+illness. Which I know 
+sounds horrifying
+
+78
+00:03:49,466 --> 00:03:52,466
+But here me out. Because what 
+happens is I go two weeks
+
+79
+00:03:52,466 --> 00:03:55,466
+three weeks, four weeks, and
+eventually something makes
+
+80
+00:03:55,466 --> 00:03:58,466
+me angry, something wells 
+up inside of me
+
+81
+00:03:58,466 --> 00:04:01,466
+and then I have an 
+episode of creativity
+
+82
+00:04:01,466 --> 00:04:04,466
+and I emit a blog post or
+a library or a
+
+83
+00:04:04,466 --> 00:04:07,466
+framework. And 
+
+84
+00:04:07,466 --> 00:04:10,466
+the way I think of it is
+it's like kidney stones
+
+85
+00:04:10,466 --> 00:04:13,466
+I'm passing npm modules
+
+86
+00:04:13,466 --> 00:04:16,466
+And then I feel a sense of relief
+
+87
+00:04:16,466 --> 00:04:19,466
+after. So I've seen this pattern
+
+88
+00:04:19,466 --> 00:04:22,466
+in my life, right? I've got all of
+these negative emotions, this
+
+89
+00:04:22,466 --> 00:04:25,466
+toxicity. I'm a really sad, 
+broken individual and
+
+90
+00:04:25,466 --> 00:04:28,466
+over the course of my professional
+life I keep finding these
+
+91
+00:04:28,466 --> 00:04:31,466
+ways to shape that 
+into positive outcomes
+
+92
+00:04:31,466 --> 00:04:34,466
+and I don't know how that happens, 
+and so this talk is an exploration
+
+93
+00:04:34,466 --> 00:04:37,466
+into trying to figure that out, and maybe 
+there's something that you can
+
+94
+00:04:37,466 --> 00:04:40,466
+relate to. Because what I've found
+is that that reframing
+
+95
+00:04:40,466 --> 00:04:43,466
+of what creativity is 
+certainly lowers the 
+
+96
+00:04:43,466 --> 00:04:46,466
+bar, it's like "are you a broken 
+individual? Good! then you
+
+97
+00:04:46,466 --> 00:04:49,466
+can be creative, too!" So let's
+
+98
+00:04:49,466 --> 00:04:52,466
+wind all the way back to 
+the beginning of my career
+
+99
+00:04:52,466 --> 00:04:55,466
+I was working at a big 
+accounting firm, I wasn't very
+
+100
+00:04:55,466 --> 00:04:58,466
+competent. I didn't have 
+very much autonomy
+
+101
+00:04:58,466 --> 00:05:01,466
+at my job, and I would get 
+ideas like anyone gets ideas
+
+102
+00:05:01,466 --> 00:05:04,466
+But I wouldn't be able to act on 
+those ideas, so they actually just
+
+103
+00:05:04,466 --> 00:05:07,466
+bummed me out. In fact, eventually
+the ideas would fade away
+
+104
+00:05:07,466 --> 00:05:10,466
+and that would make me feel relieved, 
+because now they weren't stressing me
+
+105
+00:05:10,466 --> 00:05:13,466
+out. And it took me years to realize 
+that what I was missing was
+
+106
+00:05:13,466 --> 00:05:16,466
+I didn't have an outlet to practice
+those creative ideas
+
+107
+00:05:16,466 --> 00:05:19,466
+To develop a feedback loop, just 
+like we do with coding stuff
+
+108
+00:05:19,466 --> 00:05:22,466
+And I learned once I started
+trying that production
+
+109
+00:05:22,466 --> 00:05:25,466
+wasn't necessarily the 
+best creative outlet, either
+
+110
+00:05:25,466 --> 00:05:28,466
+Us as developers working at machines
+
+111
+00:05:28,466 --> 00:05:31,466
+At work, we might think that 
+this is creativity, building
+
+112
+00:05:31,466 --> 00:05:34,466
+ideas, but typically they're 
+other people's ideas
+
+113
+00:05:34,466 --> 00:05:37,466
+we're building reports, or 
+mailers, or shopping carts
+
+114
+00:05:37,466 --> 00:05:40,466
+and we feel creative, because 
+we did create it
+
+115
+00:05:40,466 --> 00:05:43,466
+but because it wasn't our own, it doesn't 
+really scratch the same itch, I don't think
+
+116
+00:05:43,466 --> 00:05:46,466
+Separately, we usually
+
+117
+00:05:46,466 --> 00:05:49,466
+work on teams and an important 
+part of building software on teams
+
+118
+00:05:49,466 --> 00:05:52,466
+(there's me and that's my team)
+
+119
+00:05:52,466 --> 00:05:55,466
+An important part about building software 
+on teams is that we're building everything
+
+120
+00:05:55,466 --> 00:05:58,466
+to be very consistent and orderly so 
+that any of us can be productive
+
+121
+00:05:58,466 --> 00:06:01,466
+in that environment, but creativity is sporadic
+
+122
+00:06:01,466 --> 00:06:04,466
+and messy. I might have an 
+idea like "Hey I could pull this
+
+123
+00:06:04,466 --> 00:06:07,466
+one package out and that would eliminate
+the need for these two packages
+
+124
+00:06:07,466 --> 00:06:10,466
+Because I could put a factory in front 
+of them and look at this, and this is
+
+125
+00:06:10,466 --> 00:06:13,466
+really cool and I could be really proud
+of the creative thing that I just did
+
+126
+00:06:13,466 --> 00:06:16,466
+But from everyone else's 
+perspective, they see the
+
+127
+00:06:16,466 --> 00:06:19,466
+system is becoming less stable 
+and less workable. And
+
+128
+00:06:19,466 --> 00:06:22,466
+they're worried, and I get mad because 
+they don't appreciate this cool
+
+129
+00:06:22,466 --> 00:06:25,466
+creative thing that I just 
+did and then they
+
+130
+00:06:25,466 --> 00:06:28,466
+get angry because I keep going off 
+the reservation and disrupting the
+
+131
+00:06:28,466 --> 00:06:31,466
+orderliness of the system. A third thing that
+
+132
+00:06:31,466 --> 00:06:34,466
+we see happen a lot at our company 
+Test Double is, developers
+
+133
+00:06:34,466 --> 00:06:37,466
+who are passionate about what 
+they do, they put a lot of effort
+
+134
+00:06:37,466 --> 00:06:40,466
+they tie up their ego in the stuff that 
+\they build and then they hand it off
+
+135
+00:06:40,466 --> 00:06:43,466
+they get excited and then it
+just sits in QA
+
+136
+00:06:43,466 --> 00:06:46,466
+or people comment on their 
+pull requests and
+
+137
+00:06:46,466 --> 00:06:49,466
+and things take forever 
+and they don't see
+
+138
+00:06:49,466 --> 00:06:52,466
+it in front of users and then 
+eventually they just get angry
+
+139
+00:06:52,466 --> 00:06:55,466
+because what they did was 
+they ceded control
+
+140
+00:06:55,466 --> 00:06:58,466
+of their happiness and their 
+emotional state to somebody else
+
+141
+00:06:58,466 --> 00:07:01,466
+and at work that's just not appropriate, 
+because we're not building
+
+142
+00:07:01,466 --> 00:07:04,466
+this stuff for our own good
+
+143
+00:07:04,466 --> 00:07:07,466
+we need another place to practice
+
+144
+00:07:07,466 --> 00:07:10,466
+creativity. So you have to create 
+your own space where that's
+
+145
+00:07:10,466 --> 00:07:13,466
+safe. And one morning, I was
+
+146
+00:07:13,466 --> 00:07:16,466
+taking a shower. Ideas come to me in the 
+shower, I don't know when they come to you
+
+147
+00:07:16,466 --> 00:07:19,466
+but they always come to me in 
+the shower, and I had an idea and
+
+148
+00:07:19,466 --> 00:07:22,466
+it made me angry, of course, because 
+ideas are bad like I explained earlier
+
+149
+00:07:22,466 --> 00:07:25,466
+and I got so mad 
+at this idea that
+
+150
+00:07:25,466 --> 00:07:28,466
+I went and sat at my computer and 
+I hacked at it until I could build a thing
+
+151
+00:07:28,466 --> 00:07:31,466
+I felt that relief again, 
+but this relief was
+
+152
+00:07:31,466 --> 00:07:34,466
+different. This was like 
+the first green bar
+
+153
+00:07:34,466 --> 00:07:37,466
+in the test. This was like "OK, 
+cool, I understand this now"
+
+154
+00:07:37,466 --> 00:07:40,466
+And I went from a 
+disgruntled employee
+
+155
+00:07:40,466 --> 00:07:43,466
+to a merely gruntled employee 
+because I was starting to learn
+
+156
+00:07:43,466 --> 00:07:46,466
+how to be productive
+with creativity
+
+157
+00:07:46,466 --> 00:07:49,466
+And from then on when 
+I got a creative idea
+
+158
+00:07:49,466 --> 00:07:52,466
+in the shower, I'd roll my eyes 
+because now I've gotta make time
+
+159
+00:07:52,466 --> 00:07:55,466
+for this—maybe there goes my 
+Saturday or my evening or something
+
+160
+00:07:55,466 --> 00:07:58,466
+But at least I had a reasoned 
+way to work through it
+
+161
+00:07:58,466 --> 00:08:01,466
+And so ever since I 
+started programming
+
+162
+00:08:01,466 --> 00:08:04,466
+professionally, I've always had a main 
+project that occupies most of my time
+
+163
+00:08:04,466 --> 00:08:07,466
+and most of my focus, but a little 
+project to the side. Whenever I get
+
+164
+00:08:07,466 --> 00:08:10,466
+frustrated or I want to play with 
+something or I'm learning something
+
+165
+00:08:10,466 --> 00:08:13,466
+I can pull on that thread as well, 
+and I always balance both
+
+166
+00:08:13,466 --> 00:08:16,466
+of these things. Of course 
+this comes with risks
+
+167
+00:08:16,466 --> 00:08:19,466
+I'm very often burning 
+the candle at both ends
+
+168
+00:08:19,466 --> 00:08:22,466
+If I work all weekend because I'm 
+so excited about my side project
+
+169
+00:08:22,466 --> 00:08:25,466
+then I come to work on Monday morning, 
+the last thing I want to do is program
+
+170
+00:08:25,466 --> 00:08:28,466
+That can be problematic, and
+
+171
+00:08:28,466 --> 00:08:31,466
+in the last several years 
+in particular I've spent so
+
+172
+00:08:31,466 --> 00:08:34,466
+much time on the road, doing all 
+this open source stuff on top of
+
+173
+00:08:34,466 --> 00:08:37,466
+my normal job, that I'm 
+often asking "Why do I do
+
+174
+00:08:37,466 --> 00:08:40,466
+this?" And that's where 
+the introspection
+
+175
+00:08:40,466 --> 00:08:43,466
+of this talk is—part of 
+why I did this
+
+176
+00:08:43,466 --> 00:08:46,466
+talk is that I don't think that I'm that 
+special. I think all of us could be this
+
+177
+00:08:46,466 --> 00:08:49,466
+creative and it would save me a 
+lot of time if you all would
+
+178
+00:08:49,466 --> 00:08:52,466
+do the talks instead of me
+
+179
+00:08:52,466 --> 00:08:55,466
+So when I sat and I 
+
+180
+00:08:55,466 --> 00:08:58,466
+thought about why is it 
+that I do this
+
+181
+00:08:58,466 --> 00:09:01,466
+I'm almost ashamed to 
+admit those sources
+
+182
+00:09:01,466 --> 00:09:04,466
+because they're from my childhood, so 
+I've got a few little childhood anecdotes
+
+183
+00:09:04,466 --> 00:09:07,466
+The first one's about golf. My 
+dad was actually an amateur
+
+184
+00:09:07,466 --> 00:09:10,466
+golfer. One of my first 
+memories is watching my
+
+185
+00:09:10,466 --> 00:09:13,466
+dad play golf on TV at 
+an amateur PGA event
+
+186
+00:09:13,466 --> 00:09:16,466
+and so in southeastern Michigan, 
+every well-to-do businessperson
+
+187
+00:09:16,466 --> 00:09:19,466
+wanted my dad in their foursome, 
+so I spent as a kid
+
+188
+00:09:19,466 --> 00:09:22,466
+a ton of time at country clubs with 
+kids that were way richer and
+
+189
+00:09:22,466 --> 00:09:25,466
+more world-weary and experienced
+and knowledgeable
+
+190
+00:09:25,466 --> 00:09:28,466
+and well-to-do than me
+
+191
+00:09:28,466 --> 00:09:31,466
+that was an important part of my 
+upbringing, because it taught me the
+
+192
+00:09:31,466 --> 00:09:34,466
+ever-important skill of 
+feeling inadequate
+
+193
+00:09:37,466 --> 00:09:40,466
+Talk about my church a little bit
+I went to a church that didn't
+
+194
+00:09:40,466 --> 00:09:43,466
+necessarily work in its community 
+and serve the poor or anything
+
+195
+00:09:43,466 --> 00:09:46,466
+like that. I went to an upper
+crust white evangelical
+
+196
+00:09:46,466 --> 00:09:49,466
+Presbyterian church where I 
+spent years 5
+
+197
+00:09:49,466 --> 00:09:52,466
+through 10 of my life learning 
+how to understand very
+
+198
+00:09:52,466 --> 00:09:55,466
+intangible concepts and 
+then feel extremely
+
+199
+00:09:55,466 --> 00:09:58,466
+strongly about them and argue 
+with passionate rhetoric
+
+200
+00:09:58,466 --> 00:10:01,466
+and that was also a really important
+skill, because I learned
+
+201
+00:10:01,466 --> 00:10:04,466
+righteous indignation. Fun fact,
+
+202
+00:10:04,466 --> 00:10:07,466
+about me: nobody's ever asked
+for my opinion, because
+
+203
+00:10:07,466 --> 00:10:10,466
+no one's ever needed to
+
+204
+00:10:10,466 --> 00:10:13,466
+I can't help but form 
+really strong opinions
+
+205
+00:10:13,466 --> 00:10:16,466
+the minute I see something, 
+and that's less fun than
+
+206
+00:10:16,466 --> 00:10:19,466
+it sounds. Third thing 
+about my life
+
+207
+00:10:19,466 --> 00:10:22,466
+I'm one of those people, like at 
+lunch we were talking about college
+
+208
+00:10:22,466 --> 00:10:25,466
+programs. I got a computer 
+science degree
+
+209
+00:10:25,466 --> 00:10:28,466
+in college, and I wasn't 
+very good at it
+
+210
+00:10:28,466 --> 00:10:31,466
+My professors pulled me aside senior 
+year when I was trying to find a job
+
+211
+00:10:31,466 --> 00:10:34,466
+and some of them confided in me 
+that maybe I should find a more
+
+212
+00:10:34,466 --> 00:10:37,466
+hybrid role where I'm also talking 
+to people more and maybe
+
+213
+00:10:37,466 --> 00:10:40,466
+not trusted with a computer
+
+214
+00:10:40,466 --> 00:10:43,466
+and it was through there 
+that I learned this
+
+215
+00:10:43,466 --> 00:10:46,466
+real deep-grained incompetence and
+
+216
+00:10:46,466 --> 00:10:49,466
+what's funny about all those three things is 
+that clearly they're negative but they have
+
+217
+00:10:49,466 --> 00:10:52,466
+flip sides that I think are 
+really valuable to exploit
+
+218
+00:10:52,466 --> 00:10:55,466
+The inadequacy leads to me 
+having a bunch of
+
+219
+00:10:55,466 --> 00:10:58,466
+people that I aspire to in 
+my life—that I look up to
+
+220
+00:10:58,466 --> 00:11:01,466
+The indignation means that 
+I always have something to say
+
+221
+00:11:01,466 --> 00:11:04,466
+or a perspective (whether 
+it's valid or not) and 
+
+222
+00:11:04,466 --> 00:11:07,466
+the incompetence means I don't 
+view myself as a rockstar, I always
+
+223
+00:11:07,466 --> 00:11:10,466
+feel like I've got a lot to 
+learn and a lot to improve
+
+224
+00:11:10,466 --> 00:11:13,466
+That translates to a means, a 
+motive, and an opportunity
+
+225
+00:11:13,466 --> 00:11:16,466
+to exploit creative ideas
+
+226
+00:11:16,466 --> 00:11:19,466
+Also, worth mentioning here is this
+
+227
+00:11:19,466 --> 00:11:22,466
+these are all markers of tremendous 
+amounts of privilege in my upbringing
+
+228
+00:11:22,466 --> 00:11:25,466
+most kids don't have the amount 
+of spare time that I did to 
+
+229
+00:11:25,466 --> 00:11:28,466
+nurse my existential grief
+
+230
+00:11:28,466 --> 00:11:31,466
+to the extent that I have, 
+but through doing
+
+231
+00:11:31,466 --> 00:11:34,466
+a lot of creative stuff, I've learned 
+how awesome and how enriching
+
+232
+00:11:34,466 --> 00:11:37,466
+and rewarding it can be. And 
+getting back to Todd & I
+
+233
+00:11:37,466 --> 00:11:40,466
+forming Test Double, a big reason we did 
+that is because we want everyone to be
+
+234
+00:11:40,466 --> 00:11:43,466
+able to have that experience by 
+moving at a sustainable pace
+
+235
+00:11:43,466 --> 00:11:46,466
+by being able to build creative 
+stuff in a way that's congruent
+
+236
+00:11:46,466 --> 00:11:49,466
+with our normal work life, so 
+that you don't have to be
+
+237
+00:11:49,466 --> 00:11:52,466
+working on nights & 
+weekends or particularly
+
+238
+00:11:52,466 --> 00:11:55,466
+privileged to be able to enjoy 
+the fruits of creativity
+
+239
+00:11:55,466 --> 00:11:58,466
+If you want to talk 
+to us about that
+
+240
+00:11:58,466 --> 00:12:01,466
+you can e-mail join@testdouble.com.
+Our first
+
+241
+00:12:01,466 --> 00:12:04,466
+step in our recruiting process is really 
+low-pressure, it's not some sort of
+
+242
+00:12:04,466 --> 00:12:07,466
+technical interview at a white board, 
+it's literally a conversation about
+
+243
+00:12:07,466 --> 00:12:10,466
+how we work and how you work 
+and whether you'd like to try how
+
+244
+00:12:10,466 --> 00:12:13,466
+we work. Just to learn about us 
+and learn a little bit about
+
+245
+00:12:13,466 --> 00:12:16,466
+what we've learned about productive, 
+autonomous software development
+
+246
+00:12:16,466 --> 00:12:19,466
+So anyway, all these 
+things: really negative
+
+247
+00:12:19,466 --> 00:12:22,466
+How does that lead to 
+creative ideas? Well, I
+
+248
+00:12:22,466 --> 00:12:25,466
+kind of feel like it's a game of MadLibs™ 
+in my head. This is my user
+
+249
+00:12:25,466 --> 00:12:28,466
+story for creativity. I feel 
+
+250
+00:12:28,466 --> 00:12:31,466
+righteous indignation, but I 
+don't know what I'm doing
+
+251
+00:12:31,466 --> 00:12:34,466
+Maybe, if I build 
+something I will feel
+
+252
+00:12:34,466 --> 00:12:37,466
+less inadequate.
+And I have 9
+
+253
+00:12:37,466 --> 00:12:40,466
+little anecdotes. 9 little stories of 
+side projects over my career
+
+254
+00:12:40,466 --> 00:12:43,466
+that have helped me to mitigate
+some of that toxicity
+
+255
+00:12:43,466 --> 00:12:46,466
+in my heart. And I'm going to 
+start by talking about
+
+256
+00:12:46,466 --> 00:12:49,466
+incompetence. Because like I mentioned, 
+I wasn't very good in college and
+
+257
+00:12:49,466 --> 00:12:52,466
+I was really worried: why would anyone 
+ever pay me to write software?
+
+258
+00:12:52,466 --> 00:12:55,466
+when I can barely learn how 
+to do it? And my library
+
+259
+00:12:55,466 --> 00:12:58,466
+at the time where I worked said "Hey, we need 
+a new citation editor"
+
+260
+00:12:58,466 --> 00:13:01,466
+on the web. And I 
+thought, you know, I'm
+
+261
+00:13:01,466 --> 00:13:04,466
+up to this challenge. I feel 
+like I don't need this
+
+262
+00:13:04,466 --> 00:13:07,466
+Computer Science hifalutin stuff, 
+but I also don't know how to
+
+263
+00:13:07,466 --> 00:13:10,466
+build apps, either, so maybe 
+if I build it I'll at least
+
+264
+00:13:10,466 --> 00:13:13,466
+find a way to survive this profession, 
+and it was a pretty low
+
+265
+00:13:13,466 --> 00:13:16,466
+pressure gig, because it 
+was $10 an hour and I could
+
+266
+00:13:16,466 --> 00:13:19,466
+spend all summer on it. So I built 
+this thing called
+
+267
+00:13:19,466 --> 00:13:22,466
+KnightCite, a little citation 
+editor on the web. It was free
+
+268
+00:13:22,466 --> 00:13:25,466
+and I was really proud, I did 
+it. I accomplished a lot
+
+269
+00:13:25,466 --> 00:13:28,466
+of my goals. It supports all 
+the major styleguides, dozens
+
+270
+00:13:28,466 --> 00:13:31,466
+of sources (the only one that 
+did that). Has an account
+
+271
+00:13:31,466 --> 00:13:34,466
+system where you can login, create
+bibliographies, and export them
+
+272
+00:13:34,466 --> 00:13:37,466
+It's got millions of users, 
+and still to this day it's by
+
+273
+00:13:37,466 --> 00:13:40,466
+far the most-used piece of software 
+that I've ever written, and
+
+274
+00:13:40,466 --> 00:13:43,466
+I made it all up as I went. I didn't 
+read in a book how to do this
+
+275
+00:13:43,466 --> 00:13:46,466
+I just had to figure out how 
+to do a reset password
+
+276
+00:13:46,466 --> 00:13:49,466
+thing, and I just figured it 
+all out as I went. This, of course
+
+277
+00:13:49,466 --> 00:13:52,466
+had some very minor downsides. 
+Like, for instance, it's totally
+
+278
+00:13:52,466 --> 00:13:55,466
+insecure. 
+
+279
+00:13:55,466 --> 00:13:58,466
+It's 100% manual testing
+
+280
+00:13:58,466 --> 00:14:01,466
+It produces gigabytes of 
+daily server warnings
+
+281
+00:14:01,466 --> 00:14:04,466
+That those poor admins who still
+
+282
+00:14:04,466 --> 00:14:07,466
+are, over a decade 
+later, still dealing with
+
+283
+00:14:07,466 --> 00:14:10,466
+and it's one 16,000 
+line-long PHP file
+
+284
+00:14:10,466 --> 00:14:13,466
+of just if's and else's 
+and string concatenation
+
+285
+00:14:13,466 --> 00:14:16,466
+But
+
+286
+00:14:16,466 --> 00:14:19,466
+what had happened to me in my 
+classroom education was it had
+
+287
+00:14:19,466 --> 00:14:22,466
+drilled into me this fear that 
+I don't get what's going on
+
+288
+00:14:22,466 --> 00:14:25,466
+and paralyzed me from ever 
+practicing any of that creative
+
+289
+00:14:25,466 --> 00:14:28,466
+reflex and that creative 
+muscle. So recognizing
+
+290
+00:14:28,466 --> 00:14:31,466
+that I needed a safe space where
+it was OK to make a mess
+
+291
+00:14:31,466 --> 00:14:34,466
+and to do that in concert 
+with learning proper
+
+292
+00:14:34,466 --> 00:14:37,466
+computer science-y 
+stuff was crucial
+
+293
+00:14:37,466 --> 00:14:40,466
+to me even being 
+in this profession
+
+294
+00:14:40,466 --> 00:14:43,466
+much less on a stage, talking 
+to you all about it. So that
+
+295
+00:14:43,466 --> 00:14:46,466
+certainly lessened my sense 
+of incompetence. The
+
+296
+00:14:46,466 --> 00:14:49,466
+other thing at the time, the web 
+was just a really fancy hypercard
+
+297
+00:14:49,466 --> 00:14:52,466
+implementation. I didn't feel like a 
+real developer; my friends all worked
+
+298
+00:14:52,466 --> 00:14:55,466
+on airplane realtime controls and operating systems
+
+299
+00:14:55,466 --> 00:14:58,466
+so the web versus being 
+
+300
+00:14:58,466 --> 00:15:01,466
+closer to the metal. Like, Uncle 
+Bob told me—is Uncle Bob still
+
+301
+00:15:01,466 --> 00:15:04,466
+here today, that you're 
+not a real programmer
+
+302
+00:15:04,466 --> 00:15:07,466
+unless you programmed assembly—well, 
+I hadn't really programmed a lot of assembly
+
+303
+00:15:07,466 --> 00:15:10,466
+So I didn't feel like a real 
+programmer. And so I
+
+304
+00:15:10,466 --> 00:15:13,466
+tried to go native at multiple 
+points in my career
+
+305
+00:15:13,466 --> 00:15:16,466
+Maybe on a Saturday, I'd open up Xcode
+and say, "I'm gonna build an OS X
+
+306
+00:15:16,466 --> 00:15:19,466
+app", and i'd look at the documentation 
+and it would confuse me and I'd feel
+
+307
+00:15:19,466 --> 00:15:22,466
+stupid, and then I'd wait a weekend 
+and I'd go, and I'd
+
+308
+00:15:22,466 --> 00:15:25,466
+find a different part of the documentation
+and it'd depress me, and I'd feel
+
+309
+00:15:25,466 --> 00:15:28,466
+stupid. And then the week after that 
+I would open up Xcode and I'd
+
+310
+00:15:28,466 --> 00:15:31,466
+look at a different part—and this outside 
+in, like, "maybe if I just read it all
+
+311
+00:15:31,466 --> 00:15:34,466
+and then I'll know how to make native 
+apps." Of course, that didn't go well
+
+312
+00:15:34,466 --> 00:15:37,466
+and time kept passing and 
+I just concluded I was
+
+313
+00:15:37,466 --> 00:15:40,466
+probably too dumb to make 
+native apps, maybe I just had
+
+314
+00:15:40,466 --> 00:15:43,466
+stay on the web. But then one 
+day, a momentous day that a lot
+
+315
+00:15:43,466 --> 00:15:46,466
+of us remember: the iPhone was 
+announced. And I thought to myself
+
+316
+00:15:46,466 --> 00:15:49,466
+as soon as this thing has 
+an SDK, I'm gonna
+
+317
+00:15:49,466 --> 00:15:52,466
+make an app. I really want 
+to build something for
+
+318
+00:15:52,466 --> 00:15:55,466
+the iPhone. The only problem was I 
+had no idea what that would be. So I
+
+319
+00:15:55,466 --> 00:15:58,466
+got the original iPhone 
+and it changed
+
+320
+00:15:58,466 --> 00:16:01,466
+my life, right? It was beautiful, obviously. 
+It's innovative, there's nothing like it.
+
+321
+00:16:01,466 --> 00:16:04,466
+I knew from the first day 
+I had it that it was
+
+322
+00:16:04,466 --> 00:16:07,466
+life-altering, because I took my wife 
+to a restaurant and I ignored her the
+
+323
+00:16:07,466 --> 00:16:10,466
+whole time. And I was, like, "this is
+
+324
+00:16:10,466 --> 00:16:13,466
+the future!" Boy was I right
+
+325
+00:16:13,466 --> 00:16:16,466
+So, the thing about that was I
+
+326
+00:16:16,466 --> 00:16:19,466
+was staring so long, because 
+Edge was so slow
+
+327
+00:16:19,466 --> 00:16:22,466
+and I had this one gaming forum 
+I liked to visit, and
+
+328
+00:16:22,466 --> 00:16:25,466
+at first it was not very 
+readable, but it took like
+
+329
+00:16:25,466 --> 00:16:28,466
+3 minutes to load 
+a single page
+
+330
+00:16:28,466 --> 00:16:31,466
+of what were often 50, 
+60 page-long threads
+
+331
+00:16:31,466 --> 00:16:34,466
+so that was unacceptable. But 
+there  was no such thing as
+
+332
+00:16:34,466 --> 00:16:37,466
+the mobile web at the time. There's 
+certainly no responsive
+
+333
+00:16:37,466 --> 00:16:40,466
+design, and so I thought to myself, maybe 
+I could build an app that was like a
+
+334
+00:16:40,466 --> 00:16:43,466
+client to this website. Because I felt 
+like the mobile web was a joke
+
+335
+00:16:43,466 --> 00:16:46,466
+but I kept failing to learn 
+Cocoa, and so maybe
+
+336
+00:16:46,466 --> 00:16:49,466
+if I built something, I'd at 
+least learn how to learn a
+
+337
+00:16:49,466 --> 00:16:52,466
+really unfamiliar thing and 
+tackle a new platform
+
+338
+00:16:52,466 --> 00:16:55,466
+and I did it. So I started by
+building a little system that just
+
+339
+00:16:55,466 --> 00:16:58,466
+go and fetch the HTML, and then 
+I figured out how to load a library
+
+340
+00:16:58,466 --> 00:17:01,466
+like libxml2 and parse 
+all that into an object
+
+341
+00:17:01,466 --> 00:17:04,466
+model, and then, you know, 
+I'd find all the media in those
+
+342
+00:17:04,466 --> 00:17:07,466
+objects and go and fetch them 
+from the Internet, so I could build a
+
+343
+00:17:07,466 --> 00:17:10,466
+UI and have a custom user 
+interface in an iPhone app
+
+344
+00:17:10,466 --> 00:17:13,466
+and you know what, it was way faster, 
+and it was legible, and it was
+
+345
+00:17:13,466 --> 00:17:16,466
+full-featured, you could log in and 
+edit posts and stuff, it was really neat
+
+346
+00:17:16,466 --> 00:17:19,466
+it was also the very first time I ever 
+contributed to open source in a real
+
+347
+00:17:19,466 --> 00:17:22,466
+way, and it was so
+
+348
+00:17:22,466 --> 00:17:25,466
+cool, because every time that the 
+Facebook app got launched, a
+
+349
+00:17:25,466 --> 00:17:28,466
+little bit of my code ran, and when 
+I realized the impact that I
+
+350
+00:17:28,466 --> 00:17:31,466
+could have that way, I got addicted 
+to sharing my stuff in
+
+351
+00:17:31,466 --> 00:17:34,466
+open source. It was also my very 
+first user group talk, and so
+
+352
+00:17:34,466 --> 00:17:37,466
+the only reason I'm here today is because 
+this one app happened to go well
+
+353
+00:17:37,466 --> 00:17:40,466
+of course, it was rejected by Apple
+
+354
+00:17:40,466 --> 00:17:43,466
+because, sometimes people swear 
+on the Internet. And swearing
+
+355
+00:17:43,466 --> 00:17:46,466
+was against the guidelines, which 
+were very prudish at the time
+
+356
+00:17:46,466 --> 00:17:49,466
+and so I threw it in the 
+trash. But I didn't care
+
+357
+00:17:49,466 --> 00:17:52,466
+I was happy as a clam, because mission 
+accomplished: I'd learned how to learn a thing
+
+358
+00:17:52,466 --> 00:17:55,466
+That was the real purpose 
+for that exercise, and
+
+359
+00:17:55,466 --> 00:17:58,466
+what I learned there was that learning 
+something simple is pretty easy so
+
+360
+00:17:58,466 --> 00:18:01,466
+long as you can fit it inside a 
+day or whatever the bounds
+
+361
+00:18:01,466 --> 00:18:04,466
+of that passion is, because 
+it's enough to get
+
+362
+00:18:04,466 --> 00:18:07,466
+through a weekend, but when 
+the going gets tough, your motivation
+
+363
+00:18:07,466 --> 00:18:10,466
+fizzles. If you try to learn something 
+bigger, that's going to take several
+
+364
+00:18:10,466 --> 00:18:13,466
+days, weeks, months, then 
+you really need a purpose
+
+365
+00:18:13,466 --> 00:18:16,466
+that's going to push you through 
+those barriers as time
+
+366
+00:18:16,466 --> 00:18:19,466
+goes on, or else you'll get 
+distracted, you'll end up with just
+
+367
+00:18:19,466 --> 00:18:22,466
+a graveyard of half-finished 
+projects everywhere
+
+368
+00:18:22,466 --> 00:18:25,466
+So what I try to do is find the 
+smallest thing I can possibly
+
+369
+00:18:25,466 --> 00:18:28,366
+caremad about. Really, like, "I need 
+this project to exist
+
+370
+00:18:28,366 --> 00:18:31,366
+and I'm going to just push and 
+drag it over the finish line"
+
+371
+00:18:31,366 --> 00:18:34,366
+And that was a lot of valuable 
+lessons, and certainly
+
+372
+00:18:34,366 --> 00:18:37,366
+made me feel less incompetent as a 
+developer, because I got to go native
+
+373
+00:18:37,366 --> 00:18:40,366
+For a long time, I did Java development
+
+374
+00:18:40,366 --> 00:18:43,366
+and Java's a cool language, 
+but I felt like it was
+
+375
+00:18:43,366 --> 00:18:46,366
+a little uncool. It was
+
+376
+00:18:46,366 --> 00:18:49,366
+certainly not getting a lot of 
+buzz in the mid-aughts
+
+377
+00:18:49,366 --> 00:18:52,366
+certainly not like Ruby was. A 
+lot of my friends, they
+
+378
+00:18:52,366 --> 00:18:55,366
+seemed really cool, they all 
+worked on Ruby at work
+
+379
+00:18:55,366 --> 00:18:58,366
+and the best way I can compare 
+the two languages is via
+
+380
+00:18:58,366 --> 00:19:01,366
+Super Mario Kart. You might 
+think of Java
+
+381
+00:19:01,366 --> 00:19:04,366
+as being like one of the early 
+courses, just like a really
+
+382
+00:19:04,366 --> 00:19:07,366
+wide lane and you can't 
+really mess up that badly
+
+383
+00:19:07,366 --> 00:19:10,366
+If you go off the course, 
+you can just drive back
+
+384
+00:19:10,366 --> 00:19:13,366
+on and we get that with 
+Java, because it's not a
+
+385
+00:19:13,366 --> 00:19:16,366
+very expressive language. The 
+compiler does a lot for you
+
+386
+00:19:16,366 --> 00:19:19,366
+the tools do a lot for you. Ruby 
+is more like Rainbow Road
+
+387
+00:19:19,366 --> 00:19:22,366
+where it's narrower and faster
+
+388
+00:19:22,366 --> 00:19:25,366
+and if you fall off, Lakitu 
+has to pick you up
+
+389
+00:19:25,366 --> 00:19:28,366
+and you lose like 20 seconds, 
+and that's reflective of 
+
+390
+00:19:28,366 --> 00:19:31,366
+dynamic programming and 
+metaprogramming and how
+
+391
+00:19:31,366 --> 00:19:34,366
+you don't have the same amazing 
+tooling. And so programming
+
+392
+00:19:34,366 --> 00:19:37,366
+even at this point in my career, I felt 
+like I wasn't a very good programmer
+
+393
+00:19:37,366 --> 00:19:40,366
+much less dynamic programming. 
+And at the time
+
+394
+00:19:40,366 --> 00:19:43,366
+in Ruby, meta-programming—
+changing at runtime the
+
+395
+00:19:43,366 --> 00:19:46,366
+object model, the classes 
+and method definitions
+
+396
+00:19:46,366 --> 00:19:49,366
+I didn't even understand how that 
+could possibly work. So I joined
+
+397
+00:19:49,366 --> 00:19:52,366
+my first Ruby team completely terrified 
+and surrounded by people who
+
+398
+00:19:52,366 --> 00:19:55,366
+were way cooler than me and I 
+thought "I have nothing to contribute
+
+399
+00:19:55,366 --> 00:19:58,366
+here" until I looked at 
+their test suite
+
+400
+00:19:58,366 --> 00:20:01,366
+Because in Java, we had a 
+pretty formal sense of what
+
+401
+00:20:01,366 --> 00:20:04,366
+good tests looked like, and I knew 
+that Rubyists wrote a lot of tests
+
+402
+00:20:04,366 --> 00:20:07,366
+But it turns out that they all 
+sucked, and so when I looked
+
+403
+00:20:07,366 --> 00:20:10,366
+at those tests, I thought maybe this 
+is a way for me to sneak in
+
+404
+00:20:10,366 --> 00:20:13,366
+the back door and actually be 
+relevant. I looked at a test like this
+
+405
+00:20:13,366 --> 00:20:16,366
+This is creating a fake dog
+object and it's saying
+
+406
+00:20:16,366 --> 00:20:19,366
+the dog should be called with the 
+method wag and the argument tail
+
+407
+00:20:19,366 --> 00:20:22,366
+and then you pass the dog 
+to your subject under test
+
+408
+00:20:22,366 --> 00:20:25,366
+and this just looked way wrong to me. 
+First, there's no type awareness
+
+409
+00:20:25,366 --> 00:20:28,366
+so you don't know that dog 
+actually responds to wag. Then
+
+410
+00:20:28,366 --> 00:20:31,366
+these things are out of order. It's like 
+given-then-when and that feels
+
+411
+00:20:31,366 --> 00:20:34,366
+awkward. And the API for making that
+
+412
+00:20:34,366 --> 00:20:37,366
+test double and stubbing it 
+was kinda confiusing, so
+
+413
+00:20:37,366 --> 00:20:40,366
+I got caremad enough to say maybe
+
+414
+00:20:40,366 --> 00:20:43,366
+I hate these mock objects, but if I
+
+415
+00:20:43,366 --> 00:20:46,366
+can't metaprogram Ruby, I can't 
+build something to replace them
+
+416
+00:20:46,366 --> 00:20:49,366
+so maybe if I build it, I'll at 
+least find a way to fit in
+
+417
+00:20:49,366 --> 00:20:52,366
+as a Rubyist. And my whole 
+goal here was just to 
+
+418
+00:20:52,366 --> 00:20:55,366
+cargo-cult my favorite test double 
+library in Java and implement it
+
+419
+00:20:55,366 --> 00:20:58,366
+in Ruby. And it turns out that 
+that didn't work so well
+
+420
+00:20:58,366 --> 00:21:01,366
+I learnedl some
+
+421
+00:21:01,366 --> 00:21:04,366
+humility in the process that I had to 
+go and actually talk to humans about
+
+422
+00:21:04,366 --> 00:21:07,366
+the idioms and conventions in Ruby. 
+I had to really bone up and learn
+
+423
+00:21:07,366 --> 00:21:10,366
+how the Ruby object model worked. 
+And then I had to put the time
+
+424
+00:21:10,366 --> 00:21:13,366
+in. I took two weeks off for Christmas 
+that year and I spent the whole time
+
+425
+00:21:13,366 --> 00:21:16,366
+squirreled away just working 
+on this, which my family
+
+426
+00:21:16,366 --> 00:21:19,366
+didn't appreciate. And so what came
+
+427
+00:21:19,366 --> 00:21:22,366
+out is this little fun gem called 
+gimme. You pass it a type
+
+428
+00:21:22,366 --> 00:21:25,366
+it's got the type awareness built-in. 
+Here I pass it [to] the subject
+
+429
+00:21:25,366 --> 00:21:28,366
+It's in the correct order. Here you 
+can say you verify that the
+
+430
+00:21:28,366 --> 00:21:31,366
+dog's called with wag and tail in a 
+way that looks like a method
+
+431
+00:21:31,366 --> 00:21:34,366
+invocation. And so I was really proud because 
+this had the type awareness I was looking
+
+432
+00:21:34,366 --> 00:21:37,366
+for. It preserves the test order. 
+Has a clever, terse Ruby
+
+433
+00:21:37,366 --> 00:21:40,366
+like API. Of course, no one 
+adopted it, because nobody
+
+434
+00:21:40,366 --> 00:21:43,366
+knew who I was, but I shopped it around 
+at a couple conferences and got people
+
+435
+00:21:43,366 --> 00:21:46,366
+like Jim Weirich to incorporate 
+this style into Flexmock
+
+436
+00:21:46,366 --> 00:21:49,366
+and now RSpec—which 
+was the first example—
+
+437
+00:21:49,366 --> 00:21:52,366
+has incorporated the same style. 
+So I was able to kind-of move
+
+438
+00:21:52,366 --> 00:21:55,366
+the needle a little bit. But 
+what that project taught me
+
+439
+00:21:55,366 --> 00:21:58,366
+was it's important to get 
+out of the line of fire, right?
+
+440
+00:21:58,366 --> 00:22:01,366
+I don't want to try to
+
+441
+00:22:01,366 --> 00:22:04,366
+learn how to metaprogram in the 
+most important feature, because
+
+442
+00:22:04,366 --> 00:22:07,366
+then I'm on the spot, and everyone's 
+going to call me out as an imposter
+
+443
+00:22:07,366 --> 00:22:10,366
+Meanwhile, I learned 
+that working code
+
+444
+00:22:10,366 --> 00:22:13,366
+can sell an idea way better 
+than just nitpicking stuff
+
+445
+00:22:13,366 --> 00:22:16,366
+if I just come to that team and say  "hey 
+your tests suck, because I don't like this
+
+446
+00:22:16,366 --> 00:22:19,366
+and this and this", they'd say "what, 
+so?". But if you throw a keyboard at
+
+447
+00:22:19,366 --> 00:22:22,366
+the problem and actually build something—a 
+proof of concept—you can reframe the
+
+448
+00:22:22,366 --> 00:22:25,366
+discussion around the concrete stuff, 
+and that was how I was able to sell
+
+449
+00:22:25,366 --> 00:22:28,366
+that idea. Additionally, if what 
+you're selling is ideas
+
+450
+00:22:28,366 --> 00:22:31,366
+the best part is they require no maintenance. 
+Nobody is going to open up a GitHub
+
+451
+00:22:31,366 --> 00:22:34,366
+issue at 3am on a Saturday 
+because your idea stopped
+
+452
+00:22:34,366 --> 00:22:37,366
+working and so it's true that thoughtleaders
+
+453
+00:22:37,366 --> 00:22:40,366
+have more fun. So that made me certainly 
+
+454
+00:22:40,366 --> 00:22:43,366
+feel less incompetent. A little bit
+
+455
+00:22:43,366 --> 00:22:46,366
+about my own sense of inadequacy 
+and how I was able to deal with that
+
+456
+00:22:46,366 --> 00:22:49,366
+I practice a thing called 
+Midwestern programming
+
+457
+00:22:49,366 --> 00:22:52,366
+So if this is the continental
+
+458
+00:22:52,366 --> 00:22:55,366
+US, my general
+
+459
+00:22:55,366 --> 00:22:58,366
+stereotyped perception is that people 
+on the east coast, the developers
+
+460
+00:22:58,366 --> 00:23:01,366
+there they have serious jobs. 
+They work at universities doing
+
+461
+00:23:01,366 --> 00:23:04,366
+high finance, it's very 
+obviously valuable
+
+462
+00:23:04,366 --> 00:23:07,366
+work because it creates a lot of money. 
+And on the west coast, your apps
+
+463
+00:23:07,366 --> 00:23:10,366
+obviously don't make any money, 
+but they get a lot of attention and
+
+464
+00:23:10,366 --> 00:23:13,366
+all the really, really
+
+465
+00:23:13,366 --> 00:23:16,366
+popular snacklechat, and other 
+stuff, everyone is sort of…
+
+466
+00:23:16,366 --> 00:23:19,366
+but in the midwest, 
+we do a lot of charts
+
+467
+00:23:19,366 --> 00:23:22,366
+We have all these blue
+
+468
+00:23:22,366 --> 00:23:25,366
+chip companies that have backend 
+office apps that they need
+
+469
+00:23:25,366 --> 00:23:28,366
+built that might only have 
+three users, that might
+
+470
+00:23:28,366 --> 00:23:31,366
+not be that exciting. So 
+frankly, I'm just not
+
+471
+00:23:31,366 --> 00:23:34,366
+great at cocktail parties, when I 
+explain, "Oh, well we're building
+
+472
+00:23:34,366 --> 00:23:37,366
+this system that participates 
+in demand-response energy
+
+473
+00:23:37,366 --> 00:23:40,366
+markets in various parts of the 
+country", people… their eyes glaze
+
+474
+00:23:40,366 --> 00:23:43,366
+over and I heard a certain amount of 
+rockstar envy. I just wanted to build a cool
+
+475
+00:23:43,366 --> 00:23:46,366
+thing that I could say in a sentence, 
+people would know what I did
+
+476
+00:23:46,366 --> 00:23:49,366
+so I felt like my work wasn't exciting, 
+but I only really knew how to build 
+
+477
+00:23:49,366 --> 00:23:52,366
+enterprise stuff, so maybe if I built 
+something that was just designed to
+
+478
+00:23:52,366 --> 00:23:55,366
+go viral, I'd feel 
+more appreciated
+
+479
+00:23:55,366 --> 00:23:58,366
+There was a service called mustachify.me
+at the time. My friend Aidan
+
+480
+00:23:58,366 --> 00:24:01,366
+wrote, and what you do is pass 
+an image and then it would
+
+481
+00:24:01,366 --> 00:24:04,366
+use face.com API and put 
+mustaches on the faces
+
+482
+00:24:04,366 --> 00:24:07,366
+and I thought "that was cool, but 
+let's go bigger". Like, what could I
+
+483
+00:24:07,366 --> 00:24:10,366
+build that leveraged this, so I made
+a Chrome extension called Must
+
+484
+00:24:10,366 --> 00:24:13,366
+Stache. And my friend 
+Cory and I wrote it
+
+485
+00:24:13,366 --> 00:24:16,366
+and so basically we would just 
+go to the mustachify service, replace
+
+486
+00:24:16,366 --> 00:24:19,366
+all the images on every page in 
+your browser with a mustachified one
+
+487
+00:24:19,366 --> 00:24:22,366
+and we though this was really 
+cool, we did it in like 3 hours
+
+488
+00:24:22,366 --> 00:24:25,366
+posted to a forum at night, we went to 
+bed. And then the next day we had like
+
+489
+00:24:25,366 --> 00:24:28,366
+3000 installs of Pro users 
+so they were visiting 40
+
+490
+00:24:28,366 --> 00:24:31,366
+pages an hour, or 42
+images per tab and
+
+491
+00:24:31,366 --> 00:24:34,366
+we did the back-of-the-napkin math to realize
+it was like 5 million requests per hour
+
+492
+00:24:34,366 --> 00:24:37,366
+and we learned a valuable lesson
+
+493
+00:24:37,366 --> 00:24:40,366
+on that first day. It's actually a 
+popular meme right now called
+
+494
+00:24:40,366 --> 00:24:43,366
+serverless architecture, because 
+we just destroyed
+
+495
+00:24:43,366 --> 00:24:46,366
+Aidan's poor dyno. So we had to 
+go back to the drawing board
+
+496
+00:24:46,366 --> 00:24:49,366
+and what we did was we rebuilt it 
+but this time talking directly to the
+
+497
+00:24:49,366 --> 00:24:52,366
+face.com API which did the facial
+recognition and got you JSON
+
+498
+00:24:52,366 --> 00:24:55,366
+back. And then with that JSON 
+we'd take our own image and
+
+499
+00:24:55,366 --> 00:24:58,366
+then just rotate, transpose, and 
+put it over the images ourselves
+
+500
+00:24:58,366 --> 00:25:01,366
+And that was really fun. That 
+was a fun weekend hack
+
+501
+00:25:01,366 --> 00:25:04,366
+But I didn't get a ton of attention. 
+In fact time passed
+
+502
+00:25:04,366 --> 00:25:07,366
+I forgot all about this thing until I 
+saw in the news that face.com
+
+503
+00:25:07,366 --> 00:25:10,366
+was getting acquired for 
+$80 Million by facebook
+
+504
+00:25:10,366 --> 00:25:13,366
+that made me—that was 
+surprising. So I went googling
+
+505
+00:25:13,366 --> 00:25:16,366
+around my Must Stache thing and saw 
+it had been covered in Tested
+
+506
+00:25:16,366 --> 00:25:19,366
+it'd been covered in PC 
+World in print. It
+
+507
+00:25:19,366 --> 00:25:22,366
+was on the Verge. You know, the 
+Glamour magazine wrote an article
+
+508
+00:25:22,366 --> 00:25:25,366
+about this Chrome extension. And no 
+one ever thought to contact me
+
+509
+00:25:25,366 --> 00:25:28,366
+But I felt pretty 
+
+510
+00:25:28,366 --> 00:25:31,366
+proud that I'd had this 
+impact. And pretty
+
+511
+00:25:31,366 --> 00:25:34,366
+annoyed too when I thought 
+about it. I looked at face.com's
+
+512
+00:25:34,366 --> 00:25:37,366
+developer forums and almost all the 
+posts were just people using my
+
+513
+00:25:37,366 --> 00:25:40,366
+stupid Must Stache thing, and 
+the developers at face.com were
+
+514
+00:25:40,366 --> 00:25:43,366
+giving them active tech support. 
+And I thought "but this is violating
+
+515
+00:25:43,366 --> 00:25:46,366
+your terms of—ohhhhh, it's so 
+that you hockey stick and can 
+
+516
+00:25:46,366 --> 00:25:49,366
+show off a ton of usage to 
+Facebook, and I bet you a big
+
+517
+00:25:49,366 --> 00:25:52,366
+part of that $80M valuation 
+had something to do with
+
+518
+00:25:52,366 --> 00:25:55,366
+my thing. Where's my 
+cut? Well, my cut
+
+519
+00:25:55,366 --> 00:25:58,366
+came in the form of face.com shutting 
+down and then me getting a bunch of
+
+520
+00:25:58,366 --> 00:26:01,366
+e-mail because all of a sudden, 
+nobody's browser worked
+
+521
+00:26:01,366 --> 00:26:04,366
+Because all of the images 
+would just 404
+
+522
+00:26:04,366 --> 00:26:07,366
+So that was cool. I
+built a popular
+
+523
+00:26:07,366 --> 00:26:10,366
+thing, yay, but I didn't get to
+
+524
+00:26:10,366 --> 00:26:13,366
+enjoy any of that popularity 
+at all, and I may have
+
+525
+00:26:13,366 --> 00:26:16,366
+made somebody else 
+millions of dollars [citation
+
+526
+00:26:16,366 --> 00:26:19,366
+needed]. But it feels 
+
+527
+00:26:19,366 --> 00:26:22,366
+that way and I made 
+lots of users angry
+
+528
+00:26:22,366 --> 00:26:25,366
+the only time they ever learned about
+me was after their stuff stopped
+
+529
+00:26:25,366 --> 00:26:28,366
+working. And I was left 
+with no recourse
+
+530
+00:26:28,366 --> 00:26:31,366
+I didn't have time to build a new
+face.com, I just had to kind of
+
+531
+00:26:31,366 --> 00:26:34,366
+shut down the extension. 
+So I learned in the process
+
+532
+00:26:34,366 --> 00:26:37,366
+serverless isn't. Obviously, if you 
+depend on someone else's server
+
+533
+00:26:37,366 --> 00:26:40,366
+they can always pull 
+the rug out from you
+
+534
+00:26:40,366 --> 00:26:43,366
+That was a valuable 
+lesson. Also, chasing
+
+535
+00:26:43,366 --> 00:26:46,366
+popularity without an underlying 
+purpose or value statement is
+
+536
+00:26:46,366 --> 00:26:49,366
+toxic. Because, when I did 
+run into a problem, I didn't have
+
+537
+00:26:49,366 --> 00:26:52,366
+the time—there was no economic 
+reason or even moral reason
+
+538
+00:26:52,366 --> 00:26:55,366
+for me to invest the time to fix 
+it. I was just left, you know,
+
+539
+00:26:55,366 --> 00:26:58,366
+with people angry at me. 
+So that sucked.
+
+540
+00:26:58,366 --> 00:27:01,366
+But! It did get covered, apparently,
+
+541
+00:27:01,366 --> 00:27:04,366
+in the last season of 
+HBO's Silicon Valley where
+
+542
+00:27:04,366 --> 00:27:07,366
+they made an AR 
+version of the plugin, so
+
+543
+00:27:07,366 --> 00:27:10,366
+that made me feel 
+pretty cool, I guess.
+
+544
+00:27:10,366 --> 00:27:13,366
+Another way that I felt inadequate as 
+a developer is that one time I was on this
+
+545
+00:27:13,366 --> 00:27:16,366
+legacy rescue project. A big waterfall
+project. If you don't know these
+
+546
+00:27:16,366 --> 00:27:19,366
+terms, by the way, legacy when 
+we use that in software terms
+
+547
+00:27:19,366 --> 00:27:22,366
+it means that your 
+kids will inherit it
+
+548
+00:27:22,366 --> 00:27:25,366
+and rescue means that 
+you want to be rescued
+
+549
+00:27:25,366 --> 00:27:28,366
+So I was on this 
+project for months
+
+550
+00:27:28,366 --> 00:27:31,366
+I could barely—my computer 
+was just a memory
+
+551
+00:27:31,366 --> 00:27:34,366
+at this point, because I hadn't programmed 
+in so long, I'd forgotten how to program
+
+552
+00:27:34,366 --> 00:27:37,366
+I felt like, "could I even program 
+anything in 2 months anymore?"
+
+553
+00:27:37,366 --> 00:27:40,366
+I was really feeling kind of despondent 
+and out of touch with myself as a 
+
+554
+00:27:40,366 --> 00:27:43,366
+craftsperson. And at the time the
+
+555
+00:27:43,366 --> 00:27:46,366
+to-do apps were undergoing this 
+renaissance, because it was still
+
+556
+00:27:46,366 --> 00:27:49,366
+early in the App Store and there was all these 
+new to-do apps and I didn't really like any
+
+557
+00:27:49,366 --> 00:27:52,366
+of them. I kept falling back on this 
+plaintext thing that I did where
+
+558
+00:27:52,366 --> 00:27:55,366
+I'd define a project with a colon, 
+and I'd dasherize tasks
+
+559
+00:27:55,366 --> 00:27:58,366
+and I'd indicate something's 
+done with a slash or blocked
+
+560
+00:27:58,366 --> 00:28:01,366
+with a pound sign, or I'd 
+date it with braces and I
+
+561
+00:28:01,366 --> 00:28:04,366
+would just do this instead of using an 
+app, but of course that was inconvenient
+
+562
+00:28:04,366 --> 00:28:07,366
+So I was thinking at the time, 
+I feel like I hate all these
+
+563
+00:28:07,366 --> 00:28:10,366
+to-do apps, but I've also 
+forgotten how to code so I can't
+
+564
+00:28:10,366 --> 00:28:13,366
+built my own. But maybe if I were to 
+try I'd at least be able to restore my
+
+565
+00:28:13,366 --> 00:28:16,366
+dignity as a developer. And what I had
+to do there was I could give myself
+
+566
+00:28:16,366 --> 00:28:19,366
+the constraints needed and 
+so I gave myself a little quest
+
+567
+00:28:19,366 --> 00:28:22,366
+I said "I want to build a 
+to-do app that's so great
+
+568
+00:28:22,366 --> 00:28:25,366
+that I will use this at the 
+exclusion of all the others…
+
+569
+00:28:25,366 --> 00:28:28,366
+and I only want to give 
+myself 24 hours."
+
+570
+00:28:28,366 --> 00:28:31,366
+Can I still hack it? 
+Under pressure.
+
+571
+00:28:31,366 --> 00:28:34,366
+So I built this app called doing-it.
+
+572
+00:28:34,366 --> 00:28:37,366
+So in doing-it, you define a project. 
+And I started by just saying
+
+573
+00:28:37,366 --> 00:28:40,366
+throw all the content in a div, 
+[make it] contenteditable
+
+574
+00:28:40,366 --> 00:28:43,366
+dump it into localStorage,
+read it from localStorage
+
+575
+00:28:43,366 --> 00:28:46,366
+and then use the tool to track
+the rest of the work in the tool
+
+576
+00:28:46,366 --> 00:28:49,366
+So I was using doing-it to 
+build doing-it from like minute
+
+577
+00:28:49,366 --> 00:28:52,366
+40. So I did it, I built the 
+thing. It's still up at
+
+578
+00:28:52,366 --> 00:28:55,366
+todo.testdouble.com if you 
+want to check it out you can
+
+579
+00:28:55,366 --> 00:28:58,366
+make a project, it'll autoformat
+based on the
+
+580
+00:28:58,366 --> 00:29:01,366
+the lead character here, so this is 
+me making a couple different things
+
+581
+00:29:01,366 --> 00:29:04,366
+I can mark them done or 
+overdue or high priority
+
+582
+00:29:04,366 --> 00:29:07,366
+and mark'em all done. And that was a lot 
+of fun, you know I finished it within the
+
+583
+00:29:07,366 --> 00:29:10,366
+1 day. Gave me a renewed sense 
+of confidence as a developer
+
+584
+00:29:10,366 --> 00:29:13,366
+It still works, thanks to 
+Heroku's free dynos
+
+585
+00:29:13,366 --> 00:29:16,366
+No users, so no angry e-mails to
+
+586
+00:29:16,366 --> 00:29:19,366
+deal with. That was nice. And 
+I just threw it up on GitHub
+
+587
+00:29:19,366 --> 00:29:22,366
+Because that's just the default 
+thing, I just work in the open
+
+588
+00:29:22,366 --> 00:29:25,366
+But the purpose of course was 
+just self-validataion that's what
+
+589
+00:29:25,366 --> 00:29:28,366
+I wanted to prove myself I could 
+still program, but when I throw
+
+590
+00:29:28,366 --> 00:29:31,366
+stuff out into the open, that's just because
+that's my default, it's not because
+
+591
+00:29:31,366 --> 00:29:34,366
+I'm necessarily trying to become 
+an open source star. But I do
+
+592
+00:29:34,366 --> 00:29:37,366
+get a lot of people—because I do a lot
+of open source—come to me and say
+
+593
+00:29:37,366 --> 00:29:40,366
+"How do I get into open source", and I 
+think that maintainers struggle with this
+
+594
+00:29:40,366 --> 00:29:43,366
+question, because they want to 
+make it sound easy to get involved
+
+595
+00:29:43,366 --> 00:29:46,366
+They might say, "write me 
+some docs" or "Send me a
+
+596
+00:29:46,366 --> 00:29:49,366
+small pull request or something", and 
+the problem with that of course is that
+
+597
+00:29:49,366 --> 00:29:52,366
+it's not the normal creative 
+exchange of ideas. You might
+
+598
+00:29:52,366 --> 00:29:55,366
+even submit the pull request, but 
+then most of the time that maintainer
+
+599
+00:29:55,366 --> 00:29:58,366
+is gonna get angry and say "this 
+isn't how I'd do it—rejected!"
+
+600
+00:29:58,366 --> 00:30:01,366
+or "Change it!" and nobody 
+needs another boss
+
+601
+00:30:01,366 --> 00:30:04,366
+right? So if you get 
+into open source
+
+602
+00:30:04,366 --> 00:30:07,366
+to be creative, you just 
+create stuff instead
+
+603
+00:30:07,366 --> 00:30:10,366
+Because, when you go and talk to open source 
+maintainers, like "how did you get started
+
+604
+00:30:10,366 --> 00:30:13,366
+with open source," it was rarely "oh, 
+I started doing docs for this
+
+605
+00:30:13,366 --> 00:30:16,366
+one other guy. It was usually 
+"well, I made stuff that I
+
+606
+00:30:16,366 --> 00:30:19,366
+wanted, I threw it up on the Internet, 
+and then some of it got popular
+
+607
+00:30:19,366 --> 00:30:22,366
+and most of it didn't." And 
+you'll never predict what's
+
+608
+00:30:22,366 --> 00:30:25,366
+gonna stick and what's not. The reference 
+to 200 repos is that I've probably
+
+609
+00:30:25,366 --> 00:30:28,366
+got like 250 repos that 
+I've started and you've—
+
+610
+00:30:28,366 --> 00:30:31,366
+—odds are you've heard of zero of 
+them. You may have heard of two or
+
+611
+00:30:31,366 --> 00:30:34,366
+three. But the vast majority 
+is stuff that I just built
+
+612
+00:30:34,366 --> 00:30:37,366
+just for the sake of it, and I don't
+expect to hear about it again
+
+613
+00:30:37,366 --> 00:30:40,366
+And it might seem scary to 
+work in the open, like
+
+614
+00:30:40,366 --> 00:30:43,366
+you know, people are going to criticize
+your code, but there's a secret:
+
+615
+00:30:43,366 --> 00:30:46,366
+nobody reads code. So
+
+616
+00:30:46,366 --> 00:30:49,366
+just don't worry about that.
+I'm not going to read your code
+
+617
+00:30:49,366 --> 00:30:52,366
+So that made me feel a little 
+bit less inadequate
+
+618
+00:30:52,366 --> 00:30:55,366
+as a developer. Third one, now 
+that I'm a self-professed
+
+619
+00:30:55,366 --> 00:30:58,366
+thoughtleader who talks at 
+conferences a bunch, most
+
+620
+00:30:58,366 --> 00:31:01,366
+thoughtleaders get into this 
+line of work, by doing something
+
+621
+00:31:01,366 --> 00:31:04,366
+interesting, or observing something 
+interesting. Sharing that insight with 
+
+622
+00:31:04,366 --> 00:31:07,366
+other people. But then 
+eventually, you stop doing
+
+623
+00:31:07,366 --> 00:31:10,366
+the work, and you run the risk of 
+thoughtleading other people straight off
+
+624
+00:31:10,366 --> 00:31:13,366
+a cliff. And you don't 
+want to do that
+
+625
+00:31:13,366 --> 00:31:16,366
+When it comes to test-driven development, 
+I talk about test-driven development
+
+626
+00:31:16,366 --> 00:31:19,366
+a lot. I've talked about it for more 
+years than I've practiced 
+
+627
+00:31:19,366 --> 00:31:22,366
+it, which is worrying. And one day 
+I decided to start leading
+
+628
+00:31:22,366 --> 00:31:25,366
+some thoughts about test-driven
+development. In fact, if you google
+
+629
+00:31:25,366 --> 00:31:28,366
+the phrase tdd failure, this 
+blog post is the top
+
+630
+00:31:28,366 --> 00:31:31,366
+result, which I"m particularly proud of
+
+631
+00:31:31,366 --> 00:31:34,366
+And I got a lot of attention. And it was 
+the front-page of Hacker News and I was
+
+632
+00:31:34,366 --> 00:31:37,366
+in the article I was saying "well this is what 
+London-school test-driven development
+
+633
+00:31:37,366 --> 00:31:40,366
+is", and then the guy who actually 
+invented that, Nat Pryce, was like
+
+634
+00:31:40,366 --> 00:31:43,366
+"no, it's not, really", and I 
+was like "But I just got 400
+
+635
+00:31:43,366 --> 00:31:46,366
+thousand page views saying it was" and 
+now everyone's going to find out that I'm a big
+
+636
+00:31:46,366 --> 00:31:49,366
+idiot. And so I was really
+upset about that, but
+
+637
+00:31:49,366 --> 00:31:52,366
+then, being the opportunistic and
+
+638
+00:31:52,366 --> 00:31:55,366
+person just seeking the
+
+639
+00:31:55,366 --> 00:31:58,366
+validation of everyone else, I 
+decided to pivot and instead
+
+640
+00:31:58,366 --> 00:32:01,366
+just rename what I do 
+as its own thing, so I 
+
+641
+00:32:01,366 --> 00:32:04,366
+call it "Discovery Testing" 
+and I actually built libraries
+
+642
+00:32:04,366 --> 00:32:07,366
+and talks around how to practice 
+Discovery Testing as its own school
+
+643
+00:32:07,366 --> 00:32:10,566
+of TDD. So much so, that I 
+realized I give a lot of talks
+
+644
+00:32:10,566 --> 00:32:13,566
+but I hadn't actually
+practiced it much
+
+645
+00:32:13,566 --> 00:32:16,566
+and I was just full of hot air. And 
+so I felt like TDD, of course
+
+646
+00:32:16,566 --> 00:32:19,566
+it's not very well understood. 
+A lot of us try it and fail
+
+647
+00:32:19,566 --> 00:32:22,566
+or don't really learn how to apply 
+it consistently, so there's stuff
+
+648
+00:32:22,566 --> 00:32:25,566
+to say here, but I've just become
+a talking head at this point
+
+649
+00:32:25,566 --> 00:32:28,566
+And so I realized this last 
+summer, maybe I need to
+
+650
+00:32:28,566 --> 00:32:31,566
+start practicing this more on my 
+own and really proving out
+
+651
+00:32:31,566 --> 00:32:34,566
+that it really works. I've gotta validate
+my ideas. So I've got this
+
+652
+00:32:34,566 --> 00:32:37,566
+Simplisafe alarm system. It's 
+just a thing where you
+
+653
+00:32:37,566 --> 00:32:40,566
+stick it to the wall, and if a door
+
+654
+00:32:40,566 --> 00:32:43,566
+opens, an alarm goes off, police come to 
+your house. Simple alarm monitoring
+
+655
+00:32:43,566 --> 00:32:46,566
+And I love Apple's HomeKit, 
+because I really love this idea
+
+656
+00:32:46,566 --> 00:32:49,566
+of a smart home, like we learned 
+today the Internet of Things
+
+657
+00:32:49,566 --> 00:32:52,566
+aside from denial of service attacks
+
+658
+00:32:52,566 --> 00:32:55,566
+is also useful for just the convenience
+
+659
+00:32:55,566 --> 00:32:58,566
+of controlling your domain. 
+So I have this server called
+
+660
+00:32:58,566 --> 00:33:01,566
+homebridge, runs Node.js and
+
+661
+00:33:01,566 --> 00:33:04,566
+you can build adapters, so I was thinking 
+I'll build an adapter for Simplisafe
+
+662
+00:33:04,566 --> 00:33:07,566
+So that when I'm on my couch I 
+can say "hey Siri, turn on my alarm"
+
+663
+00:33:07,566 --> 00:33:10,566
+The idea being, of course, I'd 
+spend 40 hours building
+
+664
+00:33:10,566 --> 00:33:13,566
+a thing to save myself 8 seconds
+the 3 or 4 times that I think
+
+665
+00:33:13,566 --> 00:33:16,566
+to use the thing, because programming.
+
+666
+00:33:16,566 --> 00:33:19,566
+So the question was: what's this 
+thing in the middle? How do I 
+
+667
+00:33:19,566 --> 00:33:22,566
+build an adapter? The truth is I had no 
+idea how to build this, and that's
+
+668
+00:33:22,566 --> 00:33:25,566
+purportedly what my practice of test-
+driven development, Discovery Testing
+
+669
+00:33:25,566 --> 00:33:28,566
+does. So does my process 
+actually work? And so I actually
+
+670
+00:33:28,566 --> 00:33:31,566
+experimented, and several 
+hours in I was very
+
+671
+00:33:31,566 --> 00:33:34,566
+relieved to find that I could build 
+a thing and that it actually worked
+
+672
+00:33:34,566 --> 00:33:37,566
+So there's this npm module now 
+exists, simplisafe and it's got
+
+673
+00:33:37,566 --> 00:33:40,566
+a simple little API. You pass it 
+credentials, you get a
+
+674
+00:33:40,566 --> 00:33:43,566
+client back, you can set the state. 
+What was funny was I TDD'd
+
+675
+00:33:43,566 --> 00:33:46,566
+this, right, so I was writing tests. And the 
+only credentials I had were the ones
+
+676
+00:33:46,566 --> 00:33:49,566
+to my house. And so I had to be really 
+careful in the failure states, because I
+
+677
+00:33:49,566 --> 00:33:52,566
+didn't want to send the cops 
+to my house by accident
+
+678
+00:33:52,566 --> 00:33:55,566
+And in particular, this got really
+
+679
+00:33:55,566 --> 00:33:58,566
+confusing with Travis [CI], because I 
+would upload it to Travis
+
+680
+00:33:58,566 --> 00:34:01,566
+continuous integration, and people 
+would send pull requests and it would
+
+681
+00:34:01,566 --> 00:34:04,566
+change the beeping in my house and I'd 
+have to make sure all the doors were shut
+
+682
+00:34:07,566 --> 00:34:10,566
+But the lesson I learned 
+there, I followed
+
+683
+00:34:10,566 --> 00:34:13,566
+my own advice and really practice 
+it. I was relieved to see that it
+
+684
+00:34:13,566 --> 00:34:16,566
+went well. But honestly, I'm kind of ashamed 
+because I went so long without validating
+
+685
+00:34:16,566 --> 00:34:19,566
+my ideas. And you guys, 
+just by having
+
+686
+00:34:19,566 --> 00:34:22,566
+me here today, have given me 
+a platform and I don't want to
+
+687
+00:34:22,566 --> 00:34:25,566
+abuse it by just being a talking head. 
+I want to make sure that everything I
+
+688
+00:34:25,566 --> 00:34:28,566
+share can potentially really 
+help you grow in your career
+
+689
+00:34:28,566 --> 00:34:31,566
+So that was a valuable 
+lesson and I think 
+
+690
+00:34:31,566 --> 00:34:34,566
+we can apply it to 
+managers, like technical
+
+691
+00:34:34,566 --> 00:34:37,566
+managers, former 
+developers, what I've
+
+692
+00:34:37,566 --> 00:34:40,566
+been able to generalize from my experience, 
+especially at Test Double, is that everything
+
+693
+00:34:40,566 --> 00:34:43,566
+at a distance seems 
+simpler. The people
+
+694
+00:34:43,566 --> 00:34:46,566
+actually doing the work, when a developer says this 
+is going to take several more weeks, they're
+
+695
+00:34:46,566 --> 00:34:49,566
+closer to it, they see all the 
+complexity, which is easy
+
+696
+00:34:49,566 --> 00:34:52,566
+to just hand-wave away when 
+you're operating at a distance
+
+697
+00:34:52,566 --> 00:34:55,566
+Additionally, when you have a 
+lot of experience, you tend to 
+
+698
+00:34:55,566 --> 00:34:58,566
+—we're all pattern-recognition machines and you 
+feed in all these problems and somebody might
+
+699
+00:34:58,566 --> 00:35:01,466
+feed you a problem, and you might say 
+"well, yeah, that looks like the 15 other
+
+700
+00:35:01,466 --> 00:35:04,466
+things that I did." And you come 
+up with this round, polished idealistic
+
+701
+00:35:04,466 --> 00:35:07,466
+solution. But, of course, that's not 
+going to actually map very closely
+
+702
+00:35:07,466 --> 00:35:10,466
+to that individual's context. You 
+have to actually trust the people
+
+703
+00:35:10,466 --> 00:35:13,466
+closest to the work. 
+
+704
+00:35:13,466 --> 00:35:16,466
+And so that's been a humbling 
+exercise in a manager role, to not
+
+705
+00:35:16,466 --> 00:35:19,466
+just jump to conclusions 
+that I always know best.
+
+706
+00:35:19,466 --> 00:35:22,466
+But nonetheless, that was 
+also helpful in me dealing
+
+707
+00:35:22,466 --> 00:35:25,466
+with my own sense of inadequacy 
+as I merge into this
+
+708
+00:35:25,466 --> 00:35:28,466
+more management role. Let's 
+talk a little bit about indignation
+
+709
+00:35:28,466 --> 00:35:31,466
+First of all, I'm a big worrier
+
+710
+00:35:31,466 --> 00:35:34,466
+Todd, mentioned I'm really 
+high anxiety. I worry about
+
+711
+00:35:34,466 --> 00:35:37,466
+banks, and credit card statements, 
+and finances, and stuff
+
+712
+00:35:37,466 --> 00:35:40,466
+and I really wanted a dashboard 
+to handle this all for me and Mint
+
+713
+00:35:40,466 --> 00:35:43,466
+was that for a long time. I'd use 
+Mint, I'd see all my finances
+
+714
+00:35:43,466 --> 00:35:46,466
+were still there, and 
+I'd feel good. But
+
+715
+00:35:46,466 --> 00:35:49,466
+six years in, I had this random thought: 
+you know I wonder how Mint
+
+716
+00:35:49,466 --> 00:35:52,466
+is actually secure? How does it actually
+securely go and get all these
+
+717
+00:35:52,466 --> 00:35:55,466
+services? And get all 
+my account updates?
+
+718
+00:35:55,466 --> 00:35:58,466
+Of course, what I figured out 
+was that it's just not secure
+
+719
+00:35:58,466 --> 00:36:01,466
+it has decryptable versions 
+of all of your passwords
+
+720
+00:36:01,466 --> 00:36:04,466
+to all of your banking stuff and doesn't 
+support two-factor auth or anything like
+
+721
+00:36:04,466 --> 00:36:07,466
+that. And that's kind of worrisome. 
+It's actually a very popular Internet
+
+722
+00:36:07,466 --> 00:36:10,466
+cloud architecture right now called SPoFaaS.
+
+723
+00:36:10,466 --> 00:36:13,466
+If you're not familiar with SPoFaaS, it stands 
+for single point of failure as a service
+
+724
+00:36:16,466 --> 00:36:19,466
+Another thing we're learning about 
+today, too, with the Internet outage
+
+725
+00:36:19,466 --> 00:36:22,466
+So, Mint, Yodlee, if they go away
+
+726
+00:36:22,466 --> 00:36:25,466
+then all of your stuff just
+disappears. You're just giving
+
+727
+00:36:25,466 --> 00:36:28,466
+a single point of failure for them to take 
+all your money. So I was stewing on this
+
+728
+00:36:28,466 --> 00:36:31,466
+I got angry. I was trying to figure 
+out how do I get off Mint.
+
+729
+00:36:31,466 --> 00:36:34,466
+Sure, I could cancel it, but I want to replace it 
+with something better. What could I build
+
+730
+00:36:34,466 --> 00:36:37,466
+So I thought: security matters.
+
+731
+00:36:37,466 --> 00:36:40,466
+But I'm not an expert. I'm not going 
+to build the next Mint or Yodlee
+
+732
+00:36:40,466 --> 00:36:43,466
+and solve this very difficult distribution 
+problem, but I could probably
+
+733
+00:36:43,466 --> 00:36:46,466
+just build something for myself
+and at least personally feel a
+
+734
+00:36:46,466 --> 00:36:49,466
+little bit safer. And so I built this 
+gem that I call fine_ants
+
+735
+00:36:52,466 --> 00:36:55,466
+In fine_ants you build adapters. So 
+here's an adapter to Vanguard
+
+736
+00:36:55,466 --> 00:36:58,466
+I pass it credentials. And because 
+I can run it locally, I can 
+
+737
+00:36:58,466 --> 00:37:01,466
+actually do two-factor auth in my terminal, 
+so I have two-factor auth set up
+
+738
+00:37:01,466 --> 00:37:04,466
+now. And it just downloads all my 
+holdings for all my Vanguard accounts
+
+739
+00:37:04,466 --> 00:37:07,466
+And I built a little Rails 
+app for it too that
+
+740
+00:37:07,466 --> 00:37:10,466
+runs at localhost, and so it's 
+encrypted on my disk
+
+741
+00:37:10,466 --> 00:37:13,466
+And it shows me all of my account 
+holdings and I click that button and it
+
+742
+00:37:13,466 --> 00:37:16,466
+launches a Selenium 
+worker to go and
+
+743
+00:37:16,466 --> 00:37:19,466
+open browsers to go to all 
+of my banks and stuff
+
+744
+00:37:19,466 --> 00:37:22,466
+And I was really proud, because now 
+I've almost got this dashboard that I wanted
+
+745
+00:37:22,466 --> 00:37:25,466
+It's locally-encrypted. It's as safe 
+as running it from my own browser
+
+746
+00:37:25,466 --> 00:37:28,466
+Puts Selenium for good use 
+to once, instead of just
+
+747
+00:37:28,466 --> 00:37:31,466
+really brittle integration 
+tests, and
+
+748
+00:37:31,466 --> 00:37:34,466
+and, you know, admitting it's
+
+749
+00:37:34,466 --> 00:37:37,466
+not a generalizable app. I mean, you 
+can go and find this stuff on
+
+750
+00:37:37,466 --> 00:37:40,466
+GitHub and clone it yourself and run it yourself, 
+and I'd encourage you to try it
+
+751
+00:37:40,466 --> 00:37:43,466
+But it's not going to be 
+the next unicorn, billion
+
+752
+00:37:43,466 --> 00:37:46,466
+dollar company. But, honestly, 
+there's no shame in hobby
+
+753
+00:37:46,466 --> 00:37:49,466
+grade. A lot of times, we're talking about 
+creativity, right? We're talking about
+
+754
+00:37:49,466 --> 00:37:52,466
+building stuff. And sometimes 
+just solving your own
+
+755
+00:37:52,466 --> 00:37:55,466
+problem is enough. Like these little 
+toy apps like this are often
+
+756
+00:37:55,466 --> 00:37:58,466
+what got us into programming in 
+the first place, even if you're just
+
+757
+00:37:58,466 --> 00:38:01,466
+solving your own problem, 
+there's no shame in that. So that
+
+758
+00:38:01,466 --> 00:38:04,466
+made me feel a little 
+bit less furious
+
+759
+00:38:04,466 --> 00:38:07,466
+at the world. Another example, so
+
+760
+00:38:07,466 --> 00:38:10,466
+Test Double, our company, right. 
+I've already referred—I used
+
+761
+00:38:10,466 --> 00:38:13,466
+the term "test double" a few times, but some 
+of you may not know it. That library
+
+762
+00:38:13,466 --> 00:38:16,466
+gimme is actually an example of 
+a test double library. If you don't
+
+763
+00:38:16,466 --> 00:38:19,466
+know the term, the word "test double" is 
+supposed to evoke the image of a 
+
+764
+00:38:19,466 --> 00:38:22,466
+stunt double. But not like a 
+stunt driver in a plane, like
+
+765
+00:38:22,466 --> 00:38:25,466
+a stand-in for your tests. So 
+assume you like, maybe
+
+766
+00:38:25,466 --> 00:38:28,466
+your app depends on the cloud, so you have 
+to fake that out to make your
+
+767
+00:38:28,466 --> 00:38:31,466
+test pass. Well, whatever you did
+to fake out the cloud is probably
+
+768
+00:38:31,466 --> 00:38:34,466
+an example of a test double that 
+fakes that service out
+
+769
+00:38:34,466 --> 00:38:37,466
+And in JavaScript, the most 
+popular test double
+
+770
+00:38:37,466 --> 00:38:40,466
+library is called Sinon. But when
+
+771
+00:38:40,466 --> 00:38:43,466
+I see people use Sinon, most of them 
+don't understand it very well
+
+772
+00:38:43,466 --> 00:38:46,466
+Because it's kind of confusing. A 
+lot of people get frustrated
+
+773
+00:38:46,466 --> 00:38:49,466
+because it's a huge API, 
+or just angry at the
+
+774
+00:38:49,466 --> 00:38:52,466
+fact it's not very opinionated. 
+So I've given
+
+775
+00:38:52,466 --> 00:38:55,466
+a lot of thought to making something 
+better than Sinon in JavaScript
+
+776
+00:38:55,466 --> 00:38:58,466
+And I decided, you know, a lot of users
+
+777
+00:38:58,466 --> 00:39:01,466
+that use Sinon are in pain, 
+but I have to admit I
+
+778
+00:39:01,466 --> 00:39:04,466
+can't beat it. It's got like 2 
+million downloads a month
+
+779
+00:39:04,466 --> 00:39:07,466
+But if I build something at least 
+I'll be less grouchy and at least I'll
+
+780
+00:39:07,466 --> 00:39:10,466
+have something to hand somebody 
+instead of just more snark
+
+781
+00:39:10,466 --> 00:39:13,466
+and whining. And so it was 
+humbling, right, because
+
+782
+00:39:13,466 --> 00:39:16,466
+I've built now—this is like 
+the 4th or 5th test double
+
+783
+00:39:16,466 --> 00:39:19,466
+library in a different language that I've built 
+and I keep coming back to the same
+
+784
+00:39:19,466 --> 00:39:22,466
+saw over and over again. 
+And it's humbling to think
+
+785
+00:39:22,466 --> 00:39:25,466
+that my entire career 
+may well hinge on just
+
+786
+00:39:25,466 --> 00:39:28,466
+two or three concepts and 
+I keep repeating them, because
+
+787
+00:39:28,466 --> 00:39:31,466
+I learn, because I'm passionate 
+about it, and then I build
+
+788
+00:39:31,466 --> 00:39:34,466
+something and then I share it, and 
+then I feed back into learning more
+
+789
+00:39:34,466 --> 00:39:37,466
+and it's this infinite loop of me 
+iterating over time on just a handful
+
+790
+00:39:37,466 --> 00:39:40,466
+of issues, and with Test 
+Double, we're able to
+
+791
+00:39:40,466 --> 00:39:43,466
+do that again by building testdouble.js.
+You can install it on
+
+792
+00:39:43,466 --> 00:39:46,466
+npm. To get the npm install, and
+
+793
+00:39:46,466 --> 00:39:49,466
+the npm package "testdouble" it works 
+on the frontend and the backend
+
+794
+00:39:49,466 --> 00:39:52,466
+There's a screencast on our 
+website called happier tdd with
+
+795
+00:39:52,466 --> 00:39:55,466
+testdouble.js you can go watch. 
+We've also got a comparison
+
+796
+00:39:55,466 --> 00:39:58,466
+blog post of testdouble vs. sinon and
+
+797
+00:39:58,466 --> 00:40:01,466
+what was cool about testdouble 
+is it works, but it
+
+798
+00:40:01,466 --> 00:40:04,466
+most importantly, shares all of our 
+opinions about what we've learned
+
+799
+00:40:04,466 --> 00:40:07,466
+about test double libraries and 
+good isolation testing over the years
+
+800
+00:40:07,466 --> 00:40:10,466
+And it's certainly better than 
+just being cynical and snarky
+
+801
+00:40:10,466 --> 00:40:13,466
+about "oh, JavaScript sucks" or 
+"JavaScript testing is this or that"
+
+802
+00:40:13,466 --> 00:40:16,466
+A lesson I learned 
+early on is that if
+
+803
+00:40:16,466 --> 00:40:19,466
+your message isn't getting through 
+to somebody and they're not hearing
+
+804
+00:40:19,466 --> 00:40:22,466
+what you're trying to say, you 
+can conclude one of two things:
+
+805
+00:40:22,466 --> 00:40:25,466
+you can either conclude that they're 
+a bozo for not understanding
+
+806
+00:40:25,466 --> 00:40:28,466
+you, or that there's something with 
+how you're trying to communicate that's
+
+807
+00:40:28,466 --> 00:40:31,466
+failing to convey to them. And if 
+you conclude that they're a bozo
+
+808
+00:40:31,466 --> 00:40:34,466
+that's it. You just
+
+809
+00:40:34,466 --> 00:40:37,466
+disengage, right? There's 
+no next step. But
+
+810
+00:40:37,466 --> 00:40:40,466
+I always assume it's something
+ wrong in how I'm
+
+811
+00:40:40,466 --> 00:40:43,466
+trying to communicate, and so 
+I'm always iterating on my message
+
+812
+00:40:43,466 --> 00:40:46,466
+and only as a very last 
+possibility do I assume it's
+
+813
+00:40:46,466 --> 00:40:49,466
+the listener's fault, because 
+I can't control that at all
+
+814
+00:40:49,466 --> 00:40:52,466
+And also, for your library
+
+815
+00:40:52,466 --> 00:40:55,466
+to win, not everything else has to lose. 
+Sometimes just doing something that's
+
+816
+00:40:55,466 --> 00:40:58,466
+useful for a small group is plenty. Especially 
+if you're able to communicate
+
+817
+00:40:58,466 --> 00:41:01,466
+ideas in a way that moves 
+other people forward
+
+818
+00:41:01,466 --> 00:41:04,466
+in how they think about something. 
+And certainly criticism
+
+819
+00:41:04,466 --> 00:41:07,466
+is easier than contribution. 
+It's really easy
+
+820
+00:41:07,466 --> 00:41:10,466
+to be snarky on Twitter and 
+say something sucks, but
+
+821
+00:41:10,466 --> 00:41:13,466
+Christian Johansson who 
+made Sinon, he put himself
+
+822
+00:41:13,466 --> 00:41:16,466
+out there and it has served 
+a lot of people really well
+
+823
+00:41:16,466 --> 00:41:19,466
+and he's a really 
+really nice guy, but I 
+
+824
+00:41:19,466 --> 00:41:22,466
+spent like two years just shitting 
+on his work on twitter before
+
+825
+00:41:22,466 --> 00:41:25,466
+I thought "maybe I should just build 
+something that serves my needs
+
+826
+00:41:25,466 --> 00:41:28,466
+instead." So building 
+
+827
+00:41:28,466 --> 00:41:31,466
+that certainly made me a little 
+less angry about JavaScript testing.
+
+828
+00:41:31,466 --> 00:41:34,466
+Another thing you may have 
+noticed is that I like emoji
+
+829
+00:41:34,466 --> 00:41:37,466
+I've used a few of them
+
+830
+00:41:37,466 --> 00:41:40,466
+in the slides
+
+831
+00:41:40,466 --> 00:41:43,466
+And creativity, open source 
+stuff, can sometimes feel
+
+832
+00:41:43,466 --> 00:41:46,466
+a little too self-serious and 
+open source feels "you create, 
+
+833
+00:41:46,466 --> 00:41:49,466
+we depend." Other people 
+start to pull your stuff
+
+834
+00:41:49,466 --> 00:41:52,466
+and then all of a sudden 
+they're really demanding
+
+835
+00:41:52,466 --> 00:41:55,466
+and it usually starts with: you have 
+an idea, you want to build a thing
+
+836
+00:41:55,466 --> 00:41:58,466
+and it's a labor of love and it 
+brings you joy, but then 
+
+837
+00:41:58,466 --> 00:42:01,466
+eventually companies start 
+depending on it, and criticizing
+
+838
+00:42:01,466 --> 00:42:04,466
+or opening issues or acting entitled 
+and trying to get stuff out
+
+839
+00:42:04,466 --> 00:42:07,466
+of you for free and that's a big 
+bummer. In fact I know a lot of open
+
+840
+00:42:07,466 --> 00:42:10,466
+source maintainers and 
+what's super consistent
+
+841
+00:42:10,466 --> 00:42:13,466
+is that they tend to hate 
+their creations in
+
+842
+00:42:13,466 --> 00:42:16,466
+proportion to how popular 
+they are, and that just
+
+843
+00:42:16,466 --> 00:42:19,466
+seems totally backwards. So I was feeling
+
+844
+00:42:19,466 --> 00:42:22,466
+kind of exploited and exhausted 
+at this particular point
+
+845
+00:42:22,466 --> 00:42:25,466
+in my career. But I can't just escape open 
+source, I'm not going to 
+
+846
+00:42:25,466 --> 00:42:28,466
+ragequit GitHub and delete all my 
+stuff and yank all my stuff
+
+847
+00:42:28,466 --> 00:42:31,466
+and take my ball and go home. So maybe 
+if I just build something
+
+848
+00:42:31,466 --> 00:42:34,466
+new, something fresh, I'll find a fresh 
+start. And the way I did it was, I
+
+849
+00:42:34,466 --> 00:42:37,466
+decided I was going to build something 
+that no business could ever want
+
+850
+00:42:37,466 --> 00:42:40,466
+To just be creative
+
+851
+00:42:40,466 --> 00:42:43,466
+for the sake of creativity. And sometimes, 
+even still, if I build something
+
+852
+00:42:43,466 --> 00:42:46,466
+that I worry that a business 
+might exploit, might
+
+853
+00:42:46,466 --> 00:42:49,466
+build a business around and cut 
+me out, I'll just license it 
+
+854
+00:42:49,466 --> 00:42:52,466
+GPL as if troll them, because then 
+that way they have to come
+
+855
+00:42:52,466 --> 00:42:55,466
+to me to obtain a commercial license
+
+856
+00:42:55,466 --> 00:42:58,466
+This is such a project. I think it is
+
+857
+00:42:58,466 --> 00:43:01,466
+GPL'd, called emoruby. So there's 
+not a lot of transpilers
+
+858
+00:43:01,466 --> 00:43:04,466
+for the Ruby language, but this 
+one transpiles emoji
+
+859
+00:43:04,466 --> 00:43:07,466
+into Ruby code. So here's 
+an example file
+
+860
+00:43:07,466 --> 00:43:10,466
+listing of emoruby. This is a 
+class called Heart, 
+
+861
+00:43:10,466 --> 00:43:13,466
+defining a method called wave, printing 
+out a statement saying hello
+
+862
+00:43:13,466 --> 00:43:16,466
+and ending those two things. And then
+
+863
+00:43:16,466 --> 00:43:19,466
+Instantiating the heart and calling wave
+
+864
+00:43:19,466 --> 00:43:22,466
+So this, if you're not 
+familiar with emoruby, this
+
+865
+00:43:22,466 --> 00:43:25,466
+translates to this ruby here, 
+and it totally works
+
+866
+00:43:25,466 --> 00:43:28,466
+And it was a lot of fun. So 
+tl;dr what I learned
+
+867
+00:43:28,466 --> 00:43:31,466
+on emoruby is that 
+it's super dumb, it's
+
+868
+00:43:31,466 --> 00:43:34,466
+just there for fun, it's just there 
+to be joyful. I actually got a lot of
+
+869
+00:43:34,466 --> 00:43:37,466
+contributors on it, because they 
+found fun in trying to map
+
+870
+00:43:37,466 --> 00:43:40,466
+different keywords and control-
+flow structures to what 
+
+871
+00:43:40,466 --> 00:43:43,466
+emoji should that be. But it 
+brought me a lot of joy
+
+872
+00:43:43,466 --> 00:43:46,466
+and it's had zero issues 
+opened against it this year
+
+873
+00:43:46,466 --> 00:43:49,466
+So it's one of my favorite projects. 
+It's okay to just build stuff for
+
+874
+00:43:49,466 --> 00:43:52,466
+yourself. I know some of you are developers here 
+and you're here with your managers,
+
+875
+00:43:52,466 --> 00:43:55,466
+hoping they're not looking over your shoulder 
+right now: it's actually OK just
+
+876
+00:43:55,466 --> 00:43:58,466
+to build things for fun. The joy 
+of programming is like
+
+877
+00:43:58,466 --> 00:44:01,466
+really undervalued and we get 
+too self-serious about our craft
+
+878
+00:44:01,466 --> 00:44:04,466
+So that helped lessen
+
+879
+00:44:04,466 --> 00:44:07,466
+my sense of indignation. Looking 
+back on all this stuff
+
+880
+00:44:07,466 --> 00:44:10,466
+is—I wouldn't recognize myself
+
+881
+00:44:10,466 --> 00:44:13,466
+ten years ago, I think, 
+because all of this
+
+882
+00:44:13,466 --> 00:44:16,466
+these creative exercises have really 
+changed me as a person and I've actually
+
+883
+00:44:16,466 --> 00:44:19,466
+found a way to mature 
+and grow up, and
+
+884
+00:44:19,466 --> 00:44:22,466
+I see you there, I'm saying "hey look creative 
+stuff, this is easy" but I've
+
+885
+00:44:22,466 --> 00:44:25,466
+also just lambasted you with 
+12 years of side projects
+
+886
+00:44:25,466 --> 00:44:28,466
+and "look at me! look at me! This is a 
+cool thing I built!" I understand
+
+887
+00:44:28,466 --> 00:44:31,466
+that might make the bar feel 
+higher, and you know what
+
+888
+00:44:31,466 --> 00:44:34,466
+maybe you're right, because it's true that 
+creativity is not for everyone. Here's a
+
+889
+00:44:34,466 --> 00:44:37,466
+quick litmus test if you're perfectly
+
+890
+00:44:37,466 --> 00:44:40,466
+content. And you're totally 
+fulfilled. And you're OK with
+
+891
+00:44:40,466 --> 00:44:43,466
+the status quo, then why would you want 
+to change things? You're right, maybe
+
+892
+00:44:43,466 --> 00:44:46,466
+you aren't a creative type. You should 
+just enjoy the beach that you guys have
+
+893
+00:44:46,466 --> 00:44:49,466
+not too far from here. But 
+if you have any negative
+
+894
+00:44:49,466 --> 00:44:52,466
+feelings at all, our culture right 
+now, we tend to pathologize
+
+895
+00:44:52,466 --> 00:44:55,466
+negative feelings as themselves 
+being bad, but often they're just a
+
+896
+00:44:55,466 --> 00:44:58,466
+symptom of some different root 
+cause, and if you analyze and
+
+897
+00:44:58,466 --> 00:45:01,466
+you're open about that with 
+yourself, you might find that what's
+
+898
+00:45:01,466 --> 00:45:04,466
+really bothering you is that you're 
+using the wrong tool for the job, or
+
+899
+00:45:04,466 --> 00:45:07,466
+there's friction between the technologies 
+and the practices that you're using
+
+900
+00:45:07,466 --> 00:45:10,466
+or work can't offer you what you need, 
+or maybe you just have your own internal
+
+901
+00:45:10,466 --> 00:45:13,466
+baggage that you need to get over. And 
+creativity can be a great outlet
+
+902
+00:45:13,466 --> 00:45:16,466
+for those kind of root cause 
+problems. And if you reflect
+
+903
+00:45:16,466 --> 00:45:19,466
+on how you feel and you 
+feed—you accept—
+
+904
+00:45:19,466 --> 00:45:22,466
+those emotions, what's funny 
+is our asynchronous brain will just
+
+905
+00:45:22,466 --> 00:45:25,466
+start spitting out ideas and 
+it'll be a big idea generator
+
+906
+00:45:25,466 --> 00:45:28,466
+and hopefully, you'll find 
+a way to exercise it.
+
+907
+00:45:28,466 --> 00:45:31,466
+And when I tell you, like when you
+
+908
+00:45:31,466 --> 00:45:34,466
+feel confused, or when you feel down, or
+
+909
+00:45:34,466 --> 00:45:37,466
+upset or scared, all
+
+910
+00:45:37,466 --> 00:45:40,466
+of those emotions are the 
+place where all the good stuff
+
+911
+00:45:40,466 --> 00:45:43,466
+comes from. Great ideas don't 
+come from people who've
+
+912
+00:45:43,466 --> 00:45:46,466
+already got everything 
+figured out, and
+
+913
+00:45:46,466 --> 00:45:49,466
+when the bar's that low, you 
+fling over it and hopefully
+
+914
+00:45:49,466 --> 00:45:52,466
+wind up in a better place. The important 
+thing is you've gotta find your outlet
+
+915
+00:45:52,466 --> 00:45:55,466
+And I don't know what that
+outlet is for everybody
+
+916
+00:45:55,466 --> 00:45:58,466
+In fact it's important for me to mention 
+that that outlet might not have anything
+
+917
+00:45:58,466 --> 00:46:01,466
+to do with software. Certainly, if
+
+918
+00:46:01,466 --> 00:46:04,466
+my outlet for creativity wasn't software,
+
+919
+00:46:04,466 --> 00:46:07,466
+my wrists wouldn't hurt as much and I'd probably 
+get more sun and I'd be in better shape
+
+920
+00:46:07,466 --> 00:46:10,466
+So find what that outlet 
+
+921
+00:46:10,466 --> 00:46:13,466
+is for you, because it may or may not 
+have anything to do with software
+
+922
+00:46:13,466 --> 00:46:16,466
+Tomorrow, I was here last year, 
+and the day after SCNA
+
+923
+00:46:16,466 --> 00:46:19,466
+was one of my favorite days 
+last year, because I just sat
+
+924
+00:46:19,466 --> 00:46:22,466
+on Manhattan beach and watched 
+football and drank with Big Ten football
+
+925
+00:46:22,466 --> 00:46:25,466
+from 9am to 3pm which is 
+something I can't do in the
+
+926
+00:46:25,466 --> 00:46:28,466
+eastern time zone, so that was really 
+cool. But tomorrow tomorrow,
+
+927
+00:46:28,466 --> 00:46:31,466
+we're going to have even more fun, 
+because we're going to be here
+
+928
+00:46:31,466 --> 00:46:34,466
+programming stuff. Todd
+
+929
+00:46:34,466 --> 00:46:37,466
+my partner and I, we're going to join 
+forces tomorrow and we're doing
+
+930
+00:46:37,466 --> 00:46:40,466
+what we call a "test smells", 
+like "code smells" workshop
+
+931
+00:46:40,466 --> 00:46:43,466
+it's a really fun, engaging 
+thing where we all talk
+
+932
+00:46:43,466 --> 00:46:46,466
+together about things about 
+testing that we hate
+
+933
+00:46:46,466 --> 00:46:49,466
+I hope that you come and 
+join, and what we do is
+
+934
+00:46:49,466 --> 00:46:52,466
+listen to stories, and we've 
+got this repository of
+
+935
+00:46:52,466 --> 00:46:55,466
+30 different types of problematic 
+tests, work through
+
+936
+00:46:55,466 --> 00:46:58,466
+those examples and really kind of 
+bring a name to a lot of the different
+
+937
+00:46:58,466 --> 00:47:01,466
+antipatterns that we find in tests. I 
+hope that you'll join us, it's a really
+
+938
+00:47:01,466 --> 00:47:04,466
+really fun exercise, and it's going 
+to be happening kind of coincident
+
+939
+00:47:04,466 --> 00:47:07,466
+with the code retreat and 
+what other activities we have
+
+940
+00:47:07,466 --> 00:47:10,466
+tomorrow. So again, my name's @searls
+
+941
+00:47:10,466 --> 00:47:13,466
+or Justin, you can call 
+me whatever you like
+
+942
+00:47:13,466 --> 00:47:16,466
+I hope you tell me on Twitter what you 
+thought of this talk, any feedback
+
+943
+00:47:16,466 --> 00:47:19,466
+you have. Like I mentioned, 
+we're here to
+
+944
+00:47:19,466 --> 00:47:22,466
+fix the software industry and 
+to do that we're gonna
+
+945
+00:47:22,466 --> 00:47:25,466
+need creative people who want to 
+creatively solve those problems and help
+
+946
+00:47:25,466 --> 00:47:28,466
+inspire that in others. If you're 
+interested in joining, our
+
+947
+00:47:28,466 --> 00:47:31,466
+team I hope you'll contact us. 
+And if you know any
+
+948
+00:47:31,466 --> 00:47:34,466
+teams that are looking for 
+that slack. Looking for some
+
+949
+00:47:34,466 --> 00:47:37,466
+outside inspiration, we're 
+always looking for
+
+950
+00:47:37,466 --> 00:47:40,466
+additional clients that we can work with. You 
+can reach us at hello@testdouble.com
+
+951
+00:47:40,466 --> 00:47:43,466
+or find me or Todd tonight or 
+tomorrow, we'd love to talk to you
+
+952
+00:47:43,466 --> 00:47:46,466
+Also got a lot of stickers and 
+business cards we'd like to share
+
+953
+00:47:46,466 --> 00:47:49,466
+But, you know, you've been 
+super patient. Like Todd
+
+954
+00:47:49,466 --> 00:47:52,466
+mentioned, I'm the only one standing 
+between you and free drinks
+
+955
+00:47:52,466 --> 00:47:55,466
+and nobody got up 
+and left, so that's
+
+956
+00:47:55,466 --> 00:47:58,466
+really humbling. Thank you so 
+much for your time today.
