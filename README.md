@@ -1,6 +1,6 @@
 # Supertitle
 
-A little gem to help deal with converting between to & fro various subtitle and
+A little gem to help deal with converting between to & from various subtitle and
 transcript formats. Right now it only handles conversion of
 [SRT](https://en.wikipedia.org/wiki/SubRip#SubRip_text_file_format) files to a
 text transcript that's more appropriate for being read by humans.
