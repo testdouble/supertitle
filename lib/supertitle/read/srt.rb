@@ -7,8 +7,8 @@ module Supertitle::Read
     end
 
     def read
-      lines = @content.
-        split("\n").
+      @content.
+        split(/\r\n|\n/).
         chunk { |line| line == "" }. #<- group by every blank line
         reject { |(blank,_)| blank }. #<- eliminate blank lines
         map { |(_, components)|

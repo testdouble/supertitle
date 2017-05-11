@@ -1,0 +1,4991 @@
+﻿1
+00:00:00,397 --> 00:00:03,458
+- My name is Searls, my
+non-Twitter name is Justin,
+
+2
+00:00:03,458 --> 00:00:05,496
+feel free to call me either.
+
+3
+00:00:05,496 --> 00:00:07,648
+This is what my face looked like in 2011
+
+4
+00:00:07,648 --> 00:00:09,874
+and thanks to how social
+media branding works
+
+5
+00:00:09,874 --> 00:00:12,446
+I'm now stuck with it forever.
+
+6
+00:00:12,446 --> 00:00:14,981
+I work for a company called Test Double,
+
+7
+00:00:14,981 --> 00:00:17,169
+we're a software agency who's on a mission
+
+8
+00:00:17,169 --> 00:00:19,537
+to improve how the world writes software.
+
+9
+00:00:19,537 --> 00:00:23,402
+You can learn more
+about us up at that URL.
+
+10
+00:00:23,402 --> 00:00:27,383
+The title of this presentation
+is How to Program,
+
+11
+00:00:27,383 --> 00:00:29,850
+and it's a rumination on a word workflow,
+
+12
+00:00:29,850 --> 00:00:32,781
+two-part word, work
+being what programs are,
+
+13
+00:00:32,781 --> 00:00:34,393
+their structure and behavior,
+
+14
+00:00:34,393 --> 00:00:38,873
+flow being how we program
+our thoughts and actions.
+
+15
+00:00:38,873 --> 00:00:41,676
+And when I look back on
+my experience learning
+
+16
+00:00:41,676 --> 00:00:43,301
+as a computer science student,
+
+17
+00:00:43,301 --> 00:00:45,311
+they taught me things like data structures
+
+18
+00:00:45,311 --> 00:00:48,920
+and P vs NP and Big O
+analysis and cryptography,
+
+19
+00:00:48,920 --> 00:00:52,280
+and not very much about how
+to think or how to work.
+
+20
+00:00:52,280 --> 00:00:55,285
+And bootschools nowadays
+are actually analogous,
+
+21
+00:00:55,285 --> 00:00:57,491
+even though there are more
+market practical skills
+
+22
+00:00:57,491 --> 00:01:00,038
+like web standards, and system tooling,
+
+23
+00:01:00,038 --> 00:01:02,611
+and languages and frameworks,
+not so much how to think
+
+24
+00:01:02,611 --> 00:01:06,011
+through problems and solve
+stuff, and really write code.
+
+25
+00:01:06,011 --> 00:01:08,174
+And you might think that's
+the job of thoughtleaders,
+
+26
+00:01:08,174 --> 00:01:10,362
+'cause the word thought is
+right there, but really,
+
+27
+00:01:10,362 --> 00:01:12,423
+thoughtleaders, when they're
+talking about design patterns
+
+28
+00:01:12,423 --> 00:01:14,995
+or SOLID principles, even
+when they talk about Agile
+
+29
+00:01:14,995 --> 00:01:17,651
+and Test-Driven Development,
+
+30
+00:01:17,651 --> 00:01:20,275
+those are nice 'cause they
+describe work activities
+
+31
+00:01:20,275 --> 00:01:22,451
+but it's pretty discreet and mostly about
+
+32
+00:01:22,451 --> 00:01:23,292
+how people interact,
+
+33
+00:01:23,292 --> 00:01:25,775
+not so much how to think through things.
+
+34
+00:01:25,775 --> 00:01:29,197
+So it's reasonable to ask
+when do we actually learn
+
+35
+00:01:29,197 --> 00:01:32,219
+flow as programmers, who
+teaches us how to think?
+
+36
+00:01:32,219 --> 00:01:35,751
+And if you're lucky, 10
+years into your career,
+
+37
+00:01:35,751 --> 00:01:40,227
+you'll stumble upon, or
+somebody will show you
+
+38
+00:01:40,227 --> 00:01:41,885
+the only productivity tip
+
+39
+00:01:41,885 --> 00:01:43,933
+that any of us have ever been taught,
+
+40
+00:01:43,933 --> 00:01:45,718
+the Pomodoro technique,
+
+41
+00:01:45,718 --> 00:01:48,751
+(audience laughing and applauding)
+
+42
+00:01:48,751 --> 00:01:49,967
+where you work for 20 minutes
+
+43
+00:01:49,967 --> 00:01:52,604
+and then you take a three minute
+break, it's really awesome,
+
+44
+00:01:52,604 --> 00:01:54,997
+but honestly it kinda
+feels like you put 10 years
+
+45
+00:01:54,997 --> 00:01:58,580
+of hard service in to
+get a $4 plastic pin,
+
+46
+00:02:00,078 --> 00:02:01,828
+it's kinda insulting that that's the best
+
+47
+00:02:01,828 --> 00:02:03,531
+that we have to offer.
+
+48
+00:02:03,531 --> 00:02:07,562
+So sure, somehow we all
+learned what programs are,
+
+49
+00:02:07,562 --> 00:02:09,623
+but I'd hazard a guess that most of us,
+
+50
+00:02:09,623 --> 00:02:12,935
+nobody ever really
+taught us how to program.
+
+51
+00:02:12,935 --> 00:02:15,840
+Look no further than a Google
+search, how to program,
+
+52
+00:02:15,840 --> 00:02:18,169
+and you get a whole bunch
+of terrible results,
+
+53
+00:02:18,169 --> 00:02:19,366
+starting with the traditional way
+
+54
+00:02:19,366 --> 00:02:21,414
+of teaching people how to program.
+
+55
+00:02:21,414 --> 00:02:23,461
+You start with nothing and
+then somebody shows you
+
+56
+00:02:23,461 --> 00:02:25,791
+a completely finished
+example, the finished product,
+
+57
+00:02:25,791 --> 00:02:27,327
+what the program should be,
+
+58
+00:02:27,327 --> 00:02:30,091
+and then as for connecting
+it it's good luck, have fun.
+
+59
+00:02:30,091 --> 00:02:32,574
+And every single computer
+science assignment
+
+60
+00:02:32,574 --> 00:02:35,377
+that I had in college really resembled
+
+61
+00:02:35,377 --> 00:02:37,387
+the How to Draw an Owl comic,
+
+62
+00:02:37,387 --> 00:02:40,395
+where you start with two circles and then
+
+63
+00:02:40,395 --> 00:02:41,700
+go draw the rest of the owl.
+
+64
+00:02:41,700 --> 00:02:45,348
+(audience laughing)
+
+65
+00:02:45,348 --> 00:02:47,984
+And I spent entire
+weekends cooped up in a lab
+
+66
+00:02:47,984 --> 00:02:51,043
+trying to figure out,
+staring at a blank editor,
+
+67
+00:02:51,043 --> 00:02:53,155
+and no idea how to write code.
+
+68
+00:02:53,155 --> 00:02:54,806
+And it was that moment that I realized
+
+69
+00:02:54,806 --> 00:02:57,392
+that programming's almost
+a philosophical activity
+
+70
+00:02:57,392 --> 00:03:00,476
+that happens mostly in our heads.
+
+71
+00:03:00,476 --> 00:03:02,383
+Of course we've now innovated quite a lot
+
+72
+00:03:02,383 --> 00:03:05,795
+in programmer education
+since I was in college,
+
+73
+00:03:05,795 --> 00:03:09,752
+now we, instead of just
+one big finished example,
+
+74
+00:03:09,752 --> 00:03:11,886
+we've broken it up into two or three steps
+
+75
+00:03:11,886 --> 00:03:14,536
+over the course of a book or a screencast,
+
+76
+00:03:14,536 --> 00:03:17,211
+but very rarely does the
+prose or the explanation
+
+77
+00:03:17,211 --> 00:03:18,938
+actually explain the thinking
+
+78
+00:03:18,938 --> 00:03:22,343
+of how to make that thing more real.
+
+79
+00:03:22,343 --> 00:03:25,505
+It might take years before
+you're able to imitate
+
+80
+00:03:25,505 --> 00:03:28,339
+even an example application from a book.
+
+81
+00:03:28,339 --> 00:03:29,798
+But that word imitation stands out
+
+82
+00:03:29,798 --> 00:03:31,100
+because I think that most of us
+
+83
+00:03:31,100 --> 00:03:33,007
+are just imitating other programmers,
+
+84
+00:03:33,007 --> 00:03:35,375
+we see somebody successful or well-known,
+
+85
+00:03:35,375 --> 00:03:36,373
+and we just try to do things
+
+86
+00:03:36,373 --> 00:03:38,191
+like they seem to be doing things,
+
+87
+00:03:38,191 --> 00:03:41,877
+and that's how we learn and get by.
+
+88
+00:03:41,877 --> 00:03:44,014
+You can see that this is
+endemic in our society
+
+89
+00:03:44,014 --> 00:03:47,214
+as programmers because we're
+really bad at how questions.
+
+90
+00:03:47,214 --> 00:03:49,633
+If I ask how do I know when
+to create a new method,
+
+91
+00:03:49,633 --> 00:03:50,721
+when should I break this thing up
+
+92
+00:03:50,721 --> 00:03:52,359
+into more than one thing?
+
+93
+00:03:52,359 --> 00:03:54,650
+You get really unsophisticated responses,
+
+94
+00:03:54,650 --> 00:03:56,890
+like, "Methods should be
+about three lines long."
+
+95
+00:03:56,890 --> 00:04:00,422
+(audience laughing)
+
+96
+00:04:00,422 --> 00:04:04,339
+And when my wife, she
+likes telling this story,
+
+97
+00:04:05,618 --> 00:04:08,357
+when she was in first grade, Becky,
+
+98
+00:04:08,357 --> 00:04:12,524
+she was told by a teacher that
+sentences were two lines long
+
+99
+00:04:13,656 --> 00:04:16,523
+and so then dutifully,
+for the next several years
+
+100
+00:04:16,523 --> 00:04:17,829
+until she was corrected,
+
+101
+00:04:17,829 --> 00:04:20,568
+she just stamped a period at
+the end of every other line.
+
+102
+00:04:20,568 --> 00:04:22,552
+(audience laughing)
+
+103
+00:04:22,552 --> 00:04:25,099
+And that's funny 'cause
+she's not an adult,
+
+104
+00:04:25,099 --> 00:04:28,401
+and yet here we are with these
+unsophisticated ideas like,
+
+105
+00:04:28,401 --> 00:04:30,065
+"eh, methods should be
+about three lines long,"
+
+106
+00:04:30,065 --> 00:04:33,053
+and no ability to communicate
+above and beyond that.
+
+107
+00:04:33,053 --> 00:04:34,614
+But let's say in spite of all of this,
+
+108
+00:04:34,614 --> 00:04:37,417
+somehow you write a really
+good program one day
+
+109
+00:04:37,417 --> 00:04:39,670
+and you're really proud
+of it, and really happy.
+
+110
+00:04:39,670 --> 00:04:43,369
+And I ask you, okay, so
+what actions were productive
+
+111
+00:04:43,369 --> 00:04:47,260
+or unproductive that
+led you to that point?
+
+112
+00:04:47,260 --> 00:04:49,589
+Or what thoughts led you there,
+
+113
+00:04:49,589 --> 00:04:52,354
+which thought processes were
+successful or unsuccessful,
+
+114
+00:04:52,354 --> 00:04:54,223
+would you be able to
+answer those questions?
+
+115
+00:04:54,223 --> 00:04:55,803
+Most of us wouldn't be able to,
+
+116
+00:04:55,803 --> 00:04:57,812
+and it leads to rampant insecurity
+
+117
+00:04:57,812 --> 00:05:00,692
+from how we educate programmers,
+to the work that we do,
+
+118
+00:05:00,692 --> 00:05:03,508
+to the colleagues that we
+keep, and the overall industry.
+
+119
+00:05:03,508 --> 00:05:05,130
+Now 99% of the work that I have done
+
+120
+00:05:05,130 --> 00:05:08,035
+as a professional programmer
+could be boiled down as
+
+121
+00:05:08,035 --> 00:05:10,032
+a business person trying
+to get a spreadsheet
+
+122
+00:05:10,032 --> 00:05:11,734
+onto the internet.
+
+123
+00:05:11,734 --> 00:05:13,350
+(audience laughing)
+
+124
+00:05:13,350 --> 00:05:15,295
+And yet it's taken me 10 years or so
+
+125
+00:05:15,295 --> 00:05:18,752
+to even become a merely
+competent programmer,
+
+126
+00:05:18,752 --> 00:05:19,877
+clearly something's wrong
+
+127
+00:05:19,877 --> 00:05:21,963
+in how we teach people to program.
+
+128
+00:05:21,963 --> 00:05:24,398
+And this industry is 60 or 70 years old,
+
+129
+00:05:24,398 --> 00:05:26,436
+but we're still searching
+for silver bullets,
+
+130
+00:05:26,436 --> 00:05:28,142
+we always are externalizing the problem
+
+131
+00:05:28,142 --> 00:05:29,792
+and hoping the next
+language, or framework,
+
+132
+00:05:29,792 --> 00:05:32,121
+or library, or process is gonna suddenly
+
+133
+00:05:32,121 --> 00:05:36,614
+make programming explicable,
+and it never works out.
+
+134
+00:05:36,614 --> 00:05:39,114
+And think about that situation
+
+135
+00:05:40,039 --> 00:05:42,562
+where everyone's either
+making stuff up as they go
+
+136
+00:05:42,562 --> 00:05:44,046
+or pretending they understand it,
+
+137
+00:05:44,046 --> 00:05:45,821
+who's gonna succeed in that environment?
+
+138
+00:05:45,821 --> 00:05:47,887
+It's genuinely brilliant people
+
+139
+00:05:47,887 --> 00:05:50,106
+and people with the
+overconfidence of having been told
+
+140
+00:05:50,106 --> 00:05:52,102
+that they're brilliant their whole lives.
+
+141
+00:05:52,102 --> 00:05:55,070
+So imagine that you don't
+look like other programmers
+
+142
+00:05:55,070 --> 00:05:57,524
+and you walk into a room,
+and you lack that privilege
+
+143
+00:05:57,524 --> 00:06:00,311
+of having been told that
+you're brilliant by society,
+
+144
+00:06:00,311 --> 00:06:02,654
+this is a terrifying
+line of work to walk into
+
+145
+00:06:02,654 --> 00:06:05,729
+'cause no one can actually
+explain how to program.
+
+146
+00:06:05,729 --> 00:06:07,598
+And I think that if you
+wanna make programming
+
+147
+00:06:07,598 --> 00:06:09,927
+a more diverse and inclusive industry,
+
+148
+00:06:09,927 --> 00:06:12,063
+we really need to solve this.
+
+149
+00:06:12,063 --> 00:06:15,230
+(audience applauding)
+
+150
+00:06:18,732 --> 00:06:21,103
+And it's obvious that
+the industry has no idea
+
+151
+00:06:21,103 --> 00:06:24,209
+how software works,
+because they're constantly
+
+152
+00:06:24,209 --> 00:06:27,412
+analogizing it to literally
+any other industry,
+
+153
+00:06:27,412 --> 00:06:31,329
+like construction, or
+design, or manufacturing.
+
+154
+00:06:33,860 --> 00:06:37,188
+And because of that they
+control the handful of things
+
+155
+00:06:37,188 --> 00:06:39,517
+that they do understand, like estimates,
+
+156
+00:06:39,517 --> 00:06:41,472
+and when people work, and where they work,
+
+157
+00:06:41,472 --> 00:06:43,494
+instead of the true nut of it
+
+158
+00:06:43,494 --> 00:06:45,879
+which is how we think
+as software developers
+
+159
+00:06:45,879 --> 00:06:47,612
+and how we solve problems.
+
+160
+00:06:47,612 --> 00:06:50,011
+And so how do we fix it?
+
+161
+00:06:50,011 --> 00:06:51,488
+Well fortunately, yesterday at Keynote
+
+162
+00:06:51,488 --> 00:06:53,821
+DHH offered us one solution.
+
+163
+00:06:55,259 --> 00:06:58,532
+(audience laughing)
+
+164
+00:06:58,532 --> 00:07:00,001
+But I'm gonna talk about a different one,
+
+165
+00:07:00,001 --> 00:07:01,443
+I'm gonna talk about feedback loops,
+
+166
+00:07:01,443 --> 00:07:03,523
+because programmers, through compilation,
+
+167
+00:07:03,523 --> 00:07:04,383
+and through testing,
+
+168
+00:07:04,383 --> 00:07:06,435
+we're used to establishing feedback loops
+
+169
+00:07:06,435 --> 00:07:09,735
+to make forward progress,
+and we can do the same things
+
+170
+00:07:09,735 --> 00:07:12,425
+inside of our heads
+improving as developers.
+
+171
+00:07:12,425 --> 00:07:14,006
+We're gonna practice this today
+
+172
+00:07:14,006 --> 00:07:16,250
+by reflecting on the actions we take
+
+173
+00:07:16,250 --> 00:07:17,625
+and whether they're successful or not,
+
+174
+00:07:17,625 --> 00:07:19,383
+and how to improve our actions.
+
+175
+00:07:19,383 --> 00:07:21,186
+You can do the same thing for feelings
+
+176
+00:07:21,186 --> 00:07:23,724
+and actually reflect
+on your emotional state
+
+177
+00:07:23,724 --> 00:07:25,984
+so that you can reinforce
+positive emotions
+
+178
+00:07:25,984 --> 00:07:27,939
+or mitigate negative ones.
+
+179
+00:07:27,939 --> 00:07:32,369
+And, spoiler alert, you can
+actually think about thinking,
+
+180
+00:07:32,369 --> 00:07:33,659
+(audience chuckling)
+
+181
+00:07:33,659 --> 00:07:35,475
+and produce better thought processes
+
+182
+00:07:35,475 --> 00:07:37,708
+that turn out to be more productive.
+
+183
+00:07:37,708 --> 00:07:41,230
+This is really the path to
+programmer enlightenment,
+
+184
+00:07:41,230 --> 00:07:43,573
+but I realize that we're
+starting from scratch here,
+
+185
+00:07:43,573 --> 00:07:45,708
+we gotta walk before we can run,
+
+186
+00:07:45,708 --> 00:07:48,911
+and ask yourselves what
+do we do with teams
+
+187
+00:07:48,911 --> 00:07:50,742
+that are still emotionally immature
+
+188
+00:07:50,742 --> 00:07:53,168
+they struggle to even talk about feelings?
+
+189
+00:07:53,168 --> 00:07:56,274
+Well, we hand them
+crappy personality tests
+
+190
+00:07:56,274 --> 00:07:58,937
+like the Myers-Briggs Type Indicator.
+
+191
+00:07:58,937 --> 00:08:00,531
+If you're not familiar
+with the Myers-Briggs
+
+192
+00:08:00,531 --> 00:08:02,958
+just know that it's the worst type system.
+
+193
+00:08:02,958 --> 00:08:05,958
+(audience laughing)
+
+194
+00:08:07,575 --> 00:08:10,231
+The reason we rag on it
+is 'cause it puts people
+
+195
+00:08:10,231 --> 00:08:13,608
+into these silly buckets
+like ENTJ and ISFP,
+
+196
+00:08:13,608 --> 00:08:14,863
+and the implication is that there's only
+
+197
+00:08:14,863 --> 00:08:16,346
+16 types of people out there,
+
+198
+00:08:16,346 --> 00:08:18,905
+but we know that there's much, much more.
+
+199
+00:08:18,905 --> 00:08:20,569
+But when you're starting from zero,
+
+200
+00:08:20,569 --> 00:08:23,384
+16 starts sounding pretty good,
+
+201
+00:08:23,384 --> 00:08:25,630
+so that's why today I
+am pleased to announce
+
+202
+00:08:25,630 --> 00:08:27,419
+the Searls-Briggs Type Indicator.
+
+203
+00:08:27,419 --> 00:08:29,207
+(audience laughing)
+
+204
+00:08:29,207 --> 00:08:32,410
+And instead of pontificating to you today
+
+205
+00:08:32,410 --> 00:08:33,547
+about how to program,
+
+206
+00:08:33,547 --> 00:08:35,350
+and dictating that this
+is the magical way,
+
+207
+00:08:35,350 --> 00:08:37,042
+this is the silver bullet,
+
+208
+00:08:37,042 --> 00:08:39,704
+instead I'm just gonna
+humbly take my own test,
+
+209
+00:08:39,704 --> 00:08:41,728
+show you how I feel and my inclinations
+
+210
+00:08:41,728 --> 00:08:43,975
+and my personality, and what I've done
+
+211
+00:08:43,975 --> 00:08:45,195
+over the course of my career
+
+212
+00:08:45,195 --> 00:08:47,760
+to reflect and improve, and
+result in better outcomes
+
+213
+00:08:47,760 --> 00:08:49,480
+as a programmer.
+
+214
+00:08:49,480 --> 00:08:51,268
+To do that we need an example feature,
+
+215
+00:08:51,268 --> 00:08:52,904
+so let's make one up.
+
+216
+00:08:52,904 --> 00:08:54,610
+Like I mentioned, I work
+at a company Test Double,
+
+217
+00:08:54,610 --> 00:08:57,033
+and we have always been
+a distributed company,
+
+218
+00:08:57,033 --> 00:08:58,860
+but we're still learning
+that that does not mean
+
+219
+00:08:58,860 --> 00:09:00,427
+evenly distributed.
+
+220
+00:09:00,427 --> 00:09:02,133
+So if you've got a flat organization
+
+221
+00:09:02,133 --> 00:09:03,783
+you might think that there's all these
+
+222
+00:09:03,783 --> 00:09:05,668
+spontaneous relationships that form,
+
+223
+00:09:05,668 --> 00:09:07,624
+but of course that's not accurate.
+
+224
+00:09:07,624 --> 00:09:09,010
+We all have our assigned pairs
+
+225
+00:09:09,010 --> 00:09:11,409
+and we all phone home
+to an account manager.
+
+226
+00:09:11,409 --> 00:09:12,751
+Our org chart looks like one of those
+
+227
+00:09:12,751 --> 00:09:15,334
+1980's suction cup ball things,
+
+228
+00:09:16,463 --> 00:09:18,183
+but there's nothing
+wrong with that per se,
+
+229
+00:09:18,183 --> 00:09:19,458
+unless, say two people on the team
+
+230
+00:09:19,458 --> 00:09:21,733
+both really wanna learn Elm.
+
+231
+00:09:21,733 --> 00:09:23,421
+But there's nothing systemically
+
+232
+00:09:23,421 --> 00:09:24,669
+that's gonna get those two people
+
+233
+00:09:24,669 --> 00:09:26,139
+talking together necessarily,
+
+234
+00:09:26,139 --> 00:09:27,636
+so somebody raised the idea,
+
+235
+00:09:27,636 --> 00:09:29,855
+why don't we have virtual
+coffee dates on the team,
+
+236
+00:09:29,855 --> 00:09:32,794
+and just randomly assign
+people to talk to each other
+
+237
+00:09:32,794 --> 00:09:35,484
+that otherwise wouldn't be.
+
+238
+00:09:35,484 --> 00:09:37,312
+There's actually an
+expression from math though,
+
+239
+00:09:37,312 --> 00:09:38,598
+it's called The Handshake Problem,
+
+240
+00:09:38,598 --> 00:09:41,357
+which just calculates the number
+of potential relationships
+
+241
+00:09:41,357 --> 00:09:43,049
+of any group of people,
+
+242
+00:09:43,049 --> 00:09:45,184
+and you see that there's
+just tons of them.
+
+243
+00:09:45,184 --> 00:09:46,986
+And so what the system should do
+
+244
+00:09:46,986 --> 00:09:49,066
+is just send an email every week
+
+245
+00:09:49,066 --> 00:09:51,032
+to pair up people who might not otherwise
+
+246
+00:09:51,032 --> 00:09:52,169
+be talking to one another,
+
+247
+00:09:52,169 --> 00:09:53,556
+and tell 'em go spend 15 minutes
+
+248
+00:09:53,556 --> 00:09:56,121
+on this Google Hangout URL
+and chat about something,
+
+249
+00:09:56,121 --> 00:09:58,298
+it doesn't have to be about work.
+
+250
+00:09:58,298 --> 00:09:59,976
+And so we're gonna put my test to the test
+
+251
+00:09:59,976 --> 00:10:02,856
+and build this feature together
+this morning as a group.
+
+252
+00:10:02,856 --> 00:10:04,767
+And the first bucket
+that I'm gonna put us in
+
+253
+00:10:04,767 --> 00:10:06,777
+is Sensitive versus Fearless,
+
+254
+00:10:06,777 --> 00:10:08,427
+and the first question is,
+
+255
+00:10:08,427 --> 00:10:11,811
+I prefer hearing all
+requirements up front,
+
+256
+00:10:11,811 --> 00:10:14,140
+even if I can't tackle
+them all right away.
+
+257
+00:10:14,140 --> 00:10:15,651
+I strongly disagree with that,
+
+258
+00:10:15,651 --> 00:10:17,912
+I get overwhelmed really easily.
+
+259
+00:10:17,912 --> 00:10:19,409
+Two, adding to a long function
+
+260
+00:10:19,409 --> 00:10:22,044
+feels like more code just won't fit.
+
+261
+00:10:22,044 --> 00:10:25,840
+Absolutely, once I hit a
+certain amount of complexity
+
+262
+00:10:25,840 --> 00:10:28,239
+I can't imagine adding another case.
+
+263
+00:10:28,239 --> 00:10:29,528
+Three, I look forward to being assigned
+
+264
+00:10:29,528 --> 00:10:32,107
+to new projects and teams.
+
+265
+00:10:32,107 --> 00:10:35,607
+No way, new projects give me night sweats.
+
+266
+00:10:36,489 --> 00:10:38,375
+Four, I often feel paralyzed
+
+267
+00:10:38,375 --> 00:10:40,662
+while staring at a blank editor screen.
+
+268
+00:10:40,662 --> 00:10:43,144
+Yeah, I already admitted to that.
+
+269
+00:10:43,144 --> 00:10:45,224
+So does that make me
+Sensitive or Fearless?
+
+270
+00:10:45,224 --> 00:10:47,398
+Pretty obvious in this
+case, I'm Sensitive,
+
+271
+00:10:47,398 --> 00:10:48,452
+a big part of being Sensitive
+
+272
+00:10:48,452 --> 00:10:51,086
+is that I get overwhelmed easily.
+
+273
+00:10:51,086 --> 00:10:53,568
+So think about this feature
+and all I've gotta do,
+
+274
+00:10:53,568 --> 00:10:55,593
+create pairs, great, that's not so hard,
+
+275
+00:10:55,593 --> 00:10:57,728
+but I do have to go and send the email,
+
+276
+00:10:57,728 --> 00:10:59,080
+and I also have to look
+up all these people
+
+277
+00:10:59,080 --> 00:11:00,592
+from a database.
+
+278
+00:11:00,592 --> 00:11:02,783
+But I gotta be careful not to repeat
+
+279
+00:11:02,783 --> 00:11:04,322
+so I gotta randomize the pairings,
+
+280
+00:11:04,322 --> 00:11:06,762
+and I gotta not repeat
+week to week either,
+
+281
+00:11:06,762 --> 00:11:08,911
+which means I also have to persist them.
+
+282
+00:11:08,911 --> 00:11:11,615
+So it's a lotta work, so I don't
+wanna think about all that,
+
+283
+00:11:11,615 --> 00:11:13,584
+I just wanna focus on the core problem.
+
+284
+00:11:13,584 --> 00:11:15,359
+So my inclination is to just do that,
+
+285
+00:11:15,359 --> 00:11:17,661
+put a unit around it, think
+hard about the problem,
+
+286
+00:11:17,661 --> 00:11:19,879
+I could do my little
+Test-Driven Development thing,
+
+287
+00:11:19,879 --> 00:11:21,890
+and I'm feeling really good
+about that unit of code,
+
+288
+00:11:21,890 --> 00:11:24,900
+so then I go to the controller
+that's gonna call it,
+
+289
+00:11:24,900 --> 00:11:26,501
+and I realize that the method signature
+
+290
+00:11:26,501 --> 00:11:27,998
+doesn't quite line up.
+
+291
+00:11:27,998 --> 00:11:30,439
+Or somebody else might say,
+hey, this unit you just made
+
+292
+00:11:30,439 --> 00:11:32,200
+is doing all this extra redundant work
+
+293
+00:11:32,200 --> 00:11:34,585
+that's actually handled elsewhere.
+
+294
+00:11:34,585 --> 00:11:38,162
+My inclination was to overcome
+that paralysis that I felt
+
+295
+00:11:38,162 --> 00:11:41,032
+and find some productivity
+by just putting on blinders.
+
+296
+00:11:41,032 --> 00:11:42,890
+And I fell into that
+rabbit hole often enough
+
+297
+00:11:42,890 --> 00:11:44,235
+that I had to think and reflect,
+
+298
+00:11:44,235 --> 00:11:46,995
+and actually have inverted
+how I work as a programmer.
+
+299
+00:11:46,995 --> 00:11:48,686
+So what I just showed you is often called
+
+300
+00:11:48,686 --> 00:11:51,418
+bottom-up programming, but
+now I practice top-down,
+
+301
+00:11:51,418 --> 00:11:52,902
+it works better for me.
+
+302
+00:11:52,902 --> 00:11:55,065
+You might also call it outside-in,
+
+303
+00:11:55,065 --> 00:11:57,547
+where I think from the
+perspective of the controller,
+
+304
+00:11:57,547 --> 00:11:59,876
+at the top level entry
+point, and I start there,
+
+305
+00:11:59,876 --> 00:12:01,353
+and I ask what do I need?
+
+306
+00:12:01,353 --> 00:12:02,976
+Well I need something
+to create these pairs,
+
+307
+00:12:02,976 --> 00:12:05,111
+and when your brain is focused that way,
+
+308
+00:12:05,111 --> 00:12:07,787
+the caller knows exactly
+what inputs are available,
+
+309
+00:12:07,787 --> 00:12:09,285
+what output it's gonna want,
+
+310
+00:12:09,285 --> 00:12:11,794
+and it's also a way to minimize waste,
+
+311
+00:12:11,794 --> 00:12:15,418
+because it has the broader
+context in terms of
+
+312
+00:12:15,418 --> 00:12:17,029
+what guard clauses need to be inserted
+
+313
+00:12:17,029 --> 00:12:19,262
+or can be omitted.
+
+314
+00:12:19,262 --> 00:12:20,829
+The other aspect of being Sensitive
+
+315
+00:12:20,829 --> 00:12:22,395
+is that I'm really afraid of failure,
+
+316
+00:12:22,395 --> 00:12:23,837
+and when you work outside-in,
+
+317
+00:12:23,837 --> 00:12:26,458
+you do have to juggle all these
+different concerns at once
+
+318
+00:12:26,458 --> 00:12:28,663
+which can, again, be overwhelming.
+
+319
+00:12:28,663 --> 00:12:32,226
+And so what I try to do is
+just rush into solving it,
+
+320
+00:12:32,226 --> 00:12:34,875
+my inclination is just
+to open up an editor
+
+321
+00:12:34,875 --> 00:12:36,386
+and prove that I can write this code,
+
+322
+00:12:36,386 --> 00:12:38,730
+so I start with a module,
+and I make a method,
+
+323
+00:12:38,730 --> 00:12:41,530
+I go load up a bunch of
+users, I loop over them,
+
+324
+00:12:41,530 --> 00:12:43,302
+I skip anyone who's already
+had their hand shaken,
+
+325
+00:12:43,302 --> 00:12:45,873
+otherwise I'll go an add a tuple
+
+326
+00:12:45,873 --> 00:12:47,692
+to represent a pairing, and then I'll go
+
+327
+00:12:47,692 --> 00:12:49,869
+and slam it through some mailer,
+
+328
+00:12:49,869 --> 00:12:50,853
+and now I feel really good,
+
+329
+00:12:50,853 --> 00:12:52,683
+'cause I just proved I could do it.
+
+330
+00:12:52,683 --> 00:12:53,988
+And someone will remind me,
+
+331
+00:12:53,988 --> 00:12:55,176
+remember you gotta randomize it,
+
+332
+00:12:55,176 --> 00:12:58,350
+and you don't wanna leave out
+the 15th person every week,
+
+333
+00:12:58,350 --> 00:13:01,395
+and you've also gotta prevent
+repeats from happening
+
+334
+00:13:01,395 --> 00:13:03,800
+week to week, and now
+I'm terrified because
+
+335
+00:13:03,800 --> 00:13:04,633
+this is already really dense,
+
+336
+00:13:04,633 --> 00:13:06,963
+I don't know how I'm gonna
+make it more complicated.
+
+337
+00:13:06,963 --> 00:13:09,833
+And I'm very familiar with
+this corner of the room
+
+338
+00:13:09,833 --> 00:13:10,833
+as a result.
+
+339
+00:13:11,844 --> 00:13:13,923
+So I keep painting myself into this corner
+
+340
+00:13:13,923 --> 00:13:16,489
+and the root cause is fear,
+I'm afraid of failing,
+
+341
+00:13:16,489 --> 00:13:17,626
+I'm afraid of big things
+
+342
+00:13:17,626 --> 00:13:19,346
+that I don't know how to break down.
+
+343
+00:13:19,346 --> 00:13:21,075
+So my solution is avoid that fear
+
+344
+00:13:21,075 --> 00:13:23,502
+by breaking things down
+in a systematized way,
+
+345
+00:13:23,502 --> 00:13:25,568
+give myself some help.
+
+346
+00:13:25,568 --> 00:13:27,648
+And I've been practicing
+over the last few years,
+
+347
+00:13:27,648 --> 00:13:29,589
+iterating on an approach
+to Test-Driven Development
+
+348
+00:13:29,589 --> 00:13:31,350
+that I call Discovery Testing,
+
+349
+00:13:31,350 --> 00:13:34,747
+and it's really an effort in
+breaking big, scary problems
+
+350
+00:13:34,747 --> 00:13:37,395
+into smaller, more manageable ones.
+
+351
+00:13:37,395 --> 00:13:39,361
+It works with, I start with just a test
+
+352
+00:13:39,361 --> 00:13:41,122
+of that top level thing.
+
+353
+00:13:41,122 --> 00:13:43,823
+So I write a single test
+case, I invoke the thing,
+
+354
+00:13:43,823 --> 00:13:46,013
+and then I ask myself a crucial question,
+
+355
+00:13:46,013 --> 00:13:47,965
+what's the code that I wish I had,
+
+356
+00:13:47,965 --> 00:13:50,225
+that I could defer and
+hand this work out to?
+
+357
+00:13:50,225 --> 00:13:51,678
+Well something to find these hands,
+
+358
+00:13:51,678 --> 00:13:53,772
+something to determine
+who shakes whose hand,
+
+359
+00:13:53,772 --> 00:13:56,115
+something to mail them
+and then persist them.
+
+360
+00:13:56,115 --> 00:13:57,779
+Then I use my test double library,
+
+361
+00:13:57,779 --> 00:13:59,740
+which in Ruby is "gimme",
+
+362
+00:13:59,740 --> 00:14:01,686
+so it creates these four fake things,
+
+363
+00:14:01,686 --> 00:14:02,975
+and I set up a stubbing,
+
+364
+00:14:02,975 --> 00:14:04,622
+so I say, hey, when finds_hands is called
+
+365
+00:14:04,622 --> 00:14:07,077
+it gets you this thing
+to symbolize the hands,
+
+366
+00:14:07,077 --> 00:14:09,862
+and if I pass that to thing
+that determines the shakes,
+
+367
+00:14:09,862 --> 00:14:12,259
+another stubbing'll give
+me these handshakes.
+
+368
+00:14:12,259 --> 00:14:13,881
+This is all the test set-up I need
+
+369
+00:14:13,881 --> 00:14:15,462
+to be able to actually assert
+
+370
+00:14:15,462 --> 00:14:18,000
+that I mail out all those handshakes
+
+371
+00:14:18,000 --> 00:14:19,580
+and that I persist them.
+
+372
+00:14:19,580 --> 00:14:20,953
+Now this is an unusual-looking test
+
+373
+00:14:20,953 --> 00:14:22,312
+to a lot of you I'm sure,
+
+374
+00:14:22,312 --> 00:14:24,412
+but what it does is it perfectly specifies
+
+375
+00:14:24,412 --> 00:14:26,552
+the behavior of that top level unit.
+
+376
+00:14:26,552 --> 00:14:28,389
+And so I get this test to pass,
+
+377
+00:14:28,389 --> 00:14:31,232
+and I never have to worry
+about that top level again.
+
+378
+00:14:31,232 --> 00:14:33,242
+In fact, if you list out
+all the files that shake out
+
+379
+00:14:33,242 --> 00:14:34,962
+from just getting that test to pass,
+
+380
+00:14:34,962 --> 00:14:38,525
+now I have a pretty clear
+work cut out for me,
+
+381
+00:14:38,525 --> 00:14:40,397
+I know exactly what I need to do,
+
+382
+00:14:40,397 --> 00:14:42,685
+I can start making forward progress.
+
+383
+00:14:42,685 --> 00:14:44,529
+So I start off with a big, scary thing,
+
+384
+00:14:44,529 --> 00:14:46,484
+but as I build that test
+I identity the units
+
+385
+00:14:46,484 --> 00:14:49,036
+that I would need to
+actually carve out the work,
+
+386
+00:14:49,036 --> 00:14:50,880
+and instead of one big scary thing,
+
+387
+00:14:50,880 --> 00:14:53,390
+I now have four more digestible problems
+
+388
+00:14:53,390 --> 00:14:55,816
+that I can focus on, and
+if any of them are scary,
+
+389
+00:14:55,816 --> 00:14:58,978
+I now have in my back
+pocket a tool that I can use
+
+390
+00:14:58,978 --> 00:15:02,561
+to reduce and break
+things up even further.
+
+391
+00:15:04,094 --> 00:15:05,453
+The second bucket I'm gonna talk about
+
+392
+00:15:05,453 --> 00:15:07,491
+is Inventive versus Aesthetic,
+
+393
+00:15:07,491 --> 00:15:11,360
+so there's some quiz questions
+to determine my type.
+
+394
+00:15:11,360 --> 00:15:13,301
+Question one, it's more important
+to build the right thing
+
+395
+00:15:13,301 --> 00:15:15,561
+than to build the thing right.
+
+396
+00:15:15,561 --> 00:15:16,906
+Eh, these are both important,
+
+397
+00:15:16,906 --> 00:15:19,208
+but I'm more implementation-focused.
+
+398
+00:15:19,208 --> 00:15:21,413
+Question two, I love
+experimenting with new tools,
+
+399
+00:15:21,413 --> 00:15:23,285
+frameworks, and build systems.
+
+400
+00:15:23,285 --> 00:15:25,406
+Not at all, I do spend a lot of my time
+
+401
+00:15:25,406 --> 00:15:26,953
+in open source here, but it's expressly
+
+402
+00:15:26,953 --> 00:15:29,633
+so I don't have to worry about it at work.
+
+403
+00:15:29,633 --> 00:15:32,115
+Question three, I strive to
+write visually appealing code,
+
+404
+00:15:32,115 --> 00:15:34,111
+down to syntax and symmetry.
+
+405
+00:15:34,111 --> 00:15:35,235
+Absolutely, I don't know why,
+
+406
+00:15:35,235 --> 00:15:39,075
+but I really like
+pretty, symmetrical code.
+
+407
+00:15:39,075 --> 00:15:41,502
+Question four, it's boring
+when all the code in a project
+
+408
+00:15:41,502 --> 00:15:43,041
+is structured similarly.
+
+409
+00:15:43,041 --> 00:15:46,452
+I disagree, I really
+like consistency in code.
+
+410
+00:15:46,452 --> 00:15:48,560
+So does that make me
+Inventive or Aesthetic?
+
+411
+00:15:48,560 --> 00:15:50,751
+Well I think it makes
+me a little Aesthetic.
+
+412
+00:15:50,751 --> 00:15:54,189
+And one part of being Aesthetic
+is I have refined taste.
+
+413
+00:15:54,189 --> 00:15:58,529
+Now the problem with taste is
+that nobody knows what it is
+
+414
+00:15:58,529 --> 00:16:00,526
+(audience laughing)
+
+415
+00:16:00,526 --> 00:16:02,481
+until somebody on your
+team says, you know what,
+
+416
+00:16:02,481 --> 00:16:04,117
+I'd prefer a 300-line function
+
+417
+00:16:04,117 --> 00:16:06,184
+to all these well-named little small units
+
+418
+00:16:06,184 --> 00:16:07,847
+that you keep creating.
+
+419
+00:16:07,847 --> 00:16:10,038
+And then my face looks like this.
+
+420
+00:16:10,038 --> 00:16:13,117
+(audience laughing)
+
+421
+00:16:13,117 --> 00:16:14,531
+That's taste.
+
+422
+00:16:14,531 --> 00:16:17,665
+(audience laughing)
+
+423
+00:16:17,665 --> 00:16:20,646
+And so why do programmers
+develop taste, well it's obvious,
+
+424
+00:16:20,646 --> 00:16:22,268
+when you're staring at
+a blank editor screen,
+
+425
+00:16:22,268 --> 00:16:25,097
+there are infinitely many ways
+to solve any given problem,
+
+426
+00:16:25,097 --> 00:16:28,175
+we need something to constrain ourselves,
+
+427
+00:16:28,175 --> 00:16:30,962
+some patterns to follow
+to just not be stuck
+
+428
+00:16:30,962 --> 00:16:33,402
+in analysis paralysis forever.
+
+429
+00:16:33,402 --> 00:16:36,148
+And that's why I think that
+prose is a much better analogy
+
+430
+00:16:36,148 --> 00:16:39,559
+to writing software than construction is.
+
+431
+00:16:39,559 --> 00:16:41,819
+In fact, I think of programming
+as just communication
+
+432
+00:16:41,819 --> 00:16:44,426
+to the next developer
+who's gonna pick it up,
+
+433
+00:16:44,426 --> 00:16:47,296
+and it's just hard
+because it has to happen
+
+434
+00:16:47,296 --> 00:16:49,154
+through this filter
+that's just formal enough
+
+435
+00:16:49,154 --> 00:16:51,328
+for an interpreter or a
+compiler to understand.
+
+436
+00:16:51,328 --> 00:16:54,489
+And so when I hear this
+feedback I reflect,
+
+437
+00:16:54,489 --> 00:16:57,637
+and I take it to mean as a critique,
+
+438
+00:16:57,637 --> 00:17:00,077
+that maybe I'm writing code
+that's meant to be read
+
+439
+00:17:00,077 --> 00:17:02,213
+by myself as opposed to another human,
+
+440
+00:17:02,213 --> 00:17:04,806
+because the other developer,
+they're not in the room,
+
+441
+00:17:04,806 --> 00:17:07,981
+so I tend to write code that I
+think that I would wanna read
+
+442
+00:17:07,981 --> 00:17:10,047
+and this leads to self-centered design.
+
+443
+00:17:10,047 --> 00:17:12,377
+So if I just write a
+book on design patterns
+
+444
+00:17:12,377 --> 00:17:14,221
+I'm gonna create a bunch
+of units like services,
+
+445
+00:17:14,221 --> 00:17:16,301
+and factories, and repositories,
+
+446
+00:17:16,301 --> 00:17:18,963
+and I'm gonna feel really
+brilliant having done all this,
+
+447
+00:17:18,963 --> 00:17:20,724
+but then somebody else could list out
+
+448
+00:17:20,724 --> 00:17:24,662
+all of the files I just
+created in one big listing.
+
+449
+00:17:24,662 --> 00:17:27,685
+From their perspective, it's
+gonna be inpenetrably complex,
+
+450
+00:17:27,685 --> 00:17:29,109
+it's a forest of all these objects,
+
+451
+00:17:29,109 --> 00:17:31,328
+no idea how things are gonna work.
+
+452
+00:17:31,328 --> 00:17:33,658
+And so now when I hear that critique,
+
+453
+00:17:33,658 --> 00:17:35,197
+they've got a pretty good point.
+
+454
+00:17:35,197 --> 00:17:37,235
+And I found this happen
+on team after team,
+
+455
+00:17:37,235 --> 00:17:38,507
+and what it made me realize is
+
+456
+00:17:38,507 --> 00:17:40,262
+I gotta start working differently
+
+457
+00:17:40,262 --> 00:17:42,408
+to make my code more
+discoverable and approachable
+
+458
+00:17:42,408 --> 00:17:47,053
+for other developers, and now
+I do things much differently.
+
+459
+00:17:47,053 --> 00:17:50,145
+It started with realizing
+programs are directed graphs,
+
+460
+00:17:50,145 --> 00:17:53,112
+so all of these units are really
+kind of nodes in this graph
+
+461
+00:17:53,112 --> 00:17:56,856
+and all of the edges or
+vertices are function calls.
+
+462
+00:17:56,856 --> 00:17:58,409
+So the Locator calls the Service,
+
+463
+00:17:58,409 --> 00:18:00,226
+which calls this Repository,
+which calls this Mapper,
+
+464
+00:18:00,226 --> 00:18:01,680
+which instantiates Hands,
+
+465
+00:18:01,680 --> 00:18:02,970
+Service also calls this Factory,
+
+466
+00:18:02,970 --> 00:18:05,022
+which calls that thing and that thing.
+
+467
+00:18:05,022 --> 00:18:07,696
+And we already, 'cause we
+think of programs this way,
+
+468
+00:18:07,696 --> 00:18:10,523
+we have some taste, we have
+some constraining principles
+
+469
+00:18:10,523 --> 00:18:11,868
+that we share.
+
+470
+00:18:11,868 --> 00:18:13,102
+Like for instance, if this Repository
+
+471
+00:18:13,102 --> 00:18:15,307
+were to call this Service, we would all,
+
+472
+00:18:15,307 --> 00:18:17,623
+wait a second, that's a dependency cycle,
+
+473
+00:18:17,623 --> 00:18:20,389
+we realize there's a risk
+of an infinite recursion
+
+474
+00:18:20,389 --> 00:18:22,885
+or stack overflow there.
+
+475
+00:18:22,885 --> 00:18:24,966
+And so most of the programs
+that we write as developers
+
+476
+00:18:24,966 --> 00:18:27,614
+try to by acyclic diagraphs.
+
+477
+00:18:27,614 --> 00:18:29,677
+And remember my purpose
+here is just to prove
+
+478
+00:18:29,677 --> 00:18:32,214
+that I'm right, I wanna
+tell this person, no,
+
+479
+00:18:32,214 --> 00:18:35,556
+small units is better than
+300 lines objectively,
+
+480
+00:18:35,556 --> 00:18:38,357
+and to do that I thought maybe
+
+481
+00:18:38,357 --> 00:18:39,910
+there's a liberating constraint,
+
+482
+00:18:39,910 --> 00:18:43,196
+maybe if I refine my taste
+further I can solve this problem.
+
+483
+00:18:43,196 --> 00:18:46,482
+And where I landed was, I want
+to express all of my features
+
+484
+00:18:46,482 --> 00:18:49,131
+not as just general graphs, but as trees,
+
+485
+00:18:49,131 --> 00:18:52,015
+because a tree is just a
+special subtype of a graph,
+
+486
+00:18:52,015 --> 00:18:54,400
+you can take this exact
+same menagerie of units
+
+487
+00:18:54,400 --> 00:18:55,981
+and organize it in a tree shape
+
+488
+00:18:55,981 --> 00:18:58,490
+where you have your
+value objects on the left
+
+489
+00:18:58,490 --> 00:19:00,775
+and the feature behavior on the right.
+
+490
+00:19:00,775 --> 00:19:03,354
+And now if it's true that I
+have any needless indirection,
+
+491
+00:19:03,354 --> 00:19:06,207
+it stands out in a tree 'cause
+it's just got one child,
+
+492
+00:19:06,207 --> 00:19:07,774
+so that service locator, yeah,
+
+493
+00:19:07,774 --> 00:19:09,462
+I can probably get rid of that.
+
+494
+00:19:09,462 --> 00:19:11,824
+And if somebody asks, if
+what they're looking for
+
+495
+00:19:11,824 --> 00:19:13,917
+is how to compare two hands,
+
+496
+00:19:13,917 --> 00:19:16,358
+they can search the tree
+much more easily and quickly
+
+497
+00:19:16,358 --> 00:19:19,057
+than just a gigantic directory of files
+
+498
+00:19:19,057 --> 00:19:20,736
+and find what they're looking for,
+
+499
+00:19:20,736 --> 00:19:23,232
+so it's more discoverable.
+
+500
+00:19:23,232 --> 00:19:25,645
+The other aspect of my
+Aesthetic is I'm a minimalist,
+
+501
+00:19:25,645 --> 00:19:28,695
+so when you look at our
+app you see it's car,
+
+502
+00:19:28,695 --> 00:19:31,715
+it drives, you think
+about what its function is
+
+503
+00:19:31,715 --> 00:19:33,101
+and why it exists.
+
+504
+00:19:33,101 --> 00:19:34,474
+When I look at our app,
+
+505
+00:19:34,474 --> 00:19:36,956
+all I see is the clutter and the mess.
+
+506
+00:19:36,956 --> 00:19:38,370
+(audience chuckling)
+
+507
+00:19:38,370 --> 00:19:40,686
+And as a minimalist,
+my productivity goes up
+
+508
+00:19:40,686 --> 00:19:43,320
+when things are tidy and
+symmetrical and terse,
+
+509
+00:19:43,320 --> 00:19:46,593
+and it goes down when things
+are cluttered or inconsistent.
+
+510
+00:19:46,593 --> 00:19:50,226
+And what the software's
+supposed to be doing
+
+511
+00:19:50,226 --> 00:19:52,514
+is its essential complexity,
+
+512
+00:19:52,514 --> 00:19:55,897
+everything it actually does
+is its incidental complexity,
+
+513
+00:19:55,897 --> 00:19:56,730
+the other stuff,
+
+514
+00:19:56,730 --> 00:19:59,142
+think of everything that
+goes into writing a program.
+
+515
+00:19:59,142 --> 00:20:01,748
+You're writing deploy
+tooling and app config,
+
+516
+00:20:01,748 --> 00:20:04,563
+and dependencies, and
+framework appeasement.
+
+517
+00:20:04,563 --> 00:20:07,212
+Then of course there's whatever
+the app was supposed to do,
+
+518
+00:20:07,212 --> 00:20:09,264
+there's style rules,
+continuous integration,
+
+519
+00:20:09,264 --> 00:20:12,495
+build systems, and then of
+course unnecessary stuff.
+
+520
+00:20:12,495 --> 00:20:14,796
+As a minimalist, I'm the
+person on the project
+
+521
+00:20:14,796 --> 00:20:17,805
+who's always chiseling away
+to try to minimize the amount
+
+522
+00:20:17,805 --> 00:20:20,093
+of incidental complexity in the system,
+
+523
+00:20:20,093 --> 00:20:22,769
+and trying to maximize the
+time that the team spends
+
+524
+00:20:22,769 --> 00:20:24,988
+on whatever's really important.
+
+525
+00:20:24,988 --> 00:20:27,082
+That means I'm always
+tweaking my code style,
+
+526
+00:20:27,082 --> 00:20:29,519
+like maybe I'd start
+writing a feature behavior
+
+527
+00:20:29,519 --> 00:20:31,210
+inside of my model objects,
+
+528
+00:20:31,210 --> 00:20:33,429
+but then separate them
+out into separate units,
+
+529
+00:20:33,429 --> 00:20:35,048
+but then maybe make them cullables,
+
+530
+00:20:35,048 --> 00:20:37,638
+but maybe ultimately
+land at module methods.
+
+531
+00:20:37,638 --> 00:20:40,411
+These are all fine, you can
+debate the finer points,
+
+532
+00:20:40,411 --> 00:20:41,992
+but at the end of the day
+they're really six of one,
+
+533
+00:20:41,992 --> 00:20:44,376
+half a dozen of the
+other kinds of arguments.
+
+534
+00:20:44,376 --> 00:20:46,290
+And they represent a sort of trap,
+
+535
+00:20:46,290 --> 00:20:49,202
+because earlier I said
+style rules, debating style,
+
+536
+00:20:49,202 --> 00:20:51,656
+is a type of incidental complexity
+
+537
+00:20:51,656 --> 00:20:53,070
+'cause style is subjective,
+
+538
+00:20:53,070 --> 00:20:55,705
+and so it changes around arbitrarily.
+
+539
+00:20:55,705 --> 00:20:58,548
+And arbitrary decisions
+breed inconsistency,
+
+540
+00:20:58,548 --> 00:21:00,752
+and, oh it turns out that inconsistency
+
+541
+00:21:00,752 --> 00:21:03,248
+is another form of incidental complexity.
+
+542
+00:21:03,248 --> 00:21:04,331
+And so, oops.
+
+543
+00:21:06,562 --> 00:21:08,767
+Because if on Monday I
+organize code this way,
+
+544
+00:21:08,767 --> 00:21:10,763
+and on Tuesday this way,
+and Wednesday that way,
+
+545
+00:21:10,763 --> 00:21:12,705
+and then by Thursday I've
+decided this is the best way
+
+546
+00:21:12,705 --> 00:21:15,783
+to organize code, everyone's
+gonna get mad at me,
+
+547
+00:21:15,783 --> 00:21:18,695
+because I've just littered
+36 custom little styles
+
+548
+00:21:18,695 --> 00:21:20,303
+all throughout the system.
+
+549
+00:21:20,303 --> 00:21:23,021
+So my temptation to
+continuously be improving stuff
+
+550
+00:21:23,021 --> 00:21:25,018
+actually breeds inconsistency
+
+551
+00:21:25,018 --> 00:21:28,609
+and creates bigger messes
+elsewhere, so I reflected on how,
+
+552
+00:21:28,609 --> 00:21:30,155
+I think what was happening is I'd chase
+
+553
+00:21:30,155 --> 00:21:32,915
+the local optimization at the expense
+
+554
+00:21:32,915 --> 00:21:34,579
+of the global optimization
+
+555
+00:21:34,579 --> 00:21:36,950
+of what's best for the overall project.
+
+556
+00:21:36,950 --> 00:21:39,570
+And I had to learn to
+avoid this oscillation
+
+557
+00:21:39,570 --> 00:21:42,815
+in my design, and it really
+required me to just realize
+
+558
+00:21:42,815 --> 00:21:46,684
+I'd spend the entire
+project spinning my tires.
+
+559
+00:21:46,684 --> 00:21:48,486
+And so instead I decided
+
+560
+00:21:48,486 --> 00:21:50,372
+I need to just lock in these decisions,
+
+561
+00:21:50,372 --> 00:21:52,036
+and say we're just gonna
+do things this style,
+
+562
+00:21:52,036 --> 00:21:54,435
+whether or not it's better
+or worse, it doesn't matter,
+
+563
+00:21:54,435 --> 00:21:56,889
+so we can try to carve
+out time to be productive.
+
+564
+00:21:56,889 --> 00:21:59,759
+And as I got better at that,
+at flexing that muscle,
+
+565
+00:21:59,759 --> 00:22:02,394
+I could recognize where I'm
+spinning my wheels earlier
+
+566
+00:22:02,394 --> 00:22:04,210
+and spend more of my
+time being productive,
+
+567
+00:22:04,210 --> 00:22:06,027
+it was a way for me to
+both be a minimalist
+
+568
+00:22:06,027 --> 00:22:09,452
+but also really consistent
+in my applications,
+
+569
+00:22:09,452 --> 00:22:11,226
+even when it meant hewing really strongly
+
+570
+00:22:11,226 --> 00:22:12,717
+to arbitrary decisions of things
+
+571
+00:22:12,717 --> 00:22:14,853
+that didn't really matter.
+
+572
+00:22:14,853 --> 00:22:15,796
+And when you do that,
+
+573
+00:22:15,796 --> 00:22:18,916
+especially with your
+incidental complexity,
+
+574
+00:22:18,916 --> 00:22:21,411
+it brings the essential
+complexity into sharper relief,
+
+575
+00:22:21,411 --> 00:22:23,901
+so you can all as a
+team really just focus,
+
+576
+00:22:23,901 --> 00:22:27,381
+spend more time on what
+your app really needs to do.
+
+577
+00:22:27,381 --> 00:22:30,210
+The third bucket is Naive versus Leery.
+
+578
+00:22:30,210 --> 00:22:32,872
+Question one, publishing
+metrics like code coverage
+
+579
+00:22:32,872 --> 00:22:34,966
+is always a good idea.
+
+580
+00:22:34,966 --> 00:22:38,640
+Eh, I think radical
+transparency often backfires.
+
+581
+00:22:38,640 --> 00:22:41,663
+Question two, writing
+good commit messages today
+
+582
+00:22:41,663 --> 00:22:43,743
+will pay off in the future.
+
+583
+00:22:43,743 --> 00:22:48,000
+Secret, I don't actually
+read commit messages, so eh.
+
+584
+00:22:48,000 --> 00:22:50,731
+Three, software teams will
+make smarter use of time
+
+585
+00:22:50,731 --> 00:22:54,898
+under pressure, disagree, I
+think pressure kills cognition.
+
+586
+00:22:56,056 --> 00:22:58,552
+Four, software is generally
+improving over time
+
+587
+00:22:58,552 --> 00:23:00,385
+and we are not doomed.
+
+588
+00:23:01,963 --> 00:23:05,707
+(audience laughing)
+
+589
+00:23:05,707 --> 00:23:09,575
+Pass, so does that make me Naive or Leery,
+
+590
+00:23:09,575 --> 00:23:11,711
+I'm starting to realize this
+is a pretty obvious test,
+
+591
+00:23:11,711 --> 00:23:13,416
+in my case I'm Leery.
+
+592
+00:23:13,416 --> 00:23:16,605
+It all starts with my
+distrust of all of you.
+
+593
+00:23:16,605 --> 00:23:18,838
+(audience laughing)
+
+594
+00:23:18,838 --> 00:23:21,944
+Because most teams operate
+in a pressure cooker.
+
+595
+00:23:21,944 --> 00:23:23,760
+They're under pressure
+to get as much stuff done
+
+596
+00:23:23,760 --> 00:23:27,795
+as fast as possible, and as a
+result their brains turn off,
+
+597
+00:23:27,795 --> 00:23:30,527
+and it results in really,
+really bad outcomes.
+
+598
+00:23:30,527 --> 00:23:32,634
+In fact it's not very
+fair to pressure cookers
+
+599
+00:23:32,634 --> 00:23:35,477
+because pressure cookers
+serve a useful purpose.
+
+600
+00:23:35,477 --> 00:23:37,266
+(audience chuckling)
+
+601
+00:23:37,266 --> 00:23:39,276
+So I'll find another analogy.
+
+602
+00:23:39,276 --> 00:23:42,276
+(audience laughing)
+
+603
+00:23:43,450 --> 00:23:46,556
+Where we're just being
+squeezed for all of the Ruby
+
+604
+00:23:46,556 --> 00:23:48,709
+and JavaScript that we're worth,
+
+605
+00:23:48,709 --> 00:23:52,876
+and again, not being creative,
+not resulting in good code.
+
+606
+00:23:54,512 --> 00:23:56,051
+One person on teams I don't trust
+
+607
+00:23:56,051 --> 00:23:57,923
+is I don't trust product owners,
+
+608
+00:23:57,923 --> 00:24:00,058
+I love 'em, but I don't trust 'em.
+
+609
+00:24:00,058 --> 00:24:02,221
+Back in the Waterfall
+days, a product owner
+
+610
+00:24:02,221 --> 00:24:04,301
+would be able to specify 300 bullet points
+
+611
+00:24:04,301 --> 00:24:05,743
+of everything that they ever wanted
+
+612
+00:24:05,743 --> 00:24:07,906
+and then foist them upon us, and we'd say,
+
+613
+00:24:07,906 --> 00:24:10,610
+hey, this is awful, but in a
+way at least it was honest,
+
+614
+00:24:10,610 --> 00:24:13,106
+they got to articulate everything
+that they wanted up front,
+
+615
+00:24:13,106 --> 00:24:14,645
+it was just us who
+didn't know how to handle
+
+616
+00:24:14,645 --> 00:24:16,642
+that much complexity.
+
+617
+00:24:16,642 --> 00:24:20,025
+Scrum and Agile stuff gave
+us a little bit of a backbone
+
+618
+00:24:20,025 --> 00:24:23,589
+and we said, no sir, you only
+get one index card at a time,
+
+619
+00:24:23,589 --> 00:24:25,333
+and in fact that's gonna be 20 points,
+
+620
+00:24:25,333 --> 00:24:27,399
+and I made up what points mean.
+
+621
+00:24:27,399 --> 00:24:30,310
+(audience laughing)
+
+622
+00:24:30,310 --> 00:24:32,695
+So naturally, then it becomes a debate of,
+
+623
+00:24:32,695 --> 00:24:37,188
+no, I think it's five points,
+and any system can be gamed,
+
+624
+00:24:37,188 --> 00:24:39,268
+and really savvy product owners I know
+
+625
+00:24:39,268 --> 00:24:40,641
+are really good at this.
+
+626
+00:24:40,641 --> 00:24:42,443
+Like oh, you know, this
+is not that complex,
+
+627
+00:24:42,443 --> 00:24:43,719
+it's just a little cartoon whale,
+
+628
+00:24:43,719 --> 00:24:45,688
+you guys can do that right, you have time.
+
+629
+00:24:45,688 --> 00:24:47,477
+And we'll say, oh yeah
+sure, we can do that,
+
+630
+00:24:47,477 --> 00:24:49,529
+and then we realize it's much more complex
+
+631
+00:24:49,529 --> 00:24:52,801
+than we really thought, and
+by then they're out to lunch
+
+632
+00:24:52,801 --> 00:24:55,283
+and we're left holding the bag.
+
+633
+00:24:55,283 --> 00:24:58,237
+So I don't trust product owners.
+
+634
+00:24:58,237 --> 00:25:00,483
+Of course someone I trust
+even less than product owners
+
+635
+00:25:00,483 --> 00:25:03,603
+is other developers, and it's because
+
+636
+00:25:03,603 --> 00:25:05,960
+on day one of a feature
+we neglect to realize
+
+637
+00:25:05,960 --> 00:25:09,191
+a very basic fact; our
+brains can only hold
+
+638
+00:25:09,191 --> 00:25:11,669
+so much stuff in them at once.
+
+639
+00:25:11,669 --> 00:25:13,361
+And so I think the
+developers have this biased
+
+640
+00:25:13,361 --> 00:25:16,159
+towards size and features to
+just whatever number of things
+
+641
+00:25:16,159 --> 00:25:18,474
+they can hold in their head at a time,
+
+642
+00:25:18,474 --> 00:25:20,790
+and naturally, the conclusion that we draw
+
+643
+00:25:20,790 --> 00:25:23,424
+about how big our objects
+and methods should be,
+
+644
+00:25:23,424 --> 00:25:25,518
+is the same size, 'cause then that way
+
+645
+00:25:25,518 --> 00:25:27,820
+we can just put all of
+the things in one place,
+
+646
+00:25:27,820 --> 00:25:30,260
+it seems like the simple solution.
+
+647
+00:25:30,260 --> 00:25:32,285
+But then a month passes and somebody says,
+
+648
+00:25:32,285 --> 00:25:34,254
+hey, you need to add a
+couple additional aspects
+
+649
+00:25:34,254 --> 00:25:38,095
+to this feature, it has to
+do this and this as well.
+
+650
+00:25:38,095 --> 00:25:40,327
+Well, that means that the other stuff,
+
+651
+00:25:40,327 --> 00:25:43,114
+our brain is finite, we can't
+keep it all in our heads
+
+652
+00:25:43,114 --> 00:25:44,847
+at once anymore, but units,
+
+653
+00:25:44,847 --> 00:25:47,565
+we can make files as long
+as we want, and so we just,
+
+654
+00:25:47,565 --> 00:25:50,117
+even though we're incurring a paging cost,
+
+655
+00:25:50,117 --> 00:25:54,748
+we can slam in those additional
+attributes to the feature.
+
+656
+00:25:54,748 --> 00:25:57,313
+But it creates a blindspot for us where
+
+657
+00:25:57,313 --> 00:26:00,211
+now that we're not thinking
+about the persistence,
+
+658
+00:26:00,211 --> 00:26:03,275
+bugs can creep in through that door.
+
+659
+00:26:03,275 --> 00:26:05,161
+And if you work this way, a year passes,
+
+660
+00:26:05,161 --> 00:26:07,199
+and pretty soon your
+units are just gigantic,
+
+661
+00:26:07,199 --> 00:26:09,349
+and they look like this and
+they're riddled with bugs.
+
+662
+00:26:09,349 --> 00:26:11,831
+And normally day 400 is the
+day and I get a phone call
+
+663
+00:26:11,831 --> 00:26:15,741
+saying, hey, can you
+help improve our tests?
+
+664
+00:26:15,741 --> 00:26:17,433
+Of course this isn't a
+testing problem right,
+
+665
+00:26:17,433 --> 00:26:19,873
+it's a complexity management problem,
+
+666
+00:26:19,873 --> 00:26:21,897
+and it's hard for me when
+I see this cycle repeat
+
+667
+00:26:21,897 --> 00:26:25,479
+over and over again, to let that distrust
+
+668
+00:26:25,479 --> 00:26:28,217
+grow into cynicism, and that's not good.
+
+669
+00:26:28,217 --> 00:26:29,950
+And in fact, if I'm empathetic I realize
+
+670
+00:26:29,950 --> 00:26:31,281
+that at the root of this industry,
+
+671
+00:26:31,281 --> 00:26:33,458
+all of us really struggle to predict
+
+672
+00:26:33,458 --> 00:26:35,327
+how complexity is gonna change,
+
+673
+00:26:35,327 --> 00:26:37,601
+and to guess the complexity of stuff,
+
+674
+00:26:37,601 --> 00:26:39,001
+and I do it too.
+
+675
+00:26:39,001 --> 00:26:42,399
+And so what I wanna do
+is change the question,
+
+676
+00:26:42,399 --> 00:26:45,616
+and instead focus on how to
+prepare myself and other people
+
+677
+00:26:45,616 --> 00:26:48,153
+for the inevitable increase of complexity,
+
+678
+00:26:48,153 --> 00:26:51,240
+'cause on any maintained
+system, almost any of them,
+
+679
+00:26:51,240 --> 00:26:52,761
+complexity's gonna go up over time,
+
+680
+00:26:52,761 --> 00:26:55,201
+it's just a matter of what
+that graph looks like.
+
+681
+00:26:55,201 --> 00:26:59,167
+And so like Pascal, I made
+up Searls' Wager in my head,
+
+682
+00:26:59,167 --> 00:27:01,898
+where sure, complexity
+might remain constant,
+
+683
+00:27:01,898 --> 00:27:03,132
+or it might go up.
+
+684
+00:27:03,132 --> 00:27:05,670
+And yeah, we could keep writing
+these brain-sized units,
+
+685
+00:27:05,670 --> 00:27:07,361
+or much smaller ones.
+
+686
+00:27:07,361 --> 00:27:10,190
+And if complexity doesn't
+change, no harm no foul,
+
+687
+00:27:10,190 --> 00:27:12,409
+it doesn't really matter
+how we factor our code,
+
+688
+00:27:12,409 --> 00:27:14,170
+but if it goes up, we
+have a lot of evidence
+
+689
+00:27:14,170 --> 00:27:16,693
+that these larger units cause problems.
+
+690
+00:27:16,693 --> 00:27:18,354
+And the nice thing
+about small ones is that
+
+691
+00:27:18,354 --> 00:27:20,586
+they can actually accommodate
+some additional complexity
+
+692
+00:27:20,586 --> 00:27:23,027
+without too much pain.
+
+693
+00:27:23,027 --> 00:27:24,795
+And that's why on day one of every feature
+
+694
+00:27:24,795 --> 00:27:27,832
+I break things up into
+itty bitty tiny units,
+
+695
+00:27:27,832 --> 00:27:29,606
+to the point where people criticize me.
+
+696
+00:27:29,606 --> 00:27:32,407
+And if you think that my units
+are too small, don't worry,
+
+697
+00:27:32,407 --> 00:27:33,763
+because I trust that you're gonna go
+
+698
+00:27:33,763 --> 00:27:35,399
+and make 'em bigger later.
+
+699
+00:27:35,399 --> 00:27:37,753
+(audience laughing)
+
+700
+00:27:37,753 --> 00:27:39,003
+It'll work out.
+
+701
+00:27:39,941 --> 00:27:42,806
+It's a great way, if you
+struggle with trying to make,
+
+702
+00:27:42,806 --> 00:27:44,302
+follow the Single Responsibility Principle
+
+703
+00:27:44,302 --> 00:27:45,993
+and have every object do one thing,
+
+704
+00:27:45,993 --> 00:27:47,436
+this makes it really, really easy,
+
+705
+00:27:47,436 --> 00:27:49,987
+in fact, this is what
+the tree of functionality
+
+706
+00:27:49,987 --> 00:27:51,831
+shook out as in this example,
+
+707
+00:27:51,831 --> 00:27:54,327
+and every single unit
+serves exactly one purpose,
+
+708
+00:27:54,327 --> 00:27:56,545
+and they all follow one of three rules
+
+709
+00:27:56,545 --> 00:27:59,416
+that I've observed over the
+years of practicing this.
+
+710
+00:27:59,416 --> 00:28:01,981
+The parent nodes are delegator objects,
+
+711
+00:28:01,981 --> 00:28:04,962
+they don't really have
+any logic or branching,
+
+712
+00:28:04,962 --> 00:28:07,389
+maybe just one if condition or something,
+
+713
+00:28:07,389 --> 00:28:08,983
+they mostly just break up the work
+
+714
+00:28:08,983 --> 00:28:11,091
+and hand it off to other things.
+
+715
+00:28:11,091 --> 00:28:12,658
+And the way that I happen to do that
+
+716
+00:28:12,658 --> 00:28:14,183
+is I use this Test-Driven Design
+
+717
+00:28:14,183 --> 00:28:17,218
+where I use test doubles
+to identify and think up
+
+718
+00:28:17,218 --> 00:28:18,561
+what's the code I wish I had
+
+719
+00:28:18,561 --> 00:28:21,217
+that would actually do the real work?
+
+720
+00:28:21,217 --> 00:28:24,143
+What you wanna try to
+maximize is these leaf nodes,
+
+721
+00:28:24,143 --> 00:28:26,847
+so this is where the core
+logic of the application is,
+
+722
+00:28:26,847 --> 00:28:30,022
+it takes inputs and transforms
+into some kinda output,
+
+723
+00:28:30,022 --> 00:28:32,864
+these are pure functions so
+you don't need test doubles,
+
+724
+00:28:32,864 --> 00:28:34,931
+you just are actually testing real logic,
+
+725
+00:28:34,931 --> 00:28:36,040
+these are the kinds of unit tests
+
+726
+00:28:36,040 --> 00:28:38,172
+that everyone likes to write.
+
+727
+00:28:38,172 --> 00:28:39,766
+And it's sorta like functional programming
+
+728
+00:28:39,766 --> 00:28:41,611
+for people who wanna think too hard
+
+729
+00:28:41,611 --> 00:28:43,562
+about functional programming.
+
+730
+00:28:43,562 --> 00:28:44,824
+It makes it very accessible
+
+731
+00:28:44,824 --> 00:28:46,863
+because you can still do it in Ruby,
+
+732
+00:28:46,863 --> 00:28:49,636
+you don't have to change
+languages or something.
+
+733
+00:28:49,636 --> 00:28:52,326
+On the left are my
+values, and value objects,
+
+734
+00:28:52,326 --> 00:28:54,059
+they just wrap a little bit of data,
+
+735
+00:28:54,059 --> 00:28:57,068
+maybe they just hold
+onto a hash or an array,
+
+736
+00:28:57,068 --> 00:28:58,635
+and the methods on them are only allowed
+
+737
+00:28:58,635 --> 00:29:01,782
+to elucidate the data and
+answer questions about the data,
+
+738
+00:29:01,782 --> 00:29:03,585
+as opposed to doing feature work,
+
+739
+00:29:03,585 --> 00:29:05,928
+they're not there to
+actually build features.
+
+740
+00:29:05,928 --> 00:29:07,412
+Instead I think of them as the sludge
+
+741
+00:29:07,412 --> 00:29:09,825
+that flows though the
+pipes of my feature code,
+
+742
+00:29:09,825 --> 00:29:13,055
+they're the types in
+those method signatures.
+
+743
+00:29:13,055 --> 00:29:16,258
+And even if all this abstraction
+doesn't ultimately pay off,
+
+744
+00:29:16,258 --> 00:29:19,226
+and even if that feature doesn't
+change a lot in the future,
+
+745
+00:29:19,226 --> 00:29:21,680
+the very worst case, I've got
+a very discoverable system
+
+746
+00:29:21,680 --> 00:29:23,774
+of carefully named
+things that are obvious,
+
+747
+00:29:23,774 --> 00:29:25,396
+and small and comprehensible,
+
+748
+00:29:25,396 --> 00:29:29,237
+so it's not the worst
+outcome in the world.
+
+749
+00:29:29,237 --> 00:29:33,078
+The third aspect here is
+that I distrust myself,
+
+750
+00:29:33,078 --> 00:29:35,532
+even more than all of you.
+
+751
+00:29:35,532 --> 00:29:37,210
+It's because I worry about the future,
+
+752
+00:29:37,210 --> 00:29:38,999
+and even though I'm not super confident
+
+753
+00:29:38,999 --> 00:29:41,716
+in Today Me's skills,
+I'm even more worried
+
+754
+00:29:41,716 --> 00:29:44,088
+that my future self won't
+be able to program either
+
+755
+00:29:44,088 --> 00:29:45,211
+for some reason.
+
+756
+00:29:45,211 --> 00:29:46,705
+And so when I'm writing a feature,
+
+757
+00:29:46,705 --> 00:29:48,216
+somebody says, build this thing,
+
+758
+00:29:48,216 --> 00:29:49,700
+I'll think about how to build it,
+
+759
+00:29:49,700 --> 00:29:51,932
+and then I'll build a message
+in a bottle for myself
+
+760
+00:29:51,932 --> 00:29:54,484
+in the form of better
+tests and documentation
+
+761
+00:29:54,484 --> 00:29:57,340
+and commit messages,
+things to try to help.
+
+762
+00:29:57,340 --> 00:29:59,850
+And my future self,
+who's wearing sunglasses,
+
+763
+00:29:59,850 --> 00:30:02,914
+is told to change that feature,
+he gets really frustrated,
+
+764
+00:30:02,914 --> 00:30:04,187
+because what those tests mean is
+
+765
+00:30:04,187 --> 00:30:05,903
+now he's got a bunch of other stuff to do
+
+766
+00:30:05,903 --> 00:30:08,107
+every time he wants to make a change,
+
+767
+00:30:08,107 --> 00:30:10,451
+and my future self would
+much rather just start fresh
+
+768
+00:30:10,451 --> 00:30:12,517
+and be able to write new code.
+
+769
+00:30:12,517 --> 00:30:15,124
+And so I kept trying to do myself favors
+
+770
+00:30:15,124 --> 00:30:17,231
+by writing a lot of extra tests,
+
+771
+00:30:17,231 --> 00:30:19,713
+and adding in all this
+quality at the beginning,
+
+772
+00:30:19,713 --> 00:30:21,239
+but it would actually tie my hands,
+
+773
+00:30:21,239 --> 00:30:23,804
+and so I had to reflect
+how do I bake quality
+
+774
+00:30:23,804 --> 00:30:27,825
+into my applications without
+creating an undue burden
+
+775
+00:30:27,825 --> 00:30:29,004
+for my future self,
+
+776
+00:30:29,004 --> 00:30:31,236
+and so I started working
+a little bit differently.
+
+777
+00:30:31,236 --> 00:30:32,955
+Because if this is our
+tree of functionality
+
+778
+00:30:32,955 --> 00:30:35,507
+and our manager comes in
+and says, new requirement,
+
+779
+00:30:35,507 --> 00:30:38,294
+thanks to some HR fiasco all
+handshakes have to happen
+
+780
+00:30:38,294 --> 00:30:40,609
+between three people...
+
+781
+00:30:40,609 --> 00:30:42,398
+(audience chuckling)
+
+782
+00:30:42,398 --> 00:30:43,840
+the traditional way to solve this
+
+783
+00:30:43,840 --> 00:30:46,399
+is to carefully read the existing code,
+
+784
+00:30:46,399 --> 00:30:49,047
+add, remove, change
+tests, change the code,
+
+785
+00:30:49,047 --> 00:30:52,001
+and then try to make as
+small of a mess as possible,
+
+786
+00:30:52,001 --> 00:30:56,084
+and I say small mess
+because any time the purpose
+
+787
+00:30:57,228 --> 00:31:00,478
+of a piece of code has been two things,
+
+788
+00:31:01,748 --> 00:31:03,163
+whenever we change a unit,
+
+789
+00:31:03,163 --> 00:31:05,603
+it carries with it technical debt,
+
+790
+00:31:05,603 --> 00:31:08,068
+it confuses the story of why it existed
+
+791
+00:31:08,068 --> 00:31:10,106
+because it's changed over time.
+
+792
+00:31:10,106 --> 00:31:13,721
+So instead I've been trying
+to make my code disposable,
+
+793
+00:31:13,721 --> 00:31:17,272
+and what that means is that
+when I look at this tree,
+
+794
+00:31:17,272 --> 00:31:19,962
+I search for all of the
+affected units by the change,
+
+795
+00:31:19,962 --> 00:31:22,038
+these are two units that are gonna change,
+
+796
+00:31:22,038 --> 00:31:23,827
+and so then I find the smallest sub-tree
+
+797
+00:31:23,827 --> 00:31:25,338
+that encapsulates that change,
+
+798
+00:31:25,338 --> 00:31:26,933
+and so there it is right there.
+
+799
+00:31:26,933 --> 00:31:30,289
+And then I do something
+unusual, I blow it all up,
+
+800
+00:31:30,289 --> 00:31:32,570
+I just knock it out, 'cause
+I trust that my future self
+
+801
+00:31:32,570 --> 00:31:34,428
+is gonna be able to see
+that top level thing
+
+802
+00:31:34,428 --> 00:31:37,007
+and understand what the contract is.
+
+803
+00:31:37,007 --> 00:31:40,293
+So there he is, he's gonna
+drive out a new solution.
+
+804
+00:31:40,293 --> 00:31:42,956
+And as opposed to just
+changing these old units
+
+805
+00:31:42,956 --> 00:31:44,616
+that implemented the logic the old way
+
+806
+00:31:44,616 --> 00:31:46,446
+and thus wrack up technical debt,
+
+807
+00:31:46,446 --> 00:31:48,915
+instead I trust him to
+drive out a new solution.
+
+808
+00:31:48,915 --> 00:31:52,104
+And in fact, future us is
+gonna have more experience
+
+809
+00:31:52,104 --> 00:31:53,296
+than present-day us,
+
+810
+00:31:53,296 --> 00:31:54,766
+they'll probably have
+a better understanding
+
+811
+00:31:54,766 --> 00:31:57,414
+of the business, they'll be
+able to write better units
+
+812
+00:31:57,414 --> 00:32:00,465
+in the future than we
+ever could hope to today,
+
+813
+00:32:00,465 --> 00:32:02,503
+so this is a healthy way to work.
+
+814
+00:32:02,503 --> 00:32:04,944
+It does mean that I try
+not to reuse code too much
+
+815
+00:32:04,944 --> 00:32:06,948
+in my feature code because any code reuse,
+
+816
+00:32:06,948 --> 00:32:09,291
+like if you have a method
+that's called in nine places,
+
+817
+00:32:09,291 --> 00:32:10,941
+it's really hard to change that method,
+
+818
+00:32:10,941 --> 00:32:13,659
+'cause you have to consider
+nine different placed callers
+
+819
+00:32:13,659 --> 00:32:14,602
+and what they need.
+
+820
+00:32:14,602 --> 00:32:17,001
+It's also really hard to
+throw it away and replace it,
+
+821
+00:32:17,001 --> 00:32:19,413
+so I try not to reuse too much code.
+
+822
+00:32:19,413 --> 00:32:21,354
+And it also forced me
+to let go of this idea
+
+823
+00:32:21,354 --> 00:32:23,781
+that maintainable code
+has to live forever.
+
+824
+00:32:23,781 --> 00:32:28,149
+In fact, as opposed to
+that, this incremental,
+
+825
+00:32:28,149 --> 00:32:30,451
+rewriting the small as
+part of your process,
+
+826
+00:32:30,451 --> 00:32:32,767
+is a way to pay technical debt
+
+827
+00:32:32,767 --> 00:32:34,316
+without saving a rainy day fund
+
+828
+00:32:34,316 --> 00:32:36,798
+for when you finally get to refactor.
+
+829
+00:32:36,798 --> 00:32:40,736
+And in doing that, I
+actually made myself happier,
+
+830
+00:32:40,736 --> 00:32:43,565
+'cause future me does
+not want his job to be
+
+831
+00:32:43,565 --> 00:32:45,988
+fixing all of Justin's old janky tests
+
+832
+00:32:45,988 --> 00:32:48,484
+every time that he changes something.
+
+833
+00:32:48,484 --> 00:32:50,619
+It wants to be able to
+write code for a living,
+
+834
+00:32:50,619 --> 00:32:54,474
+and so this process by
+making death a part of life
+
+835
+00:32:54,474 --> 00:32:55,957
+while we're working through features,
+
+836
+00:32:55,957 --> 00:32:59,812
+is a great way to keep your
+teams happy I've found.
+
+837
+00:32:59,812 --> 00:33:02,918
+The last bucket here is
+Economical versus Thorough.
+
+838
+00:33:02,918 --> 00:33:05,567
+The question one, better
+to ship code quickly
+
+839
+00:33:05,567 --> 00:33:07,854
+than wait until everything is tested.
+
+840
+00:33:07,854 --> 00:33:11,252
+Eh, I feel like I'd just be
+bailing out water in that case.
+
+841
+00:33:11,252 --> 00:33:12,680
+Two, design principles are useful,
+
+842
+00:33:12,680 --> 00:33:14,926
+but most teams waste
+too much time on them.
+
+843
+00:33:14,926 --> 00:33:19,055
+It's possible for sure, but
+few teams are at risk of this.
+
+844
+00:33:19,055 --> 00:33:21,343
+Three, most teams lack a
+sufficient understanding
+
+845
+00:33:21,343 --> 00:33:23,561
+of their dependencies.
+
+846
+00:33:23,561 --> 00:33:26,362
+Absolutely, 90% of us have no clue
+
+847
+00:33:26,362 --> 00:33:29,482
+how most of our code
+works in our applications.
+
+848
+00:33:29,482 --> 00:33:31,049
+And four, it's okay for everyone on a team
+
+849
+00:33:31,049 --> 00:33:33,170
+to maintain separate coding styles.
+
+850
+00:33:33,170 --> 00:33:34,294
+I actually strongly disagree,
+
+851
+00:33:34,294 --> 00:33:36,568
+'cause this leads to siloed development,
+
+852
+00:33:36,568 --> 00:33:39,258
+it's kinda like a Conway's Law of style.
+
+853
+00:33:39,258 --> 00:33:41,462
+So does that make me
+Economical or Thorough?
+
+854
+00:33:41,462 --> 00:33:43,986
+Well of course it makes me Thorough.
+
+855
+00:33:43,986 --> 00:33:47,660
+Some of you are noticing
+that this spells salt,
+
+856
+00:33:47,660 --> 00:33:49,546
+(audience laughing)
+
+857
+00:33:49,546 --> 00:33:50,919
+that's because when you make up the quiz
+
+858
+00:33:50,919 --> 00:33:52,985
+you can make it spell whatever you want.
+
+859
+00:33:52,985 --> 00:33:55,051
+(audience laughing)
+
+860
+00:33:55,051 --> 00:33:56,576
+It's gonna surprise a few
+of you to learn today,
+
+861
+00:33:56,576 --> 00:33:57,713
+I have a confession to make,
+
+862
+00:33:57,713 --> 00:34:00,072
+I'm a bit of a control freak,
+
+863
+00:34:00,072 --> 00:34:03,301
+and that means I'm dubious of free stuff.
+
+864
+00:34:03,301 --> 00:34:05,201
+So when you see a sign
+that says free puppies,
+
+865
+00:34:05,201 --> 00:34:09,208
+all I read is extra
+work, and another thing
+
+866
+00:34:09,208 --> 00:34:11,274
+in our industry that
+makes me think extra work
+
+867
+00:34:11,274 --> 00:34:12,524
+is open source.
+
+868
+00:34:13,701 --> 00:34:15,822
+And so just keep that in your head
+
+869
+00:34:15,822 --> 00:34:18,235
+next time you're on GitHub
+asking for free labor
+
+870
+00:34:18,235 --> 00:34:19,691
+from an open source maintainer,
+
+871
+00:34:19,691 --> 00:34:21,660
+imagine you're yelling at a puppy instead,
+
+872
+00:34:21,660 --> 00:34:24,419
+because who yells at puppies, you jerk.
+
+873
+00:34:24,419 --> 00:34:27,456
+(audience laughing)
+
+874
+00:34:27,456 --> 00:34:29,674
+And open source isn't free
+because just like puppies
+
+875
+00:34:29,674 --> 00:34:31,214
+we have to learn how to use it,
+
+876
+00:34:31,214 --> 00:34:33,404
+we have to learn how it's
+changing and follow it,
+
+877
+00:34:33,404 --> 00:34:35,904
+and it's not just this panacea
+
+878
+00:34:37,370 --> 00:34:39,259
+that we can pull off the internet
+
+879
+00:34:39,259 --> 00:34:42,348
+instead of having to
+build stuff ourselves.
+
+880
+00:34:42,348 --> 00:34:45,444
+And if that open source has a bug,
+
+881
+00:34:45,444 --> 00:34:47,496
+in theory sure, we can fix it ourselves,
+
+882
+00:34:47,496 --> 00:34:49,840
+but in practice we're not gonna
+understand all that stuff,
+
+883
+00:34:49,840 --> 00:34:51,614
+we're probably gonna have
+to rely on a maintainer
+
+884
+00:34:51,614 --> 00:34:54,651
+or an expert to come and fix it later.
+
+885
+00:34:54,651 --> 00:34:56,537
+And finally, if we have a,
+
+886
+00:34:56,537 --> 00:34:58,228
+let's say this is our graph of objects,
+
+887
+00:34:58,228 --> 00:35:01,180
+and it's all very consistent everywhere,
+
+888
+00:35:01,180 --> 00:35:03,494
+and we slam in some third party API,
+
+889
+00:35:03,494 --> 00:35:06,032
+that's gonna create a certain
+amount of friction and pain
+
+890
+00:35:06,032 --> 00:35:08,888
+because it's going to look
+like all of our other objects.
+
+891
+00:35:08,888 --> 00:35:10,718
+In fact, third part dependencies
+
+892
+00:35:10,718 --> 00:35:13,492
+have this really nasty
+habit of leaking references
+
+893
+00:35:13,492 --> 00:35:16,431
+all over our code base, which
+makes it really hard to change
+
+894
+00:35:16,431 --> 00:35:19,551
+or replace or upgrade those
+third part dependencies
+
+895
+00:35:19,551 --> 00:35:20,384
+over time.
+
+896
+00:35:21,617 --> 00:35:23,531
+So my temptation of all
+these negative things
+
+897
+00:35:23,531 --> 00:35:25,943
+about open source and puppies, is to,
+
+898
+00:35:25,943 --> 00:35:27,663
+well I don't have a puppy first of all,
+
+899
+00:35:27,663 --> 00:35:30,325
+again, much to my wife
+Becky's consternation,
+
+900
+00:35:30,325 --> 00:35:33,819
+but two, I try to avoid using open source.
+
+901
+00:35:33,819 --> 00:35:35,677
+That's what my gut tells me to do,
+
+902
+00:35:35,677 --> 00:35:38,059
+but that's increasingly
+untenable these days
+
+903
+00:35:38,059 --> 00:35:40,666
+'cause I'd be reinventing
+wheels constantly.
+
+904
+00:35:40,666 --> 00:35:42,737
+So I had to change how I thought
+about open source instead
+
+905
+00:35:42,737 --> 00:35:46,306
+to maybe protecting myself
+from its blast radius,
+
+906
+00:35:46,306 --> 00:35:48,424
+as opposed to avoiding it entirely.
+
+907
+00:35:48,424 --> 00:35:50,241
+And the way that I do
+that is I write wrappers
+
+908
+00:35:50,241 --> 00:35:52,210
+of all of the third
+party code that I write.
+
+909
+00:35:52,210 --> 00:35:53,860
+In fact we already have
+one up on this tree,
+
+910
+00:35:53,860 --> 00:35:56,037
+it's that Finds Hands unit on the left.
+
+911
+00:35:56,037 --> 00:35:57,049
+So this is a wrapper object,
+
+912
+00:35:57,049 --> 00:35:59,101
+and it starts as just
+a well-named delegator,
+
+913
+00:35:59,101 --> 00:36:02,082
+it's a no-op, it doesn't
+do anything interesting.
+
+914
+00:36:02,082 --> 00:36:04,051
+But it comes to encode
+all of our understanding
+
+915
+00:36:04,051 --> 00:36:07,157
+of that dependency, it is the
+carpet under which we sweep
+
+916
+00:36:07,157 --> 00:36:08,821
+all of the stuff that we have to do
+
+917
+00:36:08,821 --> 00:36:11,248
+to make that third party dependency happy.
+
+918
+00:36:11,248 --> 00:36:12,412
+And I integration test it
+
+919
+00:36:12,412 --> 00:36:14,215
+but only in proportion
+to how suspicious I am
+
+920
+00:36:14,215 --> 00:36:15,574
+of it breaking, otherwise I trust
+
+921
+00:36:15,574 --> 00:36:18,291
+that it itself is tested well.
+
+922
+00:36:18,291 --> 00:36:20,191
+And it might feel like
+needless indirection,
+
+923
+00:36:20,191 --> 00:36:22,507
+but I need you to trust me that it's not.
+
+924
+00:36:22,507 --> 00:36:25,294
+Of course, if this is where
+we're calling Finds Hands
+
+925
+00:36:25,294 --> 00:36:27,318
+in our top level code,
+
+926
+00:36:27,318 --> 00:36:29,107
+and I just told you not
+to trust other developers,
+
+927
+00:36:29,107 --> 00:36:31,062
+so you don't trust me,
+
+928
+00:36:31,062 --> 00:36:33,790
+you assume that that wrapper
+is unnecessary let's say,
+
+929
+00:36:33,790 --> 00:36:35,329
+and instead of using that call
+
+930
+00:36:35,329 --> 00:36:37,728
+we're just gonna call it User.all instead.
+
+931
+00:36:37,728 --> 00:36:38,921
+That way it's much more direct,
+
+932
+00:36:38,921 --> 00:36:40,971
+we got rid of that needless indirection,
+
+933
+00:36:40,971 --> 00:36:42,939
+which means we have to update our test.
+
+934
+00:36:42,939 --> 00:36:44,242
+So this is our original test,
+
+935
+00:36:44,242 --> 00:36:45,986
+we can get rid of that fake finder
+
+936
+00:36:45,986 --> 00:36:48,107
+and instead have an array of real users
+
+937
+00:36:48,107 --> 00:36:49,494
+that we create in the database.
+
+938
+00:36:49,494 --> 00:36:51,865
+Of course, validation failed,
+
+939
+00:36:51,865 --> 00:36:53,709
+so now I have to add a birthdate,
+
+940
+00:36:53,709 --> 00:36:55,595
+some incidental other arbitrary thing
+
+941
+00:36:55,595 --> 00:36:57,869
+to make this work.
+
+942
+00:36:57,869 --> 00:37:00,060
+But I can also get rid
+of this stubbing here
+
+943
+00:37:00,060 --> 00:37:02,278
+and pass real users
+into the other stubbing,
+
+944
+00:37:02,278 --> 00:37:04,067
+and I gotta make an integration test
+
+945
+00:37:04,067 --> 00:37:05,786
+as opposed to a unit test.
+
+946
+00:37:05,786 --> 00:37:09,142
+And ask yourself now, what did we just do,
+
+947
+00:37:09,142 --> 00:37:11,790
+'cause the value of this test
+used to be crystal clear,
+
+948
+00:37:11,790 --> 00:37:13,357
+its purpose was to break the work up
+
+949
+00:37:13,357 --> 00:37:15,853
+into four clear responsibilities,
+
+950
+00:37:15,853 --> 00:37:17,046
+and now what is it?
+
+951
+00:37:17,046 --> 00:37:18,557
+It's calling through to the database
+
+952
+00:37:18,557 --> 00:37:20,415
+so it's making sure that the thing works,
+
+953
+00:37:20,415 --> 00:37:23,133
+but only when three quarters
+of the code pads are fake?
+
+954
+00:37:23,133 --> 00:37:26,183
+That doesn't seem right,
+that seems wrong to me,
+
+955
+00:37:26,183 --> 00:37:29,386
+and it really becomes obviously wrong
+
+956
+00:37:29,386 --> 00:37:30,981
+when this becomes more complex,
+
+957
+00:37:30,981 --> 00:37:32,520
+'cause if we add a couple scopes
+
+958
+00:37:32,520 --> 00:37:35,612
+like only search for full
+time and active employees,
+
+959
+00:37:35,612 --> 00:37:37,540
+then our test isn't enough anymore,
+
+960
+00:37:37,540 --> 00:37:39,190
+'cause those scopes are like branches,
+
+961
+00:37:39,190 --> 00:37:42,559
+so now we need two or three
+test cases to cover everything.
+
+962
+00:37:42,559 --> 00:37:44,154
+And now it's abundantly obvious
+
+963
+00:37:44,154 --> 00:37:46,608
+that we sliced things wrong.
+
+964
+00:37:46,608 --> 00:37:49,686
+So when I hear teams complain
+you have too many abstractions
+
+965
+00:37:49,686 --> 00:37:52,723
+or too many objects,
+typically I think that's,
+
+966
+00:37:52,723 --> 00:37:55,206
+it's not wrong, it's
+not that you're making
+
+967
+00:37:55,206 --> 00:37:57,143
+too many abstractions
+so that no abstraction
+
+968
+00:37:57,143 --> 00:37:58,280
+is somehow better,
+
+969
+00:37:58,280 --> 00:37:59,542
+it's that you're probably mixing
+
+970
+00:37:59,542 --> 00:38:01,247
+the levels of abstraction in your system,
+
+971
+00:38:01,247 --> 00:38:04,215
+because life with wrappers is much easier.
+
+972
+00:38:04,215 --> 00:38:05,241
+If I look at that same thing
+
+973
+00:38:05,241 --> 00:38:07,182
+and dive into what that
+wrapper looks like,
+
+974
+00:38:07,182 --> 00:38:09,803
+yes, on day one, in looks
+like needless indirection,
+
+975
+00:38:09,803 --> 00:38:13,097
+but on day two when it gets more complex,
+
+976
+00:38:13,097 --> 00:38:15,235
+it's easy to write a test for this,
+
+977
+00:38:15,235 --> 00:38:17,103
+there's a place for that complexity to go.
+
+978
+00:38:17,103 --> 00:38:19,987
+And over time it might become
+a little bit more complicated
+
+979
+00:38:19,987 --> 00:38:21,790
+as you distance yourself further here
+
+980
+00:38:21,790 --> 00:38:24,272
+with a transformer to a type that you own,
+
+981
+00:38:24,272 --> 00:38:27,189
+as opposed to an ActiveRecord user.
+
+982
+00:38:29,000 --> 00:38:31,899
+So let's say our boss comes in and says
+
+983
+00:38:31,899 --> 00:38:34,825
+we're gonna change from
+ActiveRecord to the Sequel gem.
+
+984
+00:38:34,825 --> 00:38:36,503
+Traditionally this would really panic
+
+985
+00:38:36,503 --> 00:38:38,166
+everyone in the room
+because you're gonna have
+
+986
+00:38:38,166 --> 00:38:39,622
+a billion references to ActiveRecord
+
+987
+00:38:39,622 --> 00:38:41,189
+all over your system,
+
+988
+00:38:41,189 --> 00:38:42,812
+but when you're writing wrappers carefully
+
+989
+00:38:42,812 --> 00:38:44,309
+of your third party dependencies,
+
+990
+00:38:44,309 --> 00:38:47,457
+you're actually preparing for yourself
+
+991
+00:38:47,457 --> 00:38:49,134
+an adapter interface that's minimal
+
+992
+00:38:49,134 --> 00:38:51,741
+and specifies exactly how
+you use that dependency.
+
+993
+00:38:51,741 --> 00:38:53,280
+So you can even answer questions like
+
+994
+00:38:53,280 --> 00:38:55,707
+would it be possible to switch
+to this third party thing?
+
+995
+00:38:55,707 --> 00:38:57,759
+And if you did, you could create
+an alternate implementation
+
+996
+00:38:57,759 --> 00:38:59,853
+and run both in parallel for awhile.
+
+997
+00:38:59,853 --> 00:39:01,822
+It's a much, much better way to work,
+
+998
+00:39:01,822 --> 00:39:04,285
+and what I found is
+it's a way to maintain,
+
+999
+00:39:04,285 --> 00:39:06,727
+still have all that
+convenience of open source
+
+1000
+00:39:06,727 --> 00:39:08,752
+and sucking in these useful libraries
+
+1001
+00:39:08,752 --> 00:39:12,703
+while maintaining control
+over how you work.
+
+1002
+00:39:12,703 --> 00:39:16,572
+So when you're as introspective
+about this stuff as I am
+
+1003
+00:39:16,572 --> 00:39:18,658
+you run the risk of
+explaining the universe
+
+1004
+00:39:18,658 --> 00:39:20,836
+through yourself.
+
+1005
+00:39:20,836 --> 00:39:22,292
+In fact if you ask
+anyone who's ever worked
+
+1006
+00:39:22,292 --> 00:39:25,245
+on a project with me what my
+favorite way to write code is,
+
+1007
+00:39:25,245 --> 00:39:28,495
+it's my way, and I'll fight you for it.
+
+1008
+00:39:30,237 --> 00:39:32,137
+So my inclination is to
+just work really hard
+
+1009
+00:39:32,137 --> 00:39:34,272
+to convince you all that my way is best,
+
+1010
+00:39:34,272 --> 00:39:36,463
+and I'd love to say that
+that's an altruistic thing
+
+1011
+00:39:36,463 --> 00:39:38,238
+and I want you all to
+be better programmers,
+
+1012
+00:39:38,238 --> 00:39:40,720
+but it's not, it's selfish.
+
+1013
+00:39:40,720 --> 00:39:41,968
+What it really is is I'm afraid
+
+1014
+00:39:41,968 --> 00:39:43,396
+I'm gonna have a manager someday
+
+1015
+00:39:43,396 --> 00:39:47,181
+tell me that I can't write
+code my favorite way anymore.
+
+1016
+00:39:47,181 --> 00:39:48,901
+And when I reflect on that,
+
+1017
+00:39:48,901 --> 00:39:51,244
+even if I were to come up with
+a perfect way to write code
+
+1018
+00:39:51,244 --> 00:39:54,586
+and hand it to you, I run
+the risk of robbing you
+
+1019
+00:39:54,586 --> 00:39:57,554
+of that same autonomy, and so
+that wouldn't be good either,
+
+1020
+00:39:57,554 --> 00:39:59,006
+and so that's why I'm getting out
+
+1021
+00:39:59,006 --> 00:40:00,975
+of the silver bullet business.
+
+1022
+00:40:00,975 --> 00:40:02,375
+So even though I talked a lot today
+
+1023
+00:40:02,375 --> 00:40:06,091
+about how I program, I'm not
+here to sell you on that,
+
+1024
+00:40:06,091 --> 00:40:07,991
+I mean I hope you find some of it useful,
+
+1025
+00:40:07,991 --> 00:40:09,392
+but what I really am here to sell you on
+
+1026
+00:40:09,392 --> 00:40:11,652
+is the idea of pausing an introspecting
+
+1027
+00:40:11,652 --> 00:40:15,545
+about how you act, feel, and
+think while you're programming
+
+1028
+00:40:15,545 --> 00:40:17,611
+so that it becomes more explicable to you,
+
+1029
+00:40:17,611 --> 00:40:19,483
+and then you could articulate
+it to other people,
+
+1030
+00:40:19,483 --> 00:40:21,424
+and improve, and share.
+
+1031
+00:40:21,424 --> 00:40:22,547
+And you might ask yourself, hey,
+
+1032
+00:40:22,547 --> 00:40:24,669
+if we all start thoughtleading ourselves,
+
+1033
+00:40:24,669 --> 00:40:26,915
+won't that just create chaos on our teams?
+
+1034
+00:40:26,915 --> 00:40:29,161
+And I think that's
+actually a valid concern,
+
+1035
+00:40:29,161 --> 00:40:31,491
+so let's spend a minute
+to talk about that.
+
+1036
+00:40:31,491 --> 00:40:33,598
+Because earlier I said if you lock down
+
+1037
+00:40:33,598 --> 00:40:35,290
+all those arbitrary decisions up front
+
+1038
+00:40:35,290 --> 00:40:37,009
+you can spend more time being productive,
+
+1039
+00:40:37,009 --> 00:40:39,741
+that's true individually,
+but it's also true as teams,
+
+1040
+00:40:39,741 --> 00:40:41,363
+and that's why when you have disagreements
+
+1041
+00:40:41,363 --> 00:40:42,778
+with other people on a team,
+
+1042
+00:40:42,778 --> 00:40:44,570
+you should aggressively pull this forward,
+
+1043
+00:40:44,570 --> 00:40:46,553
+because the earlier you
+have that discussion
+
+1044
+00:40:46,553 --> 00:40:49,174
+and say okay, we'll use these semicolons,
+
+1045
+00:40:49,174 --> 00:40:50,657
+or we'll follow this style,
+
+1046
+00:40:50,657 --> 00:40:52,931
+if you can agree to that
+stuff early and lock it in,
+
+1047
+00:40:52,931 --> 00:40:54,540
+you'll as a team be more productive,
+
+1048
+00:40:54,540 --> 00:40:56,537
+and in fact if you look
+at the average team,
+
+1049
+00:40:56,537 --> 00:40:57,743
+remember what I said earlier,
+
+1050
+00:40:57,743 --> 00:41:00,128
+we're all just imitating
+other programmers,
+
+1051
+00:41:00,128 --> 00:41:03,275
+so most teams actually like
+the idea of normalizing.
+
+1052
+00:41:03,275 --> 00:41:05,466
+In fact, some of them like it too much,
+
+1053
+00:41:05,466 --> 00:41:07,089
+where if you have a creative idea
+
+1054
+00:41:07,089 --> 00:41:08,461
+of doing things differently,
+
+1055
+00:41:08,461 --> 00:41:10,416
+oh, I don't wanna rock the boat,
+
+1056
+00:41:10,416 --> 00:41:13,301
+I don't wanna do my own thing off here,
+
+1057
+00:41:13,301 --> 00:41:15,297
+or go off the reservation, quote unquote,
+
+1058
+00:41:15,297 --> 00:41:18,306
+so instead we tend to just gravitate
+
+1059
+00:41:18,306 --> 00:41:20,691
+towards the lowest common
+denominator on a lotta teams,
+
+1060
+00:41:20,691 --> 00:41:22,521
+and that's not good.
+
+1061
+00:41:22,521 --> 00:41:23,728
+But that's not you anymore right,
+
+1062
+00:41:23,728 --> 00:41:26,099
+'cause after today
+you're gonna be thinking
+
+1063
+00:41:26,099 --> 00:41:29,593
+about how the actions you
+take could be improved,
+
+1064
+00:41:29,593 --> 00:41:32,297
+your feelings, improving
+your thought processes,
+
+1065
+00:41:32,297 --> 00:41:34,044
+and on your next team when you join a team
+
+1066
+00:41:34,044 --> 00:41:36,138
+of all enlightened Hugh Jackmans,
+
+1067
+00:41:36,138 --> 00:41:37,400
+(audience chuckling)
+
+1068
+00:41:37,400 --> 00:41:39,064
+some of whom will be SALT,
+
+1069
+00:41:39,064 --> 00:41:40,506
+and some of whom will be FINE,
+
+1070
+00:41:40,506 --> 00:41:42,752
+which is literally what the
+other four traits spell.
+
+1071
+00:41:42,752 --> 00:41:45,220
+(audience laughing)
+
+1072
+00:41:45,220 --> 00:41:47,799
+And some will be SALE
+and some will be FALT,
+
+1073
+00:41:47,799 --> 00:41:49,394
+when you look at this team, yeah sure,
+
+1074
+00:41:49,394 --> 00:41:51,820
+they all have very strongly held opinions
+
+1075
+00:41:51,820 --> 00:41:53,817
+of different ways of doing things,
+
+1076
+00:41:53,817 --> 00:41:54,968
+but the one thing they have in common
+
+1077
+00:41:54,968 --> 00:41:56,396
+is when they're approached
+with a new idea,
+
+1078
+00:41:56,396 --> 00:41:59,146
+they have a system for testing it
+
+1079
+00:42:00,126 --> 00:42:02,761
+and figuring out whether
+to adopt or reject it,
+
+1080
+00:42:02,761 --> 00:42:05,076
+and so they're not afraid
+of trying new things.
+
+1081
+00:42:05,076 --> 00:42:07,937
+And that's why I think that
+really introspected developers,
+
+1082
+00:42:07,937 --> 00:42:09,406
+when they're on a team,
+they might just look like
+
+1083
+00:42:09,406 --> 00:42:10,932
+they're talking at the whiteboard all day,
+
+1084
+00:42:10,932 --> 00:42:12,984
+but they can actually have
+a multiplicative impact
+
+1085
+00:42:12,984 --> 00:42:14,897
+on each other as they grow.
+
+1086
+00:42:14,897 --> 00:42:16,603
+And that's really my dream today,
+
+1087
+00:42:16,603 --> 00:42:20,735
+is that if we can, as an
+industry, normalize the concept
+
+1088
+00:42:20,735 --> 00:42:23,730
+of metacognition, and self-improvement,
+
+1089
+00:42:23,730 --> 00:42:25,754
+so that we can explain how to program
+
+1090
+00:42:25,754 --> 00:42:29,921
+this whole place might start
+making a whole lot more sense.
+
+1091
+00:42:31,491 --> 00:42:33,558
+And that is how to program.
+
+1092
+00:42:33,558 --> 00:42:35,471
+(audience chuckling)
+
+1093
+00:42:35,471 --> 00:42:38,825
+So I appreciate your time here today,
+
+1094
+00:42:38,825 --> 00:42:41,028
+if you're looking for
+a company to work with
+
+1095
+00:42:41,028 --> 00:42:43,358
+that's gonna support you
+on this kind of journey,
+
+1096
+00:42:43,358 --> 00:42:45,285
+I hope you'd consider checking us out,
+
+1097
+00:42:45,285 --> 00:42:46,724
+that's our page explaining what it's like
+
+1098
+00:42:46,724 --> 00:42:48,374
+to work with us at Test Double,
+
+1099
+00:42:48,374 --> 00:42:50,276
+and if you're a company that is looking
+
+1100
+00:42:50,276 --> 00:42:52,114
+for additional developers on your team,
+
+1101
+00:42:52,114 --> 00:42:53,640
+I hope you'd consider working with us.
+
+1102
+00:42:53,640 --> 00:42:57,661
+We join other teams just
+as additional developers
+
+1103
+00:42:57,661 --> 00:43:01,467
+with an interest in helping
+everyone get better as we go,
+
+1104
+00:43:01,467 --> 00:43:04,008
+and you can learn more
+about us on our site.
+
+1105
+00:43:04,008 --> 00:43:06,851
+By the way, I really made
+this quiz, it's a real thing,
+
+1106
+00:43:06,851 --> 00:43:10,151
+I actually printed out 100
+copies and I have it in my bag
+
+1107
+00:43:10,151 --> 00:43:12,730
+so you can get a special
+commemorative edition today,
+
+1108
+00:43:12,730 --> 00:43:14,990
+if you come up and say hi
+to me I'll hand you one,
+
+1109
+00:43:14,990 --> 00:43:17,070
+I also have a lotta Test Double stickers.
+
+1110
+00:43:17,070 --> 00:43:19,344
+If you don't wanna say hi to me in person
+
+1111
+00:43:19,344 --> 00:43:22,519
+you an actually go to testdouble.com/salt
+
+1112
+00:43:22,519 --> 00:43:24,516
+and fill it out, we made a Google Form,
+
+1113
+00:43:24,516 --> 00:43:27,650
+and then two of our
+agents yesterday actually
+
+1114
+00:43:27,650 --> 00:43:28,828
+figured out how to automate Google Form
+
+1115
+00:43:28,828 --> 00:43:32,083
+so it'll calculate your programmer type
+
+1116
+00:43:32,083 --> 00:43:33,276
+and email you right away,
+
+1117
+00:43:33,276 --> 00:43:35,605
+so I hope you go check that out too.
+
+1118
+00:43:35,605 --> 00:43:37,086
+But most importantly of all,
+
+1119
+00:43:37,086 --> 00:43:38,964
+I'm really thankful for this opportunity
+
+1120
+00:43:38,964 --> 00:43:40,501
+and for your time this morning.
+
+1121
+00:43:40,501 --> 00:43:41,389
+Thank you.
+
+1122
+00:43:41,389 --> 00:43:44,556
+(audience applauding)
+
